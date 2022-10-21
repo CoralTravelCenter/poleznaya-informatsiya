@@ -1,0 +1,332 @@
+html {
+  background-color: #f1f7fc;
+}
+
+h1 {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .contentLayout-BaseContainer .notcritical {
+    padding-top: 0 !important;
+  }
+  .contentLayout-BaseContainer .notcritical .container {
+    margin-top: 0 !important;
+  }
+}
+.page {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none !important;
+  }
+}
+
+.mobile {
+  width: 100%;
+}
+@media screen and (min-width: 769px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
+.banner {
+  margin: 0 0 55px 0;
+}
+
+.banner__image {
+  max-width: 1024px;
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .banner__image {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.lead {
+  margin: 0 auto 60px auto;
+  max-width: 800px;
+}
+@media screen and (max-width: 900px) {
+  .lead {
+    max-width: calc(100% - 100px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .lead {
+    max-width: unset;
+  }
+}
+
+.lead__description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+.lead__description span {
+  font-size: 16px;
+  line-height: 19px;
+}
+@media screen and (max-width: 1006px) {
+  .lead__description span {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (max-width: 1006px) {
+  .lead__description {
+    font-size: 2.05vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lead__description {
+    font-size: 2.25vw;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 550px) {
+  .lead__description {
+    font-size: 3.3vw;
+  }
+}
+
+.cards {
+  display: flex;
+  flex: 0 0 25%;
+  width: 100%;
+  list-style: none;
+  margin: 0 0 60px 0;
+  justify-content: space-between;
+  padding: 0;
+}
+@media screen and (max-width: 1006px) {
+  .cards {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    flex: 0 0 50%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 499px) {
+  .cards {
+    flex: unset;
+    flex-direction: column;
+  }
+}
+
+.cards_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: unset !important;
+  gap: 20px;
+}
+
+.card__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 auto 27px auto;
+  transition: 0.3s;
+  max-width: 80%;
+  text-decoration: none;
+}
+@media screen and (max-width: 1199px) {
+  .card__title {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1006px) {
+  .card__title {
+    font-size: 1.85vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__title {
+    font-size: 3.3vw;
+    margin: 0;
+    width: calc(100% - 40px);
+    height: unset;
+  }
+}
+@media screen and (max-width: 499px) {
+  .card__title {
+    font-size: 5vw;
+  }
+}
+
+.card__image {
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.button_card {
+  margin: 0 0 30px 0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .button_card {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+.card_large_with-image {
+  border: none !important;
+  min-height: unset;
+  padding: 0 0 60px 0;
+  max-width: calc(50% - 10px);
+  background: #fff;
+  border-radius: 20px !important;
+}
+.card_large_with-image .card__image {
+  margin: 0 0 27px 0;
+}
+.card_large_with-image a {
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .card_large_with-image {
+    padding: 0 0 30px 0;
+  }
+  .card_large_with-image .card__title {
+    margin: 0 auto 20px auto;
+  }
+  .card_large_with-image .card__image_large {
+    margin: 0 0 25px 0;
+  }
+  .card_large_with-image .card__description {
+    font-size: 12px;
+  }
+  .card_large_with-image .card__description:last-of-type {
+    margin: 0 0 25px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card_large_with-image {
+    max-width: 100%;
+  }
+}
+
+.page-footer {
+  max-width: 510px;
+  margin: 0 auto 100px auto;
+}
+@media screen and (max-width: 1006px) {
+  .page-footer {
+    margin: 0 auto 80px auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-footer {
+    max-width: calc(100% - 60px);
+    margin: 0 auto 40px auto;
+  }
+}
+
+.page-footer_buttons {
+  display: flex;
+  max-width: 100%;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .page-footer_buttons {
+    max-width: calc(100% - 60px);
+  }
+}
+
+.button {
+  margin: 0 auto;
+  border: none;
+  background: #f0ab00;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 13px 70px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px !important;
+  line-height: 1.2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  transition: 0.3s;
+  outline: none !important;
+  flex-direction: column;
+}
+.button:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 12px;
+  }
+}
+
+.button_footer {
+  background: #0093d0;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 22px;
+  margin: 0;
+  max-width: unset;
+}
+@media screen and (max-width: 1006px) {
+  .button_footer {
+    max-width: unset;
+    height: 50px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button_footer {
+    height: 40px;
+    line-height: 1 !important;
+    font-size: 10px !important;
+    padding: 0 5px;
+    width: 50%;
+  }
+}
+
+.button_transparent {
+  background: transparent !important;
+  border: 2px solid #000000;
+  color: #000000 !important;
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .button_transparent {
+    min-width: unset;
+  }
+}

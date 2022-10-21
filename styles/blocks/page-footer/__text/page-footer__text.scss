@@ -1,0 +1,22 @@
+.page-footer__text {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #000000;
+	margin: 0;
+
+	@media screen and (max-width: 1006px) {
+		font-size: 2.05vw;
+	}
+
+	@media screen and(max-width:768px) {
+		font-size: 2.25vw;
+		line-height: 1.5;
+	}
+
+	@media screen and (max-width: 550px) {
+		font-size: 3.3vw;
+	}
+}

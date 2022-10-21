@@ -1,0 +1,13 @@
+.card__download-link {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px !important;
+	color: #0093d0 !important;
+	cursor: pointer;
+
+	@media screen and (max-width: 499px) {
+		font-size: 10px !important;
+		white-space: nowrap;
+	}
+}

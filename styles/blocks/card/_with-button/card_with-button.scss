@@ -1,0 +1,122 @@
+.card_with-button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: calc(100% / 4 - 20px);
+	min-height: unset;
+	position: relative;
+
+	@media screen and (max-width: 768px) {
+		width: calc(50% - 20px);
+	}
+
+	@media screen and (max-width: 499px) {
+		width: 100%;
+	}
+
+	a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	.hover-content {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		position: relative;
+		margin: 0 0 20px 0;
+		gap: unset;
+		justify-content: flex-start;
+	}
+
+	.btn-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.5);
+		transition: 0.3s;
+	}
+
+	.card__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin: 0;
+	}
+
+	.card__title {
+		height: unset;
+		margin: 0 0 8px 0;
+		max-width: calc(100% - 40px);
+		font-size: 20px;
+		text-transform: unset;
+
+		@media screen and (max-width: 768px) {
+			font-size: 12px;
+		}
+	}
+
+	.card__description {
+		margin: 0;
+
+		@media screen and (max-width: 768px) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	.button_card {
+		margin: 0;
+		max-width: 80%;
+		font-size: 20px !important;
+		transform: translate3d(0, 20px, 0);
+		padding: 10px 32px;
+
+		@media screen and (max-width: 768px) {
+			transform: none;
+			margin: 0 0 40px 0;
+			font-size: 14px !important;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&:hover {
+		.card__image {
+			transform: none !important;
+		}
+
+		.card__title {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.btn-wrapper {
+			visibility: visible;
+			pointer-events: auto;
+			opacity: 1;
+			transition: 0.3s;
+		}
+
+		.button_card {
+			transform: translate3d(0, 0, 0);
+			transition: 0.3s;
+		}
+	}
+}

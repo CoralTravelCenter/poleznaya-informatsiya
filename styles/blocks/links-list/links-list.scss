@@ -1,0 +1,15 @@
+.links-list {
+	display: flex;
+	flex-direction: column;
+	width: calc(50% - 10px);
+    margin: 0;
+    border-radius: 20px;
+
+	@media screen and (max-width: 768px) {
+		width: calc(100% - 120px);
+	}
+
+	@media screen and (max-width: 768px) {
+		width: calc(100% - 40px);
+	}
+}

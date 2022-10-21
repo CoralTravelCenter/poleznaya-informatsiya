@@ -1,0 +1,35 @@
+.card__description {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	color: #000000;
+	margin: 0 0 30px 0;
+	max-width: 460px;
+
+	&:last-of-type {
+		margin: 0 0 40px 0;
+
+		@media screen and (max-width: 768px) {
+			margin: 0 0 60px 0;
+		}
+	}
+
+	span {
+		font-weight: 700;
+	}
+
+	@media screen and (max-width: 1006px) {
+		max-width: 100%;
+		color: #000;
+		margin: 0 auto 25px auto;
+		line-height: 1.2;
+		width: calc(100% - 40px);
+		font-size: 24px;
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,36 @@
+html {
+	background-color: #f1f7fc;
+}
+
+h1 {
+	display: none !important;
+}
+
+@import "../../components/normalize-css/normalize.scss";
+@import "../vendor/fonts/fonts.scss";
+
+@import "../styles/blocks/page/page.scss";
+
+@import "../styles/blocks/banner/banner.scss";
+@import "../styles/blocks/banner/__image/banner__image.scss";
+@import "../styles/blocks/desktop.scss";
+@import "../styles/blocks/mobile.scss";
+@import "../styles/blocks/button/button.scss";
+
+
+
+@import "../styles/blocks/aircompanies/aircompanies.scss";
+@import "../styles/blocks/cards/_flex/cards_flex.scss";
+@import "../styles/blocks/links-list/links-list.scss";
+@import "../styles/blocks/links-list/__header/links-list__header.scss";
+@import "../styles/blocks/links-list/__logo/links-list__logo.scss";
+@import "../styles/blocks/links-list/__list/links-list__list.scss";
+@import "../styles/blocks/links-list/__item/links-list__item.scss";
+@import "../styles/blocks/links-list/__link/links-list__link.scss";
+@import "../styles/blocks/links-list/__link-ico/links-list__link-ico.scss";
+
+@import "../styles/blocks/page-footer/page-footer.scss";
+@import "../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+@import "../styles/blocks/button/button.scss";
+@import "../styles/blocks/button/_footer/button_footer.scss";
+@import "../styles/blocks/button/_transparent/button_transparent.scss";

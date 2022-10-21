@@ -1,0 +1,1204 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Как забронировать тур онлайн</title>
+		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+		<style>
+			h1 {
+				display: none !important;
+			}
+
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+			@media screen and (max-width: 768px) {
+				.banner__image {
+					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 20px;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none !important;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none !important;
+				}
+			}
+
+			.lead {
+				margin: 0 auto 60px auto;
+				max-width: 800px;
+			}
+			@media screen and (max-width: 900px) {
+				.lead {
+					max-width: calc(100% - 100px);
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead {
+					max-width: unset;
+				}
+			}
+
+			.lead__title {
+				margin: 0 0 24px 0;
+
+				font-style: normal;
+				font-weight: 700;
+				font-size: 44px;
+				line-height: 53px;
+				text-align: center;
+				color: #000000;
+				display: block !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__title {
+					font-size: 4.7vw;
+					line-height: 1.2;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__title {
+					font-size: 6vw;
+				}
+			}
+
+			.lead__title_subtitle {
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 29px;
+				margin: 0 0 30px 0;
+			}
+			@media screen and (max-width: 499px) {
+				.lead__title_subtitle {
+					font-size: 1.2rem;
+					line-height: 1.5rem;
+					margin: 0 0 20px 0;
+				}
+			}
+
+			.lead__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				color: #000000;
+				margin: 0;
+			}
+			.lead__description span {
+				font-size: 16px;
+				line-height: 19px;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description span {
+					font-size: 1.6vw;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description {
+					font-size: 2.05vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__description {
+					font-size: 2.25vw;
+					line-height: 1.5;
+				}
+			}
+			@media screen and (max-width: 550px) {
+				.lead__description {
+					font-size: 3.3vw;
+				}
+			}
+
+			.text {
+				font-style: normal;
+				color: #000;
+				font-weight: 400;
+				margin: 0 0 60px 0;
+			}
+
+			.text__title {
+				font-size: 20px;
+				line-height: 23px;
+				margin: 0 0 25px 0;
+				font-weight: 700;
+			}
+			.text__title:first-of-type {
+				margin: 0;
+			}
+
+			.slide_mobile .text__title {
+				margin: 0 auto 60px auto !important;
+				text-align: center;
+				max-width: 90%;
+			}
+			@media screen and (max-width: 499px) {
+				.slide_mobile .text__title {
+					margin: 0 auto 30px auto !important;
+				}
+			}
+
+			.slider {
+				margin: 0 0 40px 0;
+				position: relative;
+				min-height: 580px;
+			}
+			@media screen and (max-width: 768px) {
+				.slider {
+					margin: 0 50px 40px 50px;
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.slider {
+					margin: 0 0 40px 0;
+				}
+			}
+
+			.slider__swiper {
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+			}
+			@media screen and (max-width: 768px) {
+				.slider__swiper {
+					background: #fff;
+					border-radius: 0 0 20px 20px;
+				}
+			}
+
+			.swiper-container {
+				height: auto;
+				overflow: hidden;
+			}
+
+			.slider__wrapper {
+				display: flex;
+				position: relative;
+				transition: 0.3s;
+				justify-content: center;
+			}
+
+			.swiper-wrapper {
+				padding: 120px 0 0 0;
+				height: auto !important;
+			}
+			@media screen and (max-width: 768px) {
+				.swiper-wrapper {
+					order: 1;
+					padding: 0;
+				}
+			}
+
+			.slider__separator {
+				width: 2px;
+				height: 100%;
+				min-height: 73px;
+				background: #ffffff;
+			}
+			@media screen and (max-width: 499px) {
+				.slider__separator {
+					height: 80%;
+					min-height: unset;
+				}
+			}
+
+			.slider__icons {
+				max-width: 1024px;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				border-radius: 20px;
+				z-index: 9;
+				background: #d9d9d9;
+				padding: 45px 40px;
+				display: flex;
+				justify-content: space-between;
+				box-sizing: border-box;
+			}
+			@media screen and (max-width: 768px) {
+				.slider__icons {
+					padding: 20px;
+					order: 2;
+					position: relative;
+					max-width: calc(100% - 200px);
+					margin: 0 auto 32px auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.slider__icons {
+					padding: 0;
+					height: 80px;
+				}
+			}
+			.slider__icons .videos__arrows {
+				width: calc(100% + 100px) !important;
+				left: -50px !important;
+				top: 55px !important;
+				transform: none !important;
+			}
+			@media screen and (max-width: 499px) {
+				.slider__icons .videos__arrows {
+					top: 40px !important;
+				}
+			}
+
+			.slider__icons_wrapper {
+				display: flex;
+				width: 100%;
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto;
+				max-width: initial;
+				justify-content: center;
+			}
+			.slider__icons_wrapper_hidden {
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				max-width: 0;
+			}
+			@media screen and (max-width: 499px) {
+				.slider__icons_wrapper {
+					align-items: center;
+				}
+			}
+
+			.slider__ico {
+				max-width: 100%;
+				-o-object-fit: contain;
+				object-fit: contain;
+				cursor: pointer;
+				position: relative;
+			}
+			@media screen and (max-width: 768px) {
+				.slider__ico {
+					max-width: 60%;
+				}
+			}
+
+			.slider__ico_active::after {
+				content: "";
+				position: absolute;
+				bottom: -45px;
+				left: calc(50% - 30px);
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_hand.png);
+				width: 60px;
+				height: 60px;
+				background-repeat: no-repeat;
+				background-size: contain;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.slider__ico_active::after {
+					width: 40px;
+					height: 43px;
+					bottom: -20px;
+					left: 50%;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.slider__ico_active::after {
+					width: 30px;
+					height: 33px;
+					bottom: -34px;
+					left: 40%;
+				}
+			}
+
+			.slide {
+				visibility: visible;
+				opacity: 1;
+				max-height: auto;
+			}
+
+			.swiper-slide {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				height: auto !important;
+			}
+			@media screen and (max-width: 768px) {
+				.swiper-slide {
+					justify-content: flex-start;
+					height: 100% !important;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.videos__slider .swiper-slide {
+					height: auto !important;
+				}
+			}
+
+			.slide_mobile {
+				height: unset;
+				width: 100%;
+				max-width: calc(100% - 200px);
+				margin: 45px auto 32px auto;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			@media screen and (max-width: 499px) {
+				.slide_mobile {
+					max-width: 90%;
+				}
+				.slide_mobile img {
+					border-style: none;
+					max-height: 50vh;
+					max-width: 100%;
+				}
+			}
+
+			.slide_disabled {
+				visibility: hidden;
+				opacity: 0;
+				max-height: 0;
+				margin: 0;
+			}
+
+			.slider__play-pause {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider-pause.png) no-repeat;
+				background-size: contain;
+				width: 12px;
+				height: 12px;
+				margin: 0 15px 0 0;
+				cursor: pointer;
+			}
+			@media screen and (max-width: 499px) {
+				.slider__play-pause {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			.slider__play-pause_paused {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider-play.png) no-repeat;
+			}
+
+			.slider__pagination {
+				display: flex;
+				justify-content: center;
+				padding: 32px 0 0 0;
+				align-items: center;
+			}
+			@media screen and (max-width: 768px) {
+				.slider__pagination {
+					background: #f1f7fc;
+					order: 3;
+				}
+			}
+
+			.swiper-pagination {
+				position: relative !important;
+				bottom: 0 !important;
+				width: -webkit-fit-content !important;
+				width: -moz-fit-content !important;
+				width: fit-content !important;
+				margin: 0 !important;
+			}
+
+			.swiper-pagination-bullet {
+				background: #d9d9d9 !important;
+				width: 12px !important;
+				height: 12px !important;
+				transition: 0.3s;
+			}
+			.swiper-pagination-bullet:hover {
+				background: #b6b6b6 !important;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 499px) {
+				.swiper-pagination-bullet {
+					width: 16px !important;
+					height: 16px !important;
+				}
+			}
+
+			.swiper-pagination-bullet-active {
+				background: #888888 !important;
+			}
+
+			.phones {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				-moz-column-gap: 40px;
+				column-gap: 40px;
+				margin: 0 auto 80px auto;
+				max-width: 840px;
+			}
+			@media screen and (max-width: 768px) {
+				.phones {
+					-moz-column-gap: 30px;
+					column-gap: 30px;
+					max-width: calc(100% - 60px);
+					margin: 0 auto 30px auto;
+				}
+			}
+
+			.phones__column {
+				display: flex;
+				align-items: center;
+			}
+			@media screen and (max-width: 768px) {
+				.phones__column {
+					flex-direction: column;
+				}
+			}
+
+			.phones__image {
+				margin: 0 20px 0 0;
+			}
+			@media screen and (max-width: 768px) {
+				.phones__image {
+					margin: 0 0 20px 0;
+					max-width: 39.5px;
+					max-height: 39px;
+				}
+			}
+
+			.phones__text {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.phones__text {
+					align-items: center;
+				}
+			}
+
+			.phones__tel {
+				font-weight: 600;
+				font-size: 28px !important;
+				line-height: 34px !important;
+				color: #000000 !important;
+				text-decoration: none;
+				margin: 0 0 10px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.phones__tel {
+					font-size: 14px !important;
+					line-height: 1.2 !important;
+					margin: 0 0 4px 0;
+				}
+			}
+
+			.phones__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				color: #000000;
+				margin: 0;
+			}
+			.phones__description span {
+				font-weight: 600;
+			}
+			@media screen and (max-width: 768px) {
+				.phones__description {
+					text-align: center;
+					font-size: 12px;
+					line-height: 1.2;
+				}
+			}
+
+			.videos {
+				width: 100%;
+				max-width: 850px;
+				margin: 0 auto 80px auto;
+				height: auto;
+				position: relative;
+			}
+
+			.videos__slider {
+				width: 100%;
+				height: auto;
+				margin: 0 0 10px 0;
+				max-height: 480px;
+			}
+			.videos__slider .swiper-wrapper {
+				padding: 0;
+				max-height: 480px;
+			}
+			.videos__slider .swiper-slide {
+				width: 100% !important;
+				min-height: 480px;
+			}
+			.videos__slider .swiper-slide img {
+				display: block;
+				width: auto;
+				height: 100%;
+				margin: 0 auto;
+			}
+			@media screen and (max-width: 499px) {
+				.videos__slider .swiper-slide {
+					min-height: unset;
+					height: 56vw;
+					margin-bottom: 10px;
+				}
+			}
+
+			.videos__thumbs {
+				width: 100%;
+				padding: 0;
+				overflow: hidden;
+				position: relative;
+			}
+			.videos__thumbs .swiper-wrapper {
+				padding: 0;
+			}
+			.videos__thumbs .swiper-slide {
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				overflow: hidden;
+				cursor: pointer;
+				display: flex;
+				justify-content: flex-start;
+			}
+			.videos__thumbs .swiper-slide-active {
+				opacity: 1;
+				cursor: auto;
+			}
+			.videos__thumbs .swiper-slide-active img {
+				opacity: 1 !important;
+				cursor: auto;
+				border: 3px solid #f0ab00;
+			}
+			.videos__thumbs .swiper-slide img {
+				width: auto;
+				max-height: 93px;
+				-o-object-fit: cover;
+				object-fit: cover;
+				height: 100%;
+				opacity: 0.6;
+				box-sizing: border-box;
+			}
+			@media screen and (max-width: 499px) {
+				.videos__thumbs .swiper-slide img {
+					max-height: 12vw;
+					margin: 0 0 7.5px 0;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.videos__thumbs {
+					width: calc(100% - 140px);
+					margin: 0 auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.videos__thumbs {
+					width: calc(100% - 100px);
+				}
+			}
+
+			.videos__arrows {
+				position: absolute;
+				width: 115%;
+				left: -7.5%;
+				transform: translateY(-100px);
+			}
+			@media screen and (max-width: 1006px) {
+				.videos__arrows {
+					width: 100%;
+					left: 0;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.videos__arrows {
+					transform: translateY(-10vw);
+				}
+			}
+
+			.videos__arrow {
+				top: unset !important;
+				color: #000 !important;
+			}
+
+			.swiper-button-prev {
+				left: 0 !important;
+				right: unset !important;
+			}
+
+			.swiper-button-next {
+				right: 0 !important;
+				left: unset !important;
+			}
+
+			.videos__wrapper {
+				width: 100%;
+				height: 100%;
+				border-radius: 20px;
+				position: relative;
+			}
+			@media screen and (max-width: 499px) {
+				.videos__wrapper {
+					height: 56vw;
+				}
+			}
+
+			.videos__iframe {
+				width: 100%;
+				height: 100%;
+				border-radius: 20px;
+				position: relative;
+			}
+			@media screen and (max-width: 768px) {
+				.videos__iframe {
+					max-height: 350px;
+				}
+			}
+
+			.videos__slide-title {
+				font-style: normal;
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 29px;
+				text-align: center;
+				color: #000000;
+				margin: 0 0 60px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.videos__slide-title {
+					margin: 0 0 30px 0;
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.videos__slide-title {
+					font-size: 18px;
+				}
+			}
+
+			.videos__slide-title_min {
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 1.2;
+				text-align: left;
+				margin: 0;
+			}
+			@media screen and (max-width: 499px) {
+				.videos__slide-title_min {
+					font-size: 2.6vw;
+				}
+			}
+
+			.videos__thumb {
+				border-radius: 12px;
+				margin: 0 0 15px 0;
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/banner.png" alt="" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/banner_mobile.png" alt="" class="banner__image mobile" />
+		</div>
+		<div class="lead">
+			<h1 class="lead__title">Покупать туры онлайн&nbsp;&mdash; это просто!</h1>
+		</div>
+
+		<div class="slider">
+			<div class="slider__swiper">
+				<div class="slider__icons desktop" id="desktop-icons">
+					<div class="slider__wrapper slider__ico_active">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button1.png" class="slider__ico slider__ico_active" />
+					</div>
+					<span class="slider__separator">&nbsp;</span>
+					<div class="slider__wrapper">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button2.png" class="slider__ico" />
+					</div>
+					<span class="slider__separator">&nbsp;</span>
+					<div class="slider__wrapper">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button3.png" class="slider__ico" />
+					</div>
+					<span class="slider__separator">&nbsp;</span>
+					<div class="slider__wrapper">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button4.png" class="slider__ico" />
+					</div>
+					<span class="slider__separator">&nbsp;</span>
+					<div class="slider__wrapper">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button5.png" class="slider__ico" />
+					</div>
+					<span class="slider__separator">&nbsp;</span>
+					<div class="slider__wrapper">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button6.png" class="slider__ico" />
+					</div>
+				</div>
+				<div class="slider__icons mobile" id="mobile-icons">
+					<div class="slider__icons_wrapper" id="first">
+						<div class="slider__wrapper slider__ico_active" id="1">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button1.png" class="slider__ico slider__ico_active" />
+						</div>
+						<span class="slider__separator">&nbsp;</span>
+						<div class="slider__wrapper" id="2">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button2.png" class="slider__ico" />
+						</div>
+						<span class="slider__separator" id="3">&nbsp;</span>
+						<div class="slider__wrapper">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button3.png" class="slider__ico" />
+						</div>
+					</div>
+					<div class="slider__icons_wrapper slider__icons_wrapper_hidden" id="second">
+						<div class="slider__wrapper" id="4">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button4.png" class="slider__ico" />
+						</div>
+						<span class="slider__separator">&nbsp;</span>
+						<div class="slider__wrapper" id="5">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button5.png" class="slider__ico" />
+						</div>
+						<span class="slider__separator">&nbsp;</span>
+						<div class="slider__wrapper" id="6">
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_button6.png" class="slider__ico" />
+						</div>
+					</div>
+					<div class="videos__arrows mobile">
+						<div class="videos__arrow slider-prev swiper-button-prev">&nbsp;</div>
+						<div class="videos__arrow slider-next swiper-button-next">&nbsp;</div>
+					</div>
+				</div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image1.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" class="slide desktop" />
+						<div class="slide slide_mobile mobile">
+							<p class="text text__title">1.&nbsp;Задайте параметры поиска в&nbsp;полях формы и&nbsp;нажмите &laquo;поиск&raquo;</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image1_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image2.png" alt="Используя фильтры и описание выберите отель" class="slide slide_switch desktop" />
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image2-2.png" alt="Используя фильтры и описание выберите отель" class="slide slide_switch slide_disabled desktop" />
+						<div class="slide slide_switch slide_mobile mobile">
+							<p class="text text__title">2.&nbsp;Используя фильтры и&nbsp;описание выберите отель</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image2_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+						<div class="slide slide_switch slide_disabled slide_mobile mobile">
+							<p class="text text__title">2.&nbsp;Используя фильтры и&nbsp;описание выберите отель</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image2-2_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image3.png" alt="Выберите удобный вариант перелета" class="slide desktop" />
+						<div class="slide slide_mobile mobile">
+							<p class="text text__title">3.Выберите удобный вариант перелета</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image3_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image4.png" alt="Добавьте дополнительные услуги и ознакомьтесь с итоговой стоимостью тура" class="slide desktop" />
+						<div class="slide slide_mobile mobile">
+							<p class="text text__title">4.&nbsp;Добавьте дополнительные услуги и&nbsp;ознакомьтесь с&nbsp;итоговой стоимостью тура</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image4_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image5.png" alt="Введите данные туристов и заказчика" class="slide desktop" />
+						<div class="slide slide_mobile mobile">
+							<p class="text text__title">5.&nbsp;Введите данные туристов и&nbsp;заказчика</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image5_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image6.png" alt="Введите примечания к заказу (например карту Coral Bonus) и нажмите кнопку забронировать" class="slide desktop" />
+						<div class="slide slide_mobile mobile">
+							<p class="text text__title">6.&nbsp;Введите примечания к&nbsp;заказу (например карту Coral Bonus) и&nbsp;нажмите кнопку забронировать</p>
+							<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_image6_mobile.png" alt="Задайте параметры поиска в полях формы и нажмите поиск" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider__pagination">
+				<div class="slider__play-pause">&nbsp;</div>
+				<div class="swiper-pagination">&nbsp;</div>
+			</div>
+		</div>
+
+		<div class="lead">
+			<p class="lead__title lead__title_subtitle">После создания заказа он&nbsp;будет принят в&nbsp;работу и&nbsp;электронную почту придет подтверждение и&nbsp;договор.</p>
+			<p class="lead__description">А&nbsp;после оплаты тура вы&nbsp;сможете распетачать документы в&nbsp;личном кабинете. В&nbsp;случае вопросов мы&nbsp;всегда на&nbsp;связи и&nbsp;поможем вам:</p>
+		</div>
+
+		<div class="phones">
+			<div class="phones__column">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/avatar.png" alt="Отдел по работе с частными клиентами" class="phones__image" />
+				<div class="phones__text">
+					<a href="tel:+74952321206" class="phones__tel">+7&nbsp;495&nbsp;232&nbsp;12&nbsp;06</a>
+					<p class="phones__description"><span>Отдел по&nbsp;работе с&nbsp;частными клиентами</span>, вопросы по&nbsp;заказу</p>
+				</div>
+			</div>
+			<div class="phones__column">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/flame.png" alt="Горячая линия" class="phones__image" />
+				<div class="phones__text">
+					<a href="tel:+74952320809" class="phones__tel">+7&nbsp;495&nbsp;232&nbsp;08&nbsp;09</a>
+					<p class="phones__description"><span>Горячая линия для туристов 24/7</span>, экстренные ситуации</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="videos">
+			<p class="lead__title">Видеоинструкции по&nbsp;поиску и&nbsp;бронированию туров</p>
+			<div class="swiper-container videos__slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Знакомство с&nbsp;сайтом</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/BwmWvspjOzs?controls=0" title="Знакомство с сайтом Coral Travel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Быстрый поиск тура</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/WFG9thbdtYI?controls=0" title="Быстрый поиск тура" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Результаты поиска</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/_7fxwXi9Ouw?controls=0" title="Результаты поиска" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Страница отеля</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/Pe8Nn4r2Eec?controls=0" title="Страница отеля" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Выбор рейса и&nbsp;дополнительных услуг</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/9pmSrsYRhrs?controls=0" title="Выбор рейса и дополнительных услуг" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">Ввод данных туристов и&nbsp;бронирование</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/GwjmAuioURU?controls=0" title="Ввод данных туристов и бронирование" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<p class="videos__slide-title">После бронирования</p>
+						<div class="videos__wrapper">
+							<iframe class="videos__iframe" id="video" src="https://www.youtube.com/embed/muadoTYul24?controls=0" title="После бронирования" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="swiper-container videos__thumbs">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img1.png" alt="Знакомство с сайтом" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Знакомство с&nbsp;сайтом</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img2.png" alt="Быстрый поиск тура" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Быстрый поиск тура</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img3.png" alt="Результаты поиска" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Результаты поиска</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img4.png" alt="Страница отеля" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Страница отеля</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img5.png" alt="Выбор рейса и дополнительных услуг" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Выбор рейса и&nbsp;дополнительных услуг</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img6.png" alt="Ввод данных туристов и бронирование" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">Ввод данных туристов и&nbsp;бронирование</p>
+					</div>
+					<div class="swiper-slide">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/videos_img7.png" alt="После бронирования" class="videos__thumb" />
+						<p class="videos__slide-title videos__slide-title_min">После бронирования</p>
+					</div>
+				</div>
+			</div>
+			<div class="videos__arrows">
+				<div class="videos__arrow videos-prev swiper-button-prev">&nbsp;</div>
+				<div class="videos__arrow videos-next swiper-button-next">&nbsp;</div>
+			</div>
+		</div>
+
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+		</div>
+
+		<script>
+			const swiper = new Swiper(".slider__swiper", {
+				direction: "horizontal",
+				slidesPerView: 1,
+				loop: true,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				speed: 1000,
+				navigation: {
+					nextEl: ".slider-next",
+					prevEl: ".slider-prev",
+				},
+			});
+			const btnPlayPause = document.querySelector(".slider__play-pause");
+			btnPlayPause.addEventListener("click", function () {
+				btnPlayPause.classList.toggle("slider__play-pause_paused");
+				btnPlayPause.classList.contains("slider__play-pause_paused") ? swiper.autoplay.stop() : swiper.autoplay.start();
+			});
+
+			const swiperVideos = new Swiper(".videos__slider", {
+				slidesPerView: 1,
+				centeredSlides: true,
+				spaceBetween: 10,
+				loop: true,
+				loopedSlides: 3,
+				breakpoints: {
+					769: {
+						loopedSlides: 5,
+					},
+				},
+			});
+
+			const thumbsVideos = new Swiper(".videos__thumbs", {
+				slidesPerView: 3,
+				spaceBetween: 10,
+				centeredSlides: false,
+				loop: true,
+				slideToClickedSlide: true,
+				navigation: {
+					nextEl: ".videos-next",
+					prevEl: ".videos-prev",
+				},
+				breakpoints: {
+					769: {
+						slidesPerView: 5,
+					},
+				},
+			});
+
+			swiperVideos.controller.control = thumbsVideos;
+			thumbsVideos.controller.control = swiperVideos;
+
+			const sliderContainer = document.querySelector(".slider");
+			const slideSwitch = sliderContainer.querySelectorAll(".slide_switch");
+			const slides = sliderContainer.querySelectorAll(".swiper-slide");
+
+			const iconsWrapperDesktop = sliderContainer.querySelector("#desktop-icons");
+			const iconsDesktop = iconsWrapperDesktop.querySelectorAll(".slider__ico");
+			const iconWrappersDesktop = iconsWrapperDesktop.querySelectorAll(".slider__wrapper");
+
+			const iconsWrapperMobile = sliderContainer.querySelector("#mobile-icons");
+			const iconsMobile = iconsWrapperMobile.querySelectorAll(".slider__ico");
+			const iconWrappersMobile = iconsWrapperMobile.querySelectorAll(".slider__wrapper");
+			const iconPagesMobile = iconsWrapperMobile.querySelectorAll(".slider__icons_wrapper");
+
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+
+			window.innerWidth > 768 ? changeIcons(iconsDesktop, iconWrappersDesktop) : changeIcons(iconsMobile, iconWrappersMobile);
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+
+			function changeIcons(icons, iconWrappers) {
+				for (let i = 1; i <= slides.length; i++) {
+					if (icons[i - 1] === undefined) {
+						break;
+					}
+					icons[i - 1].addEventListener("click", () => {
+						goToSlide(i, iconWrappers[i - 1]);
+					});
+				}
+				swiper.on("slideChange", () => {
+					goToSlide(swiper.activeIndex, iconWrappers[swiper.activeIndex - 1]);
+				});
+
+				function goToSlide(slide, ico) {
+					if (slide === 7) {
+						ico = iconWrappers[0];
+					}
+					if (slide === 0) {
+						ico = iconWrappers[5];
+					}
+					swiper.slideTo(slide, 1000, false);
+					iconWrappers.forEach((ico) => {
+						ico.classList.remove("slider__ico_active");
+					});
+					ico.classList.add("slider__ico_active");
+					if (window.innerWidth < 769) {
+						if (Number(ico.id) > 3) {
+							iconPagesMobile.item(1).classList.remove("slider__icons_wrapper_hidden");
+							iconPagesMobile.item(0).classList.add("slider__icons_wrapper_hidden");
+						} else {
+							iconPagesMobile.item(0).classList.remove("slider__icons_wrapper_hidden");
+							iconPagesMobile.item(1).classList.add("slider__icons_wrapper_hidden");
+						}
+					}
+				}
+			}
+
+			setInterval(switchSlide, 4000);
+			function switchSlide() {
+				slideSwitch.forEach((slide) => (slide.classList.contains("slide_disabled") ? slide.classList.remove("slide_disabled") : slide.classList.add("slide_disabled")));
+			}
+
+			function runAutoplay() {
+				swiper.autoplay.start();
+				setTimeout(function () {
+					if (swiper.autoplay.running === false) {
+						runAutoplay();
+					} else {
+						clearInterval(checkAutoPlayInterval);
+					}
+				}, 4000);
+			}
+
+			const checkAutoPlayInterval = setInterval(autoplayCheck, 1000);
+
+			function autoplayCheck() {
+				if (swiper.autoplay.running === false && !btnPlayPause.classList.contains("slider__play-pause_paused")) {
+					runAutoplay();
+				}
+			}
+		</script>
+	</body>
+</html>

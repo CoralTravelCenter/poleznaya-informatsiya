@@ -1,0 +1,23 @@
+.cards {
+	display: flex;
+	flex: 0 0 25%;
+	width: 100%;
+	list-style: none;
+	margin: 0 0 60px 0;
+	justify-content: space-between;
+	padding: 0;
+
+	@media screen and (max-width: 1006px) {
+		gap: 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		flex: 0 0 50%;
+		flex-wrap: wrap;
+	}
+
+	@media screen and (max-width: 499px) {
+		flex: unset;
+		flex-direction: column;
+	}
+}

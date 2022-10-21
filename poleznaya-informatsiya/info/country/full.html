@@ -1,0 +1,1068 @@
+<style>
+	html {
+		background-color: #f1f7fc;
+	}
+
+	h1 {
+		display: none !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		.contentLayout-BaseContainer .notcritical {
+			padding-top: 0 !important;
+		}
+		.contentLayout-BaseContainer .notcritical .container {
+			margin-top: 0 !important;
+		}
+	}
+	.page {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	@media screen and (max-width: 768px) {
+		.desktop {
+			display: none !important;
+		}
+	}
+
+	.mobile {
+		width: 100%;
+	}
+	@media screen and (min-width: 769px) {
+		.mobile {
+			display: none !important;
+		}
+	}
+
+	.banner {
+		margin: 0 0 55px 0;
+	}
+
+	.banner__image {
+		max-width: 1024px;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.banner__image {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
+	.cards {
+		display: flex;
+		flex: 0 0 25%;
+		width: 100%;
+		list-style: none;
+		margin: 0 0 60px 0;
+		justify-content: space-between;
+		padding: 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.cards {
+			gap: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.cards {
+			flex: 0 0 50%;
+			flex-wrap: wrap;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.cards {
+			flex: unset;
+			flex-direction: column;
+		}
+	}
+
+	.cards_flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex: unset !important;
+		gap: 20px;
+	}
+
+	.card {
+		max-width: 245px;
+		width: 100%;
+		min-height: 390px;
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		background-position: center !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		transition: 0.3s;
+		border-radius: 20px !important;
+		border: none !important;
+	}
+	.card:hover .card__title {
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.card:hover .card__title {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.card:hover .hover-content {
+		visibility: visible;
+		opacity: 1;
+		transition: 0.3s;
+		pointer-events: auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.card:hover .hover-content .hover-content_faq {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	.card:hover .card__image {
+		transform: scale(1.05);
+		transition: 0.5s;
+	}
+	@media screen and (max-width: 1006px) {
+		.card {
+			padding: 0 20px;
+			min-height: 40vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card {
+			max-width: calc(50% - 10px);
+			min-height: auto;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card {
+			max-width: 100%;
+		}
+	}
+
+	.card__image {
+		width: 100%;
+		transition: 0.5s;
+		border-radius: 20px;
+	}
+
+	.card__image_hover {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.3s;
+	}
+	.card:hover .card__image_hover {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		transition: 0.3s;
+	}
+
+	.card__title {
+		height: 30%;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.2;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000000;
+		margin: 0 auto 50px auto;
+		transition: 0.3s;
+		max-width: 200px;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 1199px) {
+		.card__title {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.card__title {
+			font-size: 1.85vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__title {
+			font-size: 3.3vw;
+			margin: 0;
+			width: calc(100% - 40px);
+			height: unset;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card__title {
+			font-size: 5vw;
+		}
+	}
+
+	.card__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: #000000;
+		margin: 0 0 30px 0;
+		max-width: 460px;
+	}
+	.card__description:last-of-type {
+		margin: 0 0 40px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.card__description:last-of-type {
+			margin: 0 0 60px 0;
+		}
+	}
+	.card__description span {
+		font-weight: 700;
+	}
+	@media screen and (max-width: 1006px) {
+		.card__description {
+			max-width: 100%;
+			color: #000;
+			margin: 0 auto 25px auto;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 24px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__description {
+			font-size: 14px;
+		}
+	}
+
+	.hover-content {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.3s;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	@media screen and (max-width: 768px) {
+		.hover-content {
+			gap: 20px;
+			visibility: visible;
+			opacity: 1;
+			pointer-events: auto;
+			position: relative;
+			top: unset;
+			left: unset;
+			margin: 0 0 25px 0;
+		}
+	}
+
+	.button_hover-content {
+		margin: 0 !important;
+		padding: 5px 50px !important;
+		width: unset;
+		max-width: 100%;
+	}
+
+	.button_card {
+		margin: 0 0 30px 0;
+		text-decoration: none;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.button_card {
+			width: 200px;
+			height: 50px;
+		}
+	}
+
+	.card_with-button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: calc(25% - 20px);
+		min-height: unset;
+		position: relative;
+	}
+	@media screen and (max-width: 768px) {
+		.card_with-button {
+			width: calc(50% - 20px);
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card_with-button {
+			width: 100%;
+		}
+	}
+	.card_with-button a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+		width: 100%;
+		height: 100%;
+	}
+	.card_with-button .hover-content {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		position: relative;
+		margin: 0 0 20px 0;
+		gap: unset;
+		justify-content: flex-start;
+	}
+	.card_with-button .btn-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.5);
+		transition: 0.3s;
+	}
+	.card_with-button .card__image {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		margin: 0;
+	}
+	.card_with-button .card__title {
+		height: unset;
+		margin: 0 0 8px 0;
+		max-width: calc(100% - 40px);
+		font-size: 20px;
+		text-transform: unset;
+	}
+	@media screen and (max-width: 768px) {
+		.card_with-button .card__title {
+			font-size: 12px;
+		}
+	}
+	.card_with-button .card__description {
+		margin: 0;
+	}
+	@media screen and (max-width: 768px) {
+		.card_with-button .card__description {
+			margin: 0 0 20px 0;
+		}
+	}
+	.card_with-button .button_card {
+		margin: 0;
+		max-width: 80%;
+		font-size: 20px !important;
+		transform: translate3d(0, 20px, 0);
+		padding: 10px 32px;
+	}
+	@media screen and (max-width: 768px) {
+		.card_with-button .button_card {
+			transform: none;
+			margin: 0 0 40px 0;
+			font-size: 14px !important;
+		}
+	}
+	.card_with-button .button_card:hover {
+		opacity: 1;
+	}
+	.card_with-button:hover .card__image {
+		transform: none !important;
+	}
+	.card_with-button:hover .card__title {
+		visibility: visible;
+		opacity: 1;
+	}
+	.card_with-button:hover .btn-wrapper {
+		visibility: visible;
+		pointer-events: auto;
+		opacity: 1;
+		transition: 0.3s;
+	}
+	.card_with-button:hover .button_card {
+		transform: translate3d(0, 0, 0);
+		transition: 0.3s;
+	}
+
+	.page-footer {
+		max-width: 510px;
+		margin: 0 auto 100px auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer {
+			margin: 0 auto 80px auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer {
+			max-width: calc(100% - 60px);
+			margin: 0 auto 40px auto;
+		}
+	}
+
+	.page-footer_buttons {
+		display: flex;
+		max-width: 100%;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer_buttons {
+			max-width: calc(100% - 60px);
+		}
+	}
+
+	.button {
+		margin: 0 0 40px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+		outline: none !important;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+
+	.button_footer {
+		background: #0093d0;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 13px 22px;
+		margin: 0;
+		max-width: unset;
+	}
+	@media screen and (max-width: 1006px) {
+		.button_footer {
+			max-width: unset;
+			height: 50px;
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button_footer {
+			height: 40px;
+			line-height: 1 !important;
+			font-size: 10px !important;
+			padding: 0 5px;
+			width: 50%;
+		}
+	}
+
+	.button_transparent {
+		background: transparent !important;
+		border: 2px solid #000000;
+		color: #000000 !important;
+		min-width: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.button_transparent {
+			min-width: unset;
+		}
+	}
+</style>
+
+<div class="page">
+	<section class="banner">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/banner.png" alt="Дополнительные услуги и сервисы Coral Travel" class="banner__image desktop" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/banner_mobile.png" alt="Дополнительные услуги и сервисы Coral Travel" class="banner__image mobile" />
+	</section>
+
+	<section>
+		<ul class="cards cards_flex">
+			<li class="card_with-button">
+				<a href="/main/turkey/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/turkey.png" alt="Турция" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Турция</p>
+					<p class="card__description">1923 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/austria/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/austria.png" alt="Австрия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Австрия</p>
+					<p class="card__description">1 отель</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/azerbaijan/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/azerbaijan.png" alt="Азербайджан" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Азербайджан</p>
+					<p class="card__description">38 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/andorra/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/andorra.png" alt="Андорра" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Андорра</p>
+					<p class="card__description">21 отель</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/armeniya/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/armenia.png" alt="Армения" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Армения</p>
+					<p class="card__description">54 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/bahrein/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/bahrejn.png" alt="Бахрейн" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Бахрейн</p>
+					<p class="card__description">41 отель</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/belarus/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/belarus.png" alt="Беларусь" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Беларусь</p>
+					<p class="card__description">49 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/bulgaria/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/bolgaria.png" alt="Болгария" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Болгария</p>
+					<p class="card__description">255 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/vietnam/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/vietnam.png" alt="Вьетнам" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Вьетнам</p>
+					<p class="card__description">296 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/greece/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/greece.png" alt="Греция" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Греция</p>
+					<p class="card__description">2591 отель</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/dominikana/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/domenikana.png" alt="Доминикана" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Доминикана</p>
+					<p class="card__description">168 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/egypt/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/egipet.png" alt="Египет" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Египет</p>
+					<p class="card__description">299 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/india/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/india.png" alt="Индия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Индия</p>
+					<p class="card__description">47 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/indonesia/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/indonesia.png" alt="Индонезия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Индонезия</p>
+					<p class="card__description">49 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/jordan/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/iordania.png" alt="Иордания" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Иордания</p>
+					<p class="card__description">4 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/spain/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/ispania.png" alt="Испания" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Испания</p>
+					<p class="card__description">893 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/italia/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/italia.png" alt="Италия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Италия</p>
+					<p class="card__description">385 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/qatar/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/katar.png" alt="Катар" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Катар</p>
+					<p class="card__description">33 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/kenya/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/kenia.png" alt="Кения" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Кения</p>
+					<p class="card__description">0 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/cyprus/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/kipr.png" alt="Кипр" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Кипр</p>
+					<p class="card__description">250 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/cuba/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/kuba.png" alt="Куба" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Куба</p>
+					<p class="card__description">154 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/mauritius/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/mavrikii.png" alt="Маврикий" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Маврикий</p>
+					<p class="card__description">74 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/maldives/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/maldivi.png" alt="Мальдивы" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Мальдивы</p>
+					<p class="card__description">162 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/morocco/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/marocco.png" alt="Марокко" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Марокко</p>
+					<p class="card__description">10 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/meksika.png" alt="Мексика" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Мексика</p>
+					<p class="card__description">164 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/uae/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/uae.png" alt="ОАЭ" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">ОАЭ</p>
+					<p class="card__description">164 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/russia/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/russia.png" alt="Россия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Россия</p>
+					<p class="card__description">962 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/seychelles/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/seisheli.png" alt="Сейшелы" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Сейшелы</p>
+					<p class="card__description">94 отеля</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/singapore/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/singapur.png" alt="Сингапур" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Сингапур</p>
+					<p class="card__description">0 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/thailand/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/tailand.png" alt="Таиланд" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Таиланд</p>
+					<p class="card__description">509 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/tanzania/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/tanzania.png" alt="Танзания" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Танзания</p>
+					<p class="card__description">135 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/tunis/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/tunis.png" alt="Тунис" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Тунис</p>
+					<p class="card__description">147 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/uzbekistan/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/uzbekistan.png" alt="Узбекистан" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Узбекистан</p>
+					<p class="card__description">39 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/croatia/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/horvatia.png" alt="Хорватия" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Хорватия</p>
+					<p class="card__description">511 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/chernogoriya/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/chernogoria.png" alt="Черногория" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Черногория</p>
+					<p class="card__description">95 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+			<li class="card_with-button">
+				<a href="/main/srilanka/">
+					<div class="hover-content">
+						<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/countries/tunis.png" alt="Шри-Ланка" class="card__image" />
+						<div class="btn-wrapper">
+							<button class="button button_card desktop">Подробнее</button>
+						</div>
+					</div>
+					<p class="card__title">Шри-Ланка</p>
+					<p class="card__description">159 отелей</p>
+					<button class="button button_card mobile">Подробнее</button>
+				</a>
+			</li>
+		</ul>
+		<div id="countries-data" style="display: none"></div>
+	</section>
+	<section class="page-footer page-footer_buttons">
+		<button class="button button_footer button_transparent" id="back">Назад</button>
+		<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+	</section>
+</div>
+
+<script>
+	const page = document.querySelector(".page");
+	const originUrl = window.location.origin;
+	const requestUrl = `${originUrl}/v1/destination/countriesandhotels`;
+	const dataPlace = page.querySelector("#countries-data");
+	const pageFooter = page.querySelector(".page-footer");
+	const backButton = pageFooter.querySelector("#back");
+	const widgetContainer = page.parentNode;
+
+	const initialData = (url) => {
+		fetch(url, {
+			method: "GET",
+		})
+			.then(checkResponse)
+			.then((res) => {
+				dataPlace.insertAdjacentHTML("afterbegin", res);
+				getHotels();
+			})
+
+			.catch((err) => {
+				console.error(err);
+			});
+	};
+
+	const checkResponse = (res) => {
+		if (res.status === 200) {
+			return res.text();
+		}
+		return Promise.reject(`Ошибка: ${res.status}`);
+	};
+
+	initialData(requestUrl);
+
+	backButton.addEventListener("click", () => {
+		history.go(-1);
+	});
+
+	widgetContainer.classList.remove("widgetcontainer");
+	widgetContainer.classList.remove("oti-content-typography");
+
+	function getHotels() {
+		const layoutCountries = page.querySelectorAll(".card_with-button");
+		const popupCountries = dataPlace.querySelector(".list").querySelectorAll("li");
+
+		popupCountries.forEach((pCountry) => {
+			const pCountryUrl = pCountry.querySelector("a").href;
+			const pCountryHotels = pCountry.querySelector("em");
+			layoutCountries.forEach((lCountry) => {
+				const lCountryUrl = lCountry.querySelector("a").href;
+				const lCountryHotels = lCountry.querySelector(".card__description");
+
+				if (lCountryUrl === pCountryUrl) {
+					lCountryHotels.textContent = pCountryHotels.textContent;
+				}
+			});
+		});
+	}
+</script>

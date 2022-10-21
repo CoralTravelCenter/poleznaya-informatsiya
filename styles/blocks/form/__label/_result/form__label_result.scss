@@ -1,0 +1,7 @@
+.form__label_result {
+    max-width: 140px;
+
+    @media screen and (max-width: 1006px) {
+        max-width: unset;
+    }
+}

@@ -1,0 +1,913 @@
+<style>
+	html {
+		background-color: #f1f7fc;
+	}
+
+	h1 {
+		display: none !important;
+	}
+
+	html {
+		line-height: 1.15;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	main {
+		display: block;
+	}
+
+	h1 {
+		font-size: 2em;
+		margin: 0.67em 0;
+	}
+
+	hr {
+		box-sizing: content-box;
+		height: 0;
+		overflow: visible;
+	}
+
+	pre {
+		font-family: monospace, monospace;
+		font-size: 1em;
+	}
+
+	a {
+		background-color: transparent;
+	}
+
+	abbr[title] {
+		border-bottom: none;
+		text-decoration: underline;
+		-webkit-text-decoration: underline dotted;
+		text-decoration: underline dotted;
+	}
+
+	b,
+	strong {
+		font-weight: bolder;
+	}
+
+	code,
+	kbd,
+	samp {
+		font-family: monospace, monospace;
+		font-size: 1em;
+	}
+
+	small {
+		font-size: 80%;
+	}
+
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	img {
+		border-style: none;
+	}
+
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		font-family: inherit;
+		font-size: 100%;
+		line-height: 1.15;
+		margin: 0;
+	}
+
+	button,
+	input {
+		overflow: visible;
+	}
+
+	button,
+	select {
+		text-transform: none;
+	}
+
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
+		-webkit-appearance: button;
+	}
+
+	button::-moz-focus-inner,
+	[type="button"]::-moz-focus-inner,
+	[type="reset"]::-moz-focus-inner,
+	[type="submit"]::-moz-focus-inner {
+		border-style: none;
+		padding: 0;
+	}
+
+	button:-moz-focusring,
+	[type="button"]:-moz-focusring,
+	[type="reset"]:-moz-focusring,
+	[type="submit"]:-moz-focusring {
+		outline: 1px dotted ButtonText;
+	}
+
+	fieldset {
+		padding: 0.35em 0.75em 0.625em;
+	}
+
+	legend {
+		box-sizing: border-box;
+		color: inherit;
+		display: table;
+		max-width: 100%;
+		padding: 0;
+		white-space: normal;
+	}
+
+	progress {
+		vertical-align: baseline;
+	}
+
+	textarea {
+		overflow: auto;
+	}
+
+	[type="checkbox"],
+	[type="radio"] {
+		box-sizing: border-box;
+		padding: 0;
+	}
+
+	[type="number"]::-webkit-inner-spin-button,
+	[type="number"]::-webkit-outer-spin-button {
+		height: auto;
+	}
+
+	[type="search"] {
+		-webkit-appearance: textfield;
+		outline-offset: -2px;
+	}
+
+	[type="search"]::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+
+	::-webkit-file-upload-button {
+		-webkit-appearance: button;
+		font: inherit;
+	}
+
+	details {
+		display: block;
+	}
+
+	summary {
+		display: list-item;
+	}
+
+	template {
+		display: none;
+	}
+
+	[hidden] {
+		display: none;
+	}
+
+	.page {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.banner {
+		margin: 0 0 55px 0;
+	}
+
+	.banner__image {
+		max-width: 1024px;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.banner__image {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.desktop {
+			display: none !important;
+		}
+	}
+
+	.mobile {
+		width: 100%;
+	}
+	@media screen and (min-width: 769px) {
+		.mobile {
+			display: none !important;
+		}
+	}
+
+	.button {
+		margin: 0 0 55px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+		}
+	}
+
+	.aircompanies {
+		margin: 0 0 80px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.aircompanies .cards_flex {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	.cards_flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex: unset !important;
+		gap: 20px;
+	}
+
+	.links-list {
+		display: flex;
+		flex-direction: column;
+		width: calc(50% - 10px);
+		margin: 0;
+		border-radius: 20px;
+	}
+	@media screen and (max-width: 768px) {
+		.links-list {
+			width: calc(100% - 120px);
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.links-list {
+			width: calc(100% - 40px);
+		}
+	}
+
+	.links-list__header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+	}
+	.links-list__header#turkish {
+		background: #c90019;
+	}
+	.links-list__header#emirates {
+		background: #d71921;
+	}
+	.links-list__header#etihad {
+		background: #bd8b13;
+	}
+	.links-list__header#aeroflot {
+		background: #065398;
+	}
+	.links-list__header#azurair {
+		background: #003964;
+	}
+	.links-list__header#ikar {
+		background: #2262a4;
+	}
+	.links-list__header#s7 {
+		background: #c4d600;
+	}
+	.links-list__header#qatar {
+		background: #5c0d34;
+	}
+	.links-list__header#ural {
+		background: #ba0c2f;
+	}
+	.links-list__header#nord {
+		background: #d6181e;
+	}
+	.links-list__header#pegasus {
+		background: #fdc43e;
+	}
+	.links-list__header#redwings {
+		background: #46484d;
+	}
+
+	.links-list__logo {
+		width: 250px;
+		height: 40px;
+		-o-object-fit: contain;
+		object-fit: contain;
+		margin: 30px auto 90px auto;
+	}
+
+	.links-list__list {
+		margin: -60px 0 0 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		border-radius: 20px;
+		box-shadow: 0px -10px 24px rgba(0, 0, 0, 0.1);
+		padding: 0 !important;
+	}
+
+	.links-list__item {
+		padding: 25px 0;
+		margin: 0 25px;
+		border-bottom: 1px solid #000;
+	}
+	.links-list__item:last-of-type {
+		border-bottom: none;
+	}
+	@media screen and (max-width: 768px) {
+		.links-list__item {
+			padding: 15px 0;
+			margin: 0 15px;
+		}
+	}
+
+	.links-list__link {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 1.2;
+		color: #000 !important;
+		text-decoration: none !important;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	@media screen and (max-width: 768px) {
+		.links-list__link {
+			font-size: 12px;
+		}
+	}
+
+	.links-list__link-ico {
+		transform: rotate(-90deg);
+		width: 24px;
+		height: 12px;
+		-o-object-fit: contain;
+		object-fit: contain;
+		margin: 0px 0px 0px 20px;
+	}
+	@media screen and (max-width: 768px) {
+		.links-list__link-ico {
+			width: 12px;
+			height: 6px;
+		}
+	}
+
+	.page-footer {
+		max-width: 510px;
+		margin: 0 auto 100px auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer {
+			margin: 0 auto 80px auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer {
+			max-width: calc(100% - 60px);
+			margin: 0 auto 40px auto;
+		}
+	}
+
+	.page-footer_buttons {
+		display: flex;
+		max-width: 100%;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer_buttons {
+			max-width: calc(100% - 60px);
+		}
+	}
+
+	.button {
+		margin: 0 0 55px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+		}
+	}
+
+	.button_footer {
+		background: #0093d0;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 13px 22px;
+		margin: 0;
+		max-width: unset;
+	}
+	@media screen and (max-width: 1006px) {
+		.button_footer {
+			max-width: unset;
+			height: 50px;
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button_footer {
+			height: 40px;
+			line-height: 1 !important;
+			font-size: 10px !important;
+			padding: 0 5px;
+			width: 50%;
+		}
+	}
+
+	.button_transparent {
+		background: transparent !important;
+		border: 2px solid #000000;
+		color: #000000 !important;
+		min-width: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.button_transparent {
+			min-width: unset;
+		}
+	}
+</style>
+
+<section class="banner">
+    <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/banner.png" alt="" class="banner__image desktop" />
+    <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/banner_mobile.png" alt="" class="banner__image mobile" />
+</section>
+
+<section class="aircompanies">
+    <div class="cards_flex">
+        <div class="links-list">
+            <div class="links-list__header" id="turkish">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/turkish.png" alt="Турецкие авиалинии" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/flights/manage-booking/" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест <img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/flights/fly-different/dining-onboard/" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/flights/fly-different/dine-on-demand/index.html" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/any-questions/baggage-information/" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/any-questions/infants-and-children/" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/any-questions/special-assistance-for-passengers/" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/any-questions/traveling-with-pets/" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.turkishairlines.com/ru-ru/any-questions/" rel="nofollow" target="_blank" class="links-list__link">Часто задаваемые вопросы<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="emirates">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/emirates.png" alt="emirates airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/manage-booking/online-check-in.aspx" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/experience/dining/" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/before-you-fly/travel/dietary-requirements.aspx" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/before-you-fly/baggage/" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/english/family/on-board/travelling-with-infants/" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/before-you-fly/health/special-needs.aspx" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/help/faq/544304/what-are-the-rules-and-charges-for-travelling-with-animals" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.emirates.com/ru/russian/help/faqs/" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="etihad">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/etihad.png" alt="etihad airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/manage/check-in" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/fly-etihad/food-and-drink" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/manage/special-assistance/special-meals" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/fly-etihad/baggage" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/fly-etihad/flying-with-children" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/manage/special-assistance" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/fly-etihad/baggage" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.etihad.com/ru-ru/fly-etihad" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="aeroflot">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/aeroflot.png" alt="Аэрофлот" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/checkin/web_checkin" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/onboard/dining" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/onboard/dining#special_tab" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/before_and_after_fly/baggage" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/preparation/special_transportation/kids" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/preparation/special_transportation/disabled" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/information/preparation/special_transportation/animals" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.aeroflot.ru/ru-ru/online_services" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="azurair">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/azurair.png" alt="azurair" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/services/online-checkin" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/services/azur-meal" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/services/azur-meal" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/flights/Baggage" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/help-contact/faqs" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/help-contact/faqs" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/help-contact/faqs" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.azurair.ru/ru/help-contact/faqs" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="ikar">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/ikar.png" alt="ikar" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/webcheckin/" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/choose-meal" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/choose-meal" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/baggage" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/families-and-children" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/disabilities" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/baggage/animals" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://ikar.aero/ru/services-for-comfort-flight" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="s7">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/s7.png" alt="s7 airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://webcheckin.s7.ru/login.action?request_locale=ru" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://helpcenter.s7.ru/hc/ru/sections/360004630092-%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/info/onboard/special-meals/" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/ru/airport/baggage.dot" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/ru/travel-with-kids/" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/ru/info/disabilities/" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/ru/info/travel-with-pets/" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.s7.ru/info/new_fare_concept/index.dot" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="qatar">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/qatar.png" alt="s7 airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://cki.qatarairways.com/cki/dashboard" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/onboard/cuisine.html" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/services-special/special-meals.html" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/baggage.html" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/family/children-on-board.html" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/services-special/disability-and-medical.html" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/baggage/animals.html" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.qatarairways.com/ru-ru/journey.html" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="ural">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/ural.png" alt="ural airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/your-flight/register/" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/flight/food/" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/flight/food/" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/rules/provoz-bagazha/" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/rules/deti/" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/rules/passazhiry-s-ogranicheniyami-zhiznedeyatelnosti_/" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/rules/zhivotnye/pravila-perevozki-zhivotnykh/" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.uralairlines.ru/passengers-info/" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="nord">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/nordwind.png" alt="nordwind airlines" class="links-list__logo" />
+            </div>
+            <div class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/check-in" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/choose-meal" rel="nofollow" target="_blank" class="links-list__link">Питание на борту<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/choose-meal" rel="nofollow" target="_blank" class="links-list__link">Заказ дополнительного питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/extra-baggage" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/families-and-children" rel="nofollow" target="_blank" class="links-list__link">Перелеты с детьми<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/disabilities" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/baggage/animals" rel="nofollow" target="_blank" class="links-list__link">Перевозка животных<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://nordwindairlines.ru/ru/services-for-comfort-flight" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </div>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="pegasus">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/pegasus.png" alt="nordwind airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://www.flypgs.com/ru/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F/%D0%BF%D0%BE%D0%BB%D0%B5%D1%82%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F/%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F" rel="nofollow" target="_blank" class="links-list__link"
+                        >Онлайн-регистрация<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico"
+                    /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.flypgs.com/ru/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BC%D0%B5%D1%81%D1%82%D0%B0" rel="nofollow" target="_blank" class="links-list__link">Выбор места<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.flypgs.com/ru/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%B1%D0%B0%D0%B3%D0%B0%D0%B6" rel="nofollow" target="_blank" class="links-list__link"
+                        >Покупка багажа<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico"
+                    /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://www.flypgs.com/ru/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/pegasus-cafe" rel="nofollow" target="_blank" class="links-list__link">Покупка питания<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a
+                        href="https://www.flypgs.com/ru/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F/%D1%87%D0%B0%D1%81%D1%82%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B"
+                        rel="nofollow"
+                        target="_blank"
+                        class="links-list__link"
+                        >Информация по багажу, перелетам с детьми и другое<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico"
+                    /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-list">
+            <div class="links-list__header" id="redwings">
+                <img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/infoairlines/redwings.png" alt="nordwind airlines" class="links-list__logo" />
+            </div>
+            <ul class="links-list__list">
+                <li class="links-list__item">
+                    <a href="https://booking.flyredwings.com/websky-check-in/" rel="nofollow" target="_blank" class="links-list__link">Онлайн-регистрация и выбор мест<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://flyredwings.com/passengers/baggage.php" rel="nofollow" target="_blank" class="links-list__link">Багаж<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://flyredwings.com/passengers/disabilities.php" rel="nofollow" target="_blank" class="links-list__link">Пассажиры с ограниченными возможностями здоровья<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+                <li class="links-list__item">
+                    <a href="https://flyredwings.com/services/" rel="nofollow" target="_blank" class="links-list__link">Все услуги авиакомпании<img src="../images/submenu-arrow-ico.png" alt="" class="links-list__link-ico" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="page-footer page-footer_buttons">
+    <button class="button button_footer button_transparent" id="back">Назад</button>
+    <a class="button button_footer" href="../main/">К&nbsp;разделу Полезная информация</a>
+</section>
+
+<script>
+	const pageFooter = document.querySelector(".page-footer");
+	const backButton = pageFooter.querySelector("#back");
+
+	backButton.addEventListener("click", () => {
+		history.go(-1);
+	});
+</script>
+
+<script>
+	const widgetContainers = document.querySelectorAll(".widgetcontainer");
+
+	widgetContainers.forEach((item) => {
+		item.classList.remove("widgetcontainer");
+		item.classList.remove("oti-content-typography");
+	});
+</script>

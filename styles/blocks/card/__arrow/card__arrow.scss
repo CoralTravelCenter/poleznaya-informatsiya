@@ -1,0 +1,38 @@
+.card__arrow {
+	background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/faq/card__arrow.png) no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 26px;
+	position: absolute;
+	z-index: 1;
+	bottom: 32px;
+	right: 32px;
+	transition: 0.3s;
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.card_faq {
+	.card__arrow {
+		z-index: 3;
+		height: 18px;
+		@media screen and (max-width: 1006px) {
+			top: calc(90px/2 - 26px/2);
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/submenu-arrow-ico.png) no-repeat;
+			background-size: contain;
+		}
+		@media screen and (max-width: 768px) {
+			width: 20px;
+			height: 11px;
+			top: 15px;
+			top: calc(60px/2 - 11px/2);
+		}
+		@media screen and (max-width: 599px) {
+			top: calc(70px/2 - 11px/2);
+		}
+		@media screen and (max-width: 479px) {
+			top: calc(90px/2 - 11px/2);
+		}
+	}
+}

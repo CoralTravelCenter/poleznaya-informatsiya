@@ -1,0 +1,10 @@
+.page-footer_buttons {
+    display: flex;
+    max-width: 100%;
+    column-gap: 20px;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        max-width: calc(100% - 60px);
+    }
+}

@@ -1,0 +1,27 @@
+.hover-content {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	align-items: center;
+	justify-content: flex-end;
+
+	@media screen and (max-width: 768px) {
+		gap: 20px;
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		position: relative;
+		top: unset;
+		left: unset;
+		margin: 0 0 25px 0;
+	}
+}

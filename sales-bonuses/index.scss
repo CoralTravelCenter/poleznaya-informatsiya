@@ -1,0 +1,22 @@
+@import "../vendor/normalize.css";
+@import "../vendor/reset.css";
+@import "../vendor/fonts/fonts.scss";
+
+@import "../styles/blocks/page/page.scss";
+
+@import "../styles/blocks/banner/banner.scss";
+@import "../styles/blocks/banner/__image/banner__image.scss";
+@import "../styles/blocks/desktop.scss";
+@import "../styles/blocks/mobile.scss";
+
+@import "../styles/blocks/cards/cards.scss";
+@import "../styles/blocks/cards/_flex/cards_flex.scss";
+@import "../styles/blocks/card/_img/card_img.scss";
+
+@import "../styles/blocks/page-footer/page-footer.scss";
+@import "../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+
+@import "../styles/blocks/button/button.scss";
+@import "../styles/blocks/button/_hover-content/button_hover-content.scss";
+@import "../styles/blocks/button/_footer/button_footer.scss";
+@import "../styles/blocks/button/_transparent/button_transparent.scss";

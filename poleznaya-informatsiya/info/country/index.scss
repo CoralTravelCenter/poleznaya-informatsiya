@@ -1,0 +1,30 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../../../styles/remove-oti-styles.scss";
+@import "../../../styles/blocks/page/page.scss";
+
+@import "../../../styles/blocks/desktop.scss";
+@import "../../../styles/blocks/mobile.scss";
+
+@import "../../../styles/blocks/banner/banner.scss";
+@import "../../../styles/blocks/banner/__image/banner__image.scss";
+
+@import "../../../styles/blocks/cards/cards.scss";
+@import "../../../styles/blocks/cards/_flex/cards_flex.scss";
+@import "../../../styles/blocks/card/card.scss";
+@import "../../../styles/blocks/card/__image/card__image.scss";
+@import "../../../styles/blocks/card/__image/_hover/card__image_hover.scss";
+@import "../../../styles/blocks/card/__title/card__title.scss";
+@import "../../../styles/blocks/card/__description/card__description.scss";
+@import "../../../styles/blocks/hover-content/hover-content.scss";
+@import "../../../styles/blocks/button/_hover-content/button_hover-content.scss";
+@import "../../../styles/blocks/button/_card/button_card.scss";
+@import "../../../styles/blocks/card/_with-button/card_with-button.scss";
+
+@import "../../../styles/blocks/page-footer/page-footer.scss";
+@import "../../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+@import "../../../styles/blocks/button/button.scss";
+@import "../../../styles/blocks/button/_footer/button_footer.scss";
+@import "../../../styles/blocks/button/_transparent/button_transparent.scss";

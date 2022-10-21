@@ -1,0 +1,10 @@
+.slider__ico {
+	max-width: 100%;
+	object-fit: contain;
+	cursor: pointer;
+	position: relative;
+
+	@media screen and (max-width: 768px) {
+		max-width: 60%;
+	}
+}

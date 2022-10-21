@@ -1,0 +1,52 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../../../styles/blocks/page/page.scss";
+
+@import "../../../styles/blocks/banner/banner.scss";
+@import "../../../styles/blocks/banner/__image/banner__image.scss";
+@import "../../../styles/blocks/mobile.scss";
+@import "../../../styles/blocks/desktop.scss";
+
+@import "../../../styles/blocks/logos/logos.scss";
+
+@import "../../../styles/blocks/lead/lead.scss";
+@import "../../../styles/blocks/lead/_bg/lead_bg.scss";
+@import "../../../styles/blocks/lead/__title/lead__title.scss";
+@import "../../../styles/blocks/lead/__description/lead__description.scss";
+@import "../../../styles/blocks/sber-payment/sber-payment.scss";
+
+@import "../../../styles/blocks/cards/cards.scss";
+@import "../../../styles/blocks/cards/_two-columns/cards_two-columns.scss";
+@import "../../../styles/blocks/card/card.scss";
+@import "../../../styles/blocks/card/_large/card_large.scss";
+@import "../../../styles/blocks/card/__logo/card__logo.scss";
+@import "../../../styles/blocks/card/__title/card__title.scss";
+@import "../../../styles/blocks/card/__description/card__description.scss";
+@import "../../../styles/blocks/button/button.scss";
+@import "../../../styles/blocks/button/_card/button_card.scss";
+
+@import "../../../styles/blocks/calculator/calculator.scss";
+@import "../../../styles/blocks/calculator/__tabs/calculator__tabs.scss";
+@import "../../../styles/blocks/calculator/__tab/calculator__tab.scss";
+@import "../../../styles/blocks/calculator/__tab/_disabled/calculator__tab_disabled.scss";
+@import "../../../styles/blocks/calculator/__tab-image/calculator__tab-image.scss";
+
+@import "../../../styles/blocks/form/form.scss";
+@import "../../../styles/blocks/form/_diasbled/form_disabled.scss";
+@import "../../../styles/blocks/form/__fields/form__fields.scss";
+@import "../../../styles/blocks/form/__separator/form__separator.scss";
+@import "../../../styles/blocks/form/__info/form__info.scss";
+@import "../../../styles/blocks/form/__wrapper/form__wrapper.scss";
+@import "../../../styles/blocks/form/__label/form__label.scss";
+@import "../../../styles/blocks/form/__label/_result/form__label_result.scss";
+@import "../../../styles/blocks/form/__input/form__input.scss";
+@import "../../../styles/blocks/form/__percents/form__percents.scss";
+@import "../../../styles/blocks/form/__result/form__result.scss";
+@import "../../../styles/blocks/button/_form/button_form.scss";
+@import "../../../styles/blocks/button/_transparent/button_transparent.scss";
+
+@import "../../../styles/blocks/page-footer/page-footer.scss";
+@import "../../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+@import "../../../styles/blocks/button/_footer/button_footer.scss";

@@ -1,0 +1,174 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<title>Полезная информация</title>
+	</head>
+	<body>
+		<div class="page">
+			<section class="banner">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/proverka-zagranpasporta/banner.png" alt="" class="banner__image desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/proverka-zagranpasporta/banner_mobile.png" alt="" class="banner__image mobile" />
+			</section>
+			<section class="lead">
+				<p class="lead__description">В&nbsp;этом разделе вы&nbsp;сможете проверить в&nbsp;онлайн режиме срок действия вашего загранпаспорта.</p>
+			</section>
+		</div>
+		<style>
+			.material-label-fixed {
+				flex-direction: column;
+				align-items: flex-start !important;
+				position: relative;
+				max-width: 100%;
+				gap: 12px;
+			}
+			.field-label-fixed {
+				font-weight: 400;
+				font-size: 12px;
+				color: #888888;
+			}
+			.field-style-fixed {
+				cursor: pointer;
+				outline: none !important;
+				padding: 0 12px;
+				font-size: 16px;
+				color: #000;
+				background: transparent;
+				border: 2px solid #c4c4c4 !important;
+				border-radius: 8px;
+				height: 44px;
+				width: 100%;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				appearance: none;
+				position: relative;
+				outline: none;
+			}
+			.field-style-fixed::-webkit-outer-spin-button,
+			.field-style-fixed::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			.quantity-nav-fixed {
+				position: absolute;
+				right: 2px;
+				bottom: 2px;
+				height: 100%;
+				max-height: 40px;
+			}
+			.form-row-fixed {
+				display: flex;
+				position: relative;
+				width: 100%;
+				gap: 10px;
+			}
+			.form-col-fixed {
+				display: flex;
+				width: 100%;
+				justify-content: flex-end;
+				flex-direction: column;
+			}
+			.checkpassportcontainer {
+				border: none !important;
+				padding: 0 !important;
+				margin: 0 0 80px 0 !important;
+			}
+			.quantity-button {
+				transition: 0.3s;
+				height: 50%;
+			}
+			.quantity-button .material-icons {
+				font-size: 20px;
+			}
+			.quantity-button:hover {
+				background: #c4c4c4;
+				transition: 0.3s;
+			}
+			.quantity-up {
+				border-top-right-radius: 8px;
+			}
+			.quantity-down {
+				border-bottom-right-radius: 8px;
+			}
+			.btnSubmitCheckPassport {
+				height: 44px;
+				display: flex !important;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px !important;
+				color: #fff !important;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				border-radius: 8px !important;
+			}
+
+			@media screen and (max-width: 768px) {
+				.btnSubmitCheckPassport {
+					font-size: 12px !important;
+				}
+				.form-row-fixed {
+					flex-wrap: wrap;
+				}
+				.material-label-fixed {
+					width: 100%;
+				}
+				.checkpassportcontainer {
+					margin: 0 0 40px 0 !important;
+				}
+			}
+		</style>
+		<script>
+			window.addEventListener("DOMContentLoaded", () => {
+				const mainContainer = document.querySelector(".checkpassportmaincontainer");
+				const formContainer = mainContainer.querySelector(".checkpassportcontainer");
+				const formInline = formContainer.querySelector(".form-inline");
+				const title = formContainer.querySelector("h4");
+				const form = formContainer.querySelector(".form-row");
+				const formCols = form.childNodes;
+				const formGroups = formContainer.querySelectorAll(".form-group");
+				const fields = form.querySelectorAll(".form-control");
+
+				formCols.forEach((el) => {
+					const quantity = el.querySelector(".quantity-nav");
+
+					el.classList.remove("col-12");
+					el.classList.remove("col-sm-4");
+					el.classList.remove("col-sm");
+					el.classList.add("form-col-fixed");
+
+					if (quantity) {
+						quantity.classList.add("quantity-nav-fixed");
+						quantity.classList.remove("quantity-nav");
+					}
+				});
+
+				title.remove();
+				mainContainer.classList.remove("widgetcontainer");
+				formContainer.classList.add("border-hidden");
+				form.classList.add("form-row-fixed");
+				form.classList.remove("form-row");
+
+				fields.forEach((field) => {
+					field.classList.remove("material-input");
+					field.classList.remove("material-selectbox");
+					field.classList.remove("form-control");
+					field.classList.add("field-style-fixed");
+				});
+				formGroups.forEach((item) => {
+					item.querySelector("label").classList.remove("material-label");
+					item.querySelector("label").classList.add("material-label-fixed");
+					item.querySelector("span").classList.add("field-label-fixed");
+					item.classList.remove("form-group");
+				});
+			});
+		</script>
+		<div class="page">
+			<section class="page-footer page-footer_buttons">
+				<button class="button button_footer button_transparent" id="back">Назад</button>
+				<a class="button button_footer" href="/useful-information/">К&nbsp;разделу Полезная информация</a>
+			</section>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+.slider {
+	margin: 0 0 40px 0;
+	position: relative;
+	min-height: 580px;
+
+	@media screen and (max-width: 768px) {
+		margin: 0 50px 40px 50px;
+		min-height: auto;
+	}
+
+	@media screen and (max-width: 499px) {
+		margin: 0 0 40px 0;
+	}
+}
+
+.slider__swiper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (max-width: 768px) {
+		background: #fff;
+		border-radius: 0 0 20px 20px;
+	}
+}
+
+.swiper-container {
+	height: auto;
+	overflow: hidden;
+}

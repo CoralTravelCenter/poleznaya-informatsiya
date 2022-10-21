@@ -1,0 +1,16 @@
+.slider__wrapper {
+	display: flex;
+	position: relative;
+	transition: 0.3s;
+	justify-content: center;
+}
+
+.swiper-wrapper {
+	padding: 120px 0 0 0;
+    height: auto !important;
+
+	@media screen and (max-width: 768px) {
+		order: 1;
+		padding: 0;;
+	}
+}

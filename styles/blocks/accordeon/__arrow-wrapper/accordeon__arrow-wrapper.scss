@@ -1,0 +1,17 @@
+.accordeon__arrow-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	position: relative;
+
+	.text {
+		margin: 0;
+		opacity: 0;
+		transform: translate3d(0, 20px, 0);
+        transition: 0.3s;
+
+		@media screen and (max-width: 1006px) {
+			display: none;
+		}
+	}
+}

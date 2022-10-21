@@ -1,0 +1,15 @@
+.links-list__link {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+    color: #000 !important;
+    text-decoration: none !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+}

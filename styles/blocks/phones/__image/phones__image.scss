@@ -1,0 +1,9 @@
+.phones__image {
+	margin: 0 20px 0 0;
+
+	@media screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
+        max-width: calc(79px / 2);
+        max-height: 39px;
+	}
+}

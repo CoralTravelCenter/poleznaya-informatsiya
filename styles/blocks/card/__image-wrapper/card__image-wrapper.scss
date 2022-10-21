@@ -1,0 +1,10 @@
+.card__image-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 0 20px 0;
+    position: relative;
+
+    @media screen and (max-width: 1006px) {
+        width: 100%;
+    }
+}

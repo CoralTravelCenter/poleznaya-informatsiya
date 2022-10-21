@@ -1,0 +1,32 @@
+.card__title {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.2;
+	text-align: center;
+	text-transform: uppercase;
+	color: #000000;
+	margin: 0 auto 27px auto;
+	transition: 0.3s;
+	max-width: 80%;
+	text-decoration: none;
+
+	@media screen and (max-width: 1199px) {
+		font-size: 14px;
+	}
+
+	@media screen and (max-width: 1006px) {
+		font-size: 1.85vw;
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 3.3vw;
+		margin: 0;
+		width: calc(100% - 40px);
+		height: unset;
+	}
+
+	@media screen and (max-width: 499px) {
+		font-size: 5vw;
+	}
+}

@@ -1,0 +1,13 @@
+.button_transparent {
+	background: transparent !important;
+    border: 2px solid #000000;
+    color: #000000 !important;
+    min-width: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and(max-width: 768px) {
+        min-width: unset;
+    }
+}

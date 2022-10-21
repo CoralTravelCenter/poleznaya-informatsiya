@@ -1,0 +1,666 @@
+<style>
+	html {
+		background-color: #f1f7fc;
+	}
+
+	h1 {
+		display: none !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		.contentLayout-BaseContainer .notcritical {
+			padding-top: 0 !important;
+		}
+		.contentLayout-BaseContainer .notcritical .container {
+			margin-top: 0 !important;
+		}
+	}
+	.page {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	@media screen and (max-width: 768px) {
+		.desktop {
+			display: none !important;
+		}
+	}
+
+	.mobile {
+		width: 100%;
+	}
+	@media screen and (min-width: 769px) {
+		.mobile {
+			display: none !important;
+		}
+	}
+
+	.banner {
+		margin: 0 0 55px 0;
+	}
+
+	.banner__image {
+		max-width: 1024px;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.banner__image {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
+	.lead {
+		margin: 0 auto 60px auto;
+		max-width: 800px;
+	}
+	@media screen and (max-width: 900px) {
+		.lead {
+			max-width: calc(100% - 100px);
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead {
+			max-width: unset;
+		}
+	}
+
+	.lead__title {
+		margin: 0 0 24px 0;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 44px;
+		line-height: 1.2;
+		text-align: center;
+		color: #000000;
+		display: block !important;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__title {
+			font-size: 4.7vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__title {
+			font-size: 6vw;
+		}
+	}
+	.lead__title:last-child {
+		margin: 0;
+	}
+
+	.lead__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		color: #000000;
+		margin: 0;
+	}
+	.lead__description span {
+		font-size: 16px;
+		line-height: 19px;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description span {
+			font-size: 1.6vw;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description {
+			font-size: 2.05vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__description {
+			font-size: 2.25vw;
+			line-height: 1.5;
+		}
+	}
+	@media screen and (max-width: 550px) {
+		.lead__description {
+			font-size: 3.3vw;
+		}
+	}
+
+	.cards {
+		display: flex;
+		flex: 0 0 25%;
+		width: 100%;
+		list-style: none;
+		margin: 0 0 60px 0;
+		justify-content: space-between;
+		padding: 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.cards {
+			gap: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.cards {
+			flex: 0 0 50%;
+			flex-wrap: wrap;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.cards {
+			flex: unset;
+			flex-direction: column;
+		}
+	}
+
+	.cards_flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex: unset !important;
+		gap: 20px;
+	}
+
+	.card {
+		max-width: 245px;
+		width: 100%;
+		min-height: 390px;
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		background-position: center !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		transition: 0.3s;
+		border-radius: 20px !important;
+		border: none !important;
+	}
+	.card:hover .card__title {
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.card:hover .card__title {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.card:hover .hover-content {
+		visibility: visible;
+		opacity: 1;
+		transition: 0.3s;
+		pointer-events: auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.card:hover .hover-content .hover-content_faq {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	.card:hover .card__image {
+		transform: scale(1.05);
+		transition: 0.5s;
+	}
+	@media screen and (max-width: 1006px) {
+		.card {
+			padding: 0 20px;
+			min-height: 40vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card {
+			max-width: calc(50% - 10px);
+			min-height: auto;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card {
+			max-width: 100%;
+		}
+	}
+
+	.card_square {
+		max-height: unset;
+		min-height: unset;
+		max-width: calc(33.3333333333% - 20px);
+		width: 100%;
+		padding: 0 !important;
+		position: relative;
+	}
+	@media screen and (max-width: 1006px) {
+		.card_square {
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card_square {
+			max-width: calc(50% - 20px);
+			background: #fff !important;
+			max-height: unset;
+			min-height: unset;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card_square {
+			max-width: 100%;
+		}
+	}
+	.card_square .card__title {
+		max-width: calc(100% - 20px);
+		padding: 0 10px;
+		width: 100%;
+		margin: 0;
+		position: absolute;
+		bottom: 0;
+	}
+	@media screen and (max-width: 768px) {
+		.card_square .card__title {
+			position: relative !important;
+			bottom: unset !important;
+			min-height: unset;
+		}
+	}
+	.card_square .card__image {
+		-o-object-fit: cover;
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.card_square .card__image {
+			margin: 0 0 24px 0;
+			height: unset;
+		}
+	}
+	.card_square:hover .card__image {
+		transform: none !important;
+	}
+
+	@media screen and (min-width: 769px) {
+		#booking-on-site-info .card:hover .card__title {
+			visibility: hidden !important;
+			opacity: 0 !important;
+			pointer-events: none !important;
+		}
+	}
+	.card__link {
+		gap: 20px;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+		overflow: hidden;
+	}
+
+	.card__image {
+		width: 100%;
+		transition: 0.5s;
+		border-radius: 20px;
+	}
+
+	.card__image_hover {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.3s;
+	}
+	.card:hover .card__image_hover {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		transition: 0.3s;
+	}
+
+	.card__image_mobile {
+		display: none;
+	}
+	@media screen and (max-width: 768px) {
+		.card__image_mobile {
+			display: block;
+			width: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			border-radius: 20px;
+			margin: 0;
+		}
+	}
+
+	.card__title {
+		height: 30%;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.2;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000000;
+		margin: 0 auto 50px auto;
+		transition: 0.3s;
+		max-width: 200px;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 1199px) {
+		.card__title {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.card__title {
+			font-size: 1.85vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__title {
+			font-size: 3.3vw;
+			margin: 0;
+			width: calc(100% - 40px);
+			height: unset;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card__title {
+			font-size: 5vw;
+		}
+	}
+
+	.card__title_white {
+		color: #fff;
+	}
+	@media screen and (max-width: 768px) {
+		.card__title_white {
+			color: #000;
+		}
+	}
+
+	.hover-content {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.3s;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	@media screen and (max-width: 768px) {
+		.hover-content {
+			gap: 20px;
+			visibility: visible;
+			opacity: 1;
+			pointer-events: auto;
+			position: relative;
+			top: unset;
+			left: unset;
+			margin: 0 0 25px 0;
+		}
+	}
+
+	.hover-content__text {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		max-width: 90%;
+		justify-content: center;
+		align-items: center;
+	}
+	@media screen and (max-width: 768px) {
+		.hover-content__text {
+			justify-content: flex-start;
+			max-width: 90%;
+			height: unset;
+		}
+	}
+
+	.hover-content__title {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: #ffffff;
+		margin: 0 0 40px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.hover-content__title {
+			color: #000;
+			margin: 0 0 5px 0;
+			font-size: 2.8vw;
+			line-height: 1.2;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.hover-content__title {
+			font-size: 4vw;
+		}
+	}
+
+	.hover-content__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: #ffffff;
+		margin: 0;
+	}
+	@media screen and (max-width: 768px) {
+		.hover-content__description {
+			color: #000;
+			margin: 0;
+			line-height: 1.2;
+			width: 100%;
+			font-size: 2.8vw;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.hover-content__description {
+			font-size: 4vw;
+		}
+	}
+
+	.button {
+		margin: 0 0 40px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+		outline: none !important;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+
+	.page-footer {
+		max-width: 510px;
+		margin: 0 auto 100px auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer {
+			margin: 0 auto 80px auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer {
+			max-width: calc(100% - 60px);
+			margin: 0 auto 40px auto;
+		}
+	}
+
+	.page-footer__text {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		color: #000000;
+		margin: 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer__text {
+			font-size: 2.05vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer__text {
+			font-size: 2.25vw;
+			line-height: 1.5;
+		}
+	}
+	@media screen and (max-width: 550px) {
+		.page-footer__text {
+			font-size: 3.3vw;
+		}
+	}
+</style>
+<div class="page">
+	<div class="banner">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/banner.png" alt="" class="banner__image desktop" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/banner_mobile.png" alt="" class="banner__image mobile" />
+	</div>
+	<div class="lead">
+		<h1 class="lead__title">Дорогие туристы!</h1>
+		<p class="lead__description">Мы&nbsp;постоянно работаем над тем, чтобы сделать ваше путешествие максимально комфортным и&nbsp;безопасным. На&nbsp;этой странице вы&nbsp;найдете ответы на&nbsp;большинство интересующих вопросов! А&nbsp;еще вы&nbsp;сможете узнать больше о&nbsp;компании Coral Travel и&nbsp;найти необходимые контакты для связи.</p>
+	</div>
+	<ul class="cards cards_flex">
+		<li class="card card_square">
+			<a href="/poleznaya-informatsiya/сompany/about/coral/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card1.png" class="card__image desktop" alt="Компания" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card1_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card1_mobile.png" class="card__image_mobile" alt="Компания" />
+				<p class="card__title">Компания</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">Coral Travel внимательно относится к&nbsp;качеству предоставляемых услуг. В&nbsp;этом разделе собрана вся важная информация о&nbsp;деятельности компании и&nbsp;работе с&nbsp;партнерами.</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+		<li class="card card_square">
+			<a href="/poleznaya-informatsiya/onlinetour/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card2.png" class="card__image desktop" alt="Информация для туристов, бронирующих тур на&nbsp;сайте coral.ru" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card2_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card2.png" class="card__image_mobile" alt="Информация для туристов, бронирующих тур на&nbsp;сайте coral.ru" />
+				<p class="card__title">Информация для туристов, бронирующих тур на&nbsp;сайте coral.ru</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;найдете всю важную информацию по&nbsp;бронированию тура онлайн: пошаговую инструкцию, ответы на&nbsp;часто задаваемые вопросы, сведения о&nbsp;способах оплаты путешествия и&nbsp;многое другое.</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+		<li class="card card_square">
+			<a href="/poleznaya-informatsiya/offers/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card3.png" class="card__image desktop" alt="Акции и&nbsp;программа лояльности" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card3_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card3.png" class="card__image_mobile" alt="Акции и&nbsp;программа лояльности" />
+				<p class="card__title">Акции и&nbsp;программа лояльности</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">В&nbsp;этом разделе собрана вся важная и&nbsp;актуальная информация об&nbsp;акциях, специальных предложениях и&nbsp;программе лояльности CoralBonus.</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+		<li class="card card_square">
+			<a href="/poleznaya-informatsiya/info/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card4.png" class="card__image desktop" alt="Общая информация для&nbsp;туристов" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card4_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card4.png" class="card__image_mobile" alt="Общая информация для&nbsp;туристов" />
+				<p class="card__title">Общая информация для&nbsp;туристов</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;найдете информацию по&nbsp;авиаперелетам, актуальным направлениям, гиду по&nbsp;отдыху и&nbsp;другое. А&nbsp;еще вы&nbsp;здесь сможете узнать, как оставить отзыв и&nbsp;проверить срок загранпаспорта.</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+		<li class="card card_square">
+			<a href="/additional-services-coral/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card5.png" class="card__image desktop" alt="Дополнительные услуги и&nbsp;сервисы Coral Travel" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card5_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card5.png" class="card__image_mobile" alt="Дополнительные услуги и&nbsp;сервисы Coral Travel" />
+				<p class="card__title card__title_white">Дополнительные услуги и&nbsp;сервисы Coral Travel</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;найдете информацию по&nbsp;дополнительным услугам от&nbsp;Coral Travel и&nbsp;услугам авиакомпаний. А&nbsp;также информацию о&nbsp;подарочных картах и&nbsp;мобильном приложении.</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+		<li class="card card_square">
+			<a href="/main/coral/about/" class="card__link">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card6.png" class="card__image desktop" alt="Отличный отдых&nbsp;&mdash; это&nbsp;просто!" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card6_blur.png" class="card__image_hover desktop" />
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/main/card6.png" class="card__image_mobile" alt="Отличный отдых&nbsp;&mdash; это&nbsp;просто!" />
+				<p class="card__title card__title_white">Отличный отдых&nbsp;&mdash; это&nbsp;просто!</p>
+				<div class="hover-content">
+					<div class="hover-content__text">
+						<p class="hover-content__description">Coral Travel&nbsp;&mdash; это гарант качественного и&nbsp;безопасного отдыха. В&nbsp;этом разделе собрана информация обо всех преимуществах отдыха с&nbsp;Coral Travel!</p>
+					</div>
+					<button class="button button_card" aria-label="Подробнее" type="button">Подробнее</button>
+				</div>
+			</a>
+		</li>
+	</ul>
+	<div class="page-footer">
+		<p class="page-footer__text">Пользуйтесь удобной и&nbsp;функциональной навигацией и&nbsp;получайте ответы на&nbsp;свои вопросы!</p>
+	</div>
+</div>
+<script>
+	const page = document.querySelector(".page");
+	const widgetContainer = page.parentNode;
+
+	widgetContainer.classList.remove("widgetcontainer");
+	widgetContainer.classList.remove("oti-content-typography");
+</script>

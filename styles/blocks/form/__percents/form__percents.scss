@@ -1,0 +1,17 @@
+.form__percents {
+	font-family: "Museo Sans Cyrl";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 38px;
+	text-align: right;
+	color: #989898;
+
+	@media screen and (max-width: 1006px) {
+		font-size: 32px;
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}

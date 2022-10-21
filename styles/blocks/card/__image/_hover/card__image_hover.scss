@@ -1,0 +1,14 @@
+.card__image_hover {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
+
+	.card:hover & {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		transition: 0.3s;
+	}
+}

@@ -1,0 +1,11 @@
+.cards_three-columns {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+
+	@media screen and (max-width: 819px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}

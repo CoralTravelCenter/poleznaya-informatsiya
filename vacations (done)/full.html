@@ -1,0 +1,759 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Определяемся с отдыхом</title>
+		<style>
+			h1 {
+				display: none !important;
+			}
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none;
+				}
+			}
+
+			.lead {
+				margin: 0 auto 60px auto;
+				max-width: 800px;
+			}
+			@media screen and (max-width: 900px) {
+				.lead {
+					max-width: calc(100% - 100px);
+				}
+			}
+
+			.lead__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				color: #000000;
+				margin: 0;
+			}
+			.lead__description span {
+				font-size: 16px;
+				line-height: 19px;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description span {
+					font-size: 1.6vw;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description {
+					font-size: 2.05vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__description {
+					font-size: 2.25vw;
+					line-height: 1.5;
+				}
+			}
+			@media screen and (max-width: 550px) {
+				.lead__description {
+					font-size: 3.3vw;
+				}
+			}
+
+			.cards {
+				display: flex;
+				flex: 0 0 25%;
+				width: calc(100% + 15px);
+				list-style: none;
+				margin: 0 0 60px -14px;
+				justify-content: space-between;
+				padding: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards {
+					max-width: calc(100% + 15px);
+					margin: 0 0 60px -15px;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.cards {
+					flex: 0 0 50%;
+					flex-wrap: wrap;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.cards {
+					flex: unset;
+					flex-direction: column;
+				}
+			}
+
+			.cards_three-columns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: 819px) {
+				.cards_three-columns {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			.card {
+				max-width: 245px;
+				width: 100%;
+				min-height: 390px;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				transition: 0.3s;
+				border-radius: 20px !important;
+				border: none !important;
+			}
+			.card:hover .card__title {
+				visibility: hidden;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.card:hover .card__title {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.card:hover .hover-content {
+				visibility: visible;
+				opacity: 1;
+				transition: 0.3s;
+				pointer-events: auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.card:hover .hover-content .hover-content_faq {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+			.card:hover .card__image {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
+			@media screen and (max-width: 1006px) {
+				.card {
+					padding: 0 20px;
+					min-height: 40vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card {
+					max-width: calc(50% - 10px);
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card {
+					max-width: 100%;
+				}
+			}
+
+			.card__image_mobile {
+				display: none;
+			}
+			@media screen and (max-width: 768px) {
+				.card__image_mobile {
+					display: block;
+					width: 100%;
+					-o-object-fit: cover;
+					object-fit: cover;
+					border-radius: 20px;
+					margin: 0 0 20px 0;
+				}
+			}
+
+			.card_vacations {
+				max-height: 328px;
+				min-height: 328px;
+				max-width: 328px;
+				width: 100%;
+			}
+			.card_vacations:nth-of-type(1) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card1.png);
+			}
+			.card_vacations:nth-of-type(1):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card1_blur.png);
+			}
+			.card_vacations:nth-of-type(2) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card2.png);
+			}
+			.card_vacations:nth-of-type(2):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card2_blur.png);
+			}
+			.card_vacations:nth-of-type(3) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card3.png);
+			}
+			.card_vacations:nth-of-type(3):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card3_blur.png);
+			}
+			.card_vacations:nth-of-type(4) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card4.png);
+			}
+			.card_vacations:nth-of-type(4):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card4_blur.png);
+			}
+			.card_vacations:nth-of-type(5) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card5.png);
+			}
+			.card_vacations:nth-of-type(5):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card5_blur.png);
+			}
+			.card_vacations:nth-of-type(6) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card6.png);
+			}
+			.card_vacations:nth-of-type(6):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card6_blur.png);
+			}
+			.card_vacations:nth-of-type(7) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card7.png);
+			}
+			.card_vacations:nth-of-type(7):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card7_blur.png);
+			}
+			.card_vacations:nth-of-type(8) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card8.png);
+			}
+			.card_vacations:nth-of-type(8):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card8_blur.png);
+			}
+			.card_vacations:nth-of-type(9) {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card9.png);
+			}
+			.card_vacations:nth-of-type(9):hover {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card9_blur.png);
+			}
+			.card_vacations .card__title {
+				max-width: 300px;
+				margin: 0 0 35px 0;
+			}
+			.card_vacations .hover-content__text {
+				max-width: 300px;
+			}
+			.card_vacations .hover-content__button {
+				margin: 0 0 40px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.card_vacations {
+					max-height: unset;
+					min-height: unset;
+					max-width: 100%;
+				}
+				.card_vacations .hover-content__title {
+					display: none;
+				}
+				.card_vacations .hover-content__text {
+					max-width: 100%;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card_vacations {
+					background: #fff !important;
+					padding: 0;
+				}
+			}
+
+			.card__link {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-end;
+				text-decoration: none;
+				overflow: hidden;
+			}
+
+			.card__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #000000;
+				margin: 0 auto 50px auto;
+				transition: 0.3s;
+				max-width: 200px;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title {
+					font-size: 1.85vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title {
+					font-size: 3.3vw;
+					line-height: 1.2;
+					margin: 0 auto 25px auto;
+					width: calc(100% - 40px);
+					min-height: 8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card__title {
+					font-size: 5vw;
+				}
+			}
+
+			.card__title_white {
+				color: #fff;
+			}
+			@media screen and (max-width: 768px) {
+				.card__title_white {
+					color: #000;
+				}
+			}
+
+			.hover-content {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				transition: 0.3s;
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				align-items: center;
+				justify-content: space-between;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: auto;
+					position: relative;
+					top: unset;
+					left: unset;
+					height: unset;
+				}
+			}
+
+			.hover-content__text {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				max-width: 200px;
+				justify-content: center;
+				align-items: center;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__text {
+					justify-content: flex-start;
+					max-width: calc(100% - 40px);
+					height: unset;
+				}
+			}
+
+			.hover-content__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0 0 40px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__title {
+					color: #000;
+					margin: 0 0 5px 0;
+					font-size: 2.8vw;
+					line-height: 1.2;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__title {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__title_l {
+				font-size: 18px;
+				line-height: 21px;
+				text-transform: uppercase;
+				margin: 0 0 20px 0;
+			}
+
+			.hover-content__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__description {
+					color: #000;
+					margin: 0 auto 25px auto;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 2.8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__description {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__spec {
+				margin: 30px 0 0 0;
+
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__spec {
+					color: #000;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 2.8vw;
+					margin: 0 0 18px 0;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__spec {
+					font-size: 4vw;
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/banner.png" alt="Определяемся с отдыхом" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/banner_mobile.png" alt="Определяемся с отдыхом" class="banner__image mobile" />
+		</div>
+		<div class="lead">
+			<p class="lead__description">Coral Travel заботится о&nbsp;своих туристах. Поэтому мы&nbsp;собрали и&nbsp;систематизировали всю важную информацию о&nbsp;турах на&nbsp;этой странице. Здесь собраны ответы на&nbsp;самые актуальные вопросы. А&nbsp;если вы&nbsp;вдруг не&nbsp;нашли нужный ответ, то&nbsp;вы&nbsp;всегда можете позвонить нам или написать в&nbsp;чат. Наши менеджеры вам помогут!</p>
+		</div>
+		<ul class="cards cards_three-columns">
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card1.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title">Наши акции</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Наши акции</p>
+							<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;найдете все актуальные акции и&nbsp;специальные предложения. Не&nbsp;забудьте ими воспользоваться. Они сделают ваш отдых выгоднее.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card2.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title">Отдых в&nbsp;Турции</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Отдых в&nbsp;Турции</p>
+							<p class="hover-content__description">В&nbsp;этом разделе находится подробная информация о&nbsp;турецких курортах. Также вы&nbsp;здесь найдете актуальные акции на&nbsp;туры в&nbsp;Турцию</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="../notes/" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card3.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Гид по&nbsp;отдыху</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Гид по&nbsp;отдыху</p>
+							<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;найдете интересную и&nbsp;полезную информацию о&nbsp;странах, городах, достопримечательностях и&nbsp;экскурсиях.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card4.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Отдых в&nbsp;России</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Отдых в&nbsp;России</p>
+							<p class="hover-content__description">В&nbsp;этом разделе находится информация о&nbsp;турах и&nbsp;экскурсиях по&nbsp;России и&nbsp;странам СНГ.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card5.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Куда отправиться отдыхать прямо сейчас</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Куда отправиться отдыхать прямо сейчас</p>
+							<p class="hover-content__description">В&nbsp;этом разделе находится информация об&nbsp;актуальных направлениях, куда можно отправиться отдыхать прямо сейчас.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card6.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Типы отдыха</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Типы отдыха</p>
+							<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;сможете узнать о&nbsp;типах отдыха и&nbsp;подобрать понравившийся.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card7.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Информация о&nbsp;странах</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Информация о&nbsp;странах</p>
+							<p class="hover-content__description">В&nbsp;этом разделе находится важная и&nbsp;полезная информация о&nbsp;странах: как добраться, какие есть курорты, погода и&nbsp;другое.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="#" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card8.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title">Проверка срока действия загранпаспорта</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Проверка срока действия загранпаспорта</p>
+							<p class="hover-content__description">В&nbsp;этом разделе вы&nbsp;сможете проверить в&nbsp;онлайн режиме срок действия вашего загранпаспорта.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+			<li class="card card_vacations">
+				<a href="../faq/" class="card__link">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vacations/card9.png" class="card__image_mobile" alt="Акции Coral Travel" />
+					<p class="card__title card__title_white">Популярные вопросы туристов</p>
+					<div class="hover-content">
+						<div class="hover-content__text">
+							<p class="hover-content__title hover-content__title_l">Популярные вопросы туристов</p>
+							<p class="hover-content__description">В&nbsp;этом разделе находятся ответы на&nbsp;часто задаваемые вопросы туристов о&nbsp;визах, документах, отелях и&nbsp;много другом, что нужно знать путешественнику.</p>
+						</div>
+						<button class="button" aria-label="Подробнее" type="button">Подробнее</button>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="/useful-information/">К&nbsp;разделу Полезная информация</a>
+		</div>
+		<script>
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+		</script>
+	</body>
+</html>

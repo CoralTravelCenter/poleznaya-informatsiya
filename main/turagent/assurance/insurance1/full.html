@@ -1,0 +1,1048 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Страховка от невыезда</title>
+		<style>
+			h1 {
+				display: none !important;
+			}
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+			@media screen and (max-width: 768px) {
+				.banner__image {
+					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 20px;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none !important;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none !important;
+				}
+			}
+
+			.lead {
+				margin: 0 auto 60px auto;
+				max-width: 800px;
+			}
+			@media screen and (max-width: 900px) {
+				.lead {
+					max-width: calc(100% - 100px);
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead {
+					max-width: unset;
+				}
+			}
+
+			.lead__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				color: #000000;
+				margin: 0;
+			}
+			.lead__description span {
+				font-size: 16px;
+				line-height: 19px;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description span {
+					font-size: 1.6vw;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description {
+					font-size: 2.05vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__description {
+					font-size: 2.25vw;
+					line-height: 1.5;
+				}
+			}
+			@media screen and (max-width: 550px) {
+				.lead__description {
+					font-size: 3.3vw;
+				}
+			}
+
+			.cards {
+				display: flex;
+				flex: 0 0 25%;
+				width: 100%;
+				list-style: none;
+				margin: 0 0 60px 0;
+				justify-content: space-between;
+				padding: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards {
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.cards {
+					flex: 0 0 50%;
+					flex-wrap: wrap;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.cards {
+					flex: unset;
+					flex-direction: column;
+				}
+			}
+
+			.cards_three-columns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: 819px) {
+				.cards_three-columns {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			.cards_three-columns_faq {
+				gap: 16px !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards_three-columns_faq {
+					gap: 8px !important;
+					display: flex !important;
+					flex-direction: column;
+				}
+			}
+
+			.card {
+				max-width: 245px;
+				width: 100%;
+				min-height: 390px;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				transition: 0.3s;
+				border-radius: 20px !important;
+				border: none !important;
+			}
+			.card:hover .card__title {
+				visibility: hidden;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.card:hover .card__title {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.card:hover .hover-content {
+				visibility: visible;
+				opacity: 1;
+				transition: 0.3s;
+				pointer-events: auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.card:hover .hover-content .hover-content_faq {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+			.card:hover .card__image {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
+			@media screen and (max-width: 1006px) {
+				.card {
+					padding: 0 20px;
+					min-height: 40vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card {
+					max-width: calc(50% - 10px);
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card {
+					max-width: 100%;
+				}
+			}
+
+			.card_simple {
+				min-height: unset;
+				max-height: 160px;
+			}
+
+			.card__image {
+				width: 100%;
+				transition: 0.5s;
+				border-radius: 20px;
+			}
+
+			.card_faq {
+				max-width: 330px;
+				max-height: 330px;
+				min-height: 330px;
+				background: #fff;
+				justify-content: center;
+				cursor: auto;
+			}
+			.card_faq:hover .card__arrow {
+				transition: 0.3s;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq:hover .card__arrow {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.card_faq:hover .hover-content {
+				background: #4b4b4b !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq {
+					max-width: 100%;
+					max-height: 1000px;
+					min-height: 90px;
+					padding: 0;
+					background: transparent;
+					justify-content: flex-start;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card_faq {
+					min-height: 60px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card_faq {
+					min-height: 70px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card_faq {
+					min-height: 90px;
+				}
+			}
+
+			.cards_three-columns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: 819px) {
+				.cards_three-columns {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			.card__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #000000;
+				margin: 0 auto 50px auto;
+				transition: 0.3s;
+				max-width: 200px;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title {
+					font-size: 1.85vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title {
+					font-size: 3.3vw;
+					line-height: 1.2;
+					margin: 0 auto 25px auto;
+					width: calc(100% - 40px);
+					min-height: 8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card__title {
+					font-size: 5vw;
+				}
+			}
+
+			.card__title_faq {
+				margin: 0 30px 0 30px;
+				text-align: left;
+				width: calc(100% - 60px);
+				max-width: 100%;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title_faq {
+					font-size: 20px;
+					background: #fff;
+					border-radius: 20px;
+					line-height: 1.3;
+					min-height: 90px;
+					height: 100%;
+					display: flex;
+					margin: 0;
+					padding: 0 100px 0 30px;
+					visibility: visible !important;
+					opacity: 1 !important;
+					width: 100%;
+					z-index: 2;
+					align-items: center;
+					justify-content: flex-start;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title_faq {
+					line-height: 1.2;
+					padding: 0 135px 0 15px;
+					min-height: 60px;
+					height: 60px;
+					font-size: 16px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card__title_faq {
+					min-height: 70px;
+					height: 70px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card__title_faq {
+					min-height: 90px;
+					height: 90px;
+					padding: 0 70px 0 15px;
+				}
+			}
+
+			.hover-content {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				transition: 0.3s;
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				align-items: center;
+				justify-content: space-between;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: auto;
+					position: relative;
+					top: unset;
+					left: unset;
+					height: unset;
+				}
+			}
+
+			.hover-content_faq {
+				align-items: flex-start;
+				padding: 32px;
+				box-sizing: border-box;
+			}
+			@media screen and (max-width: 1006px) {
+				.hover-content_faq {
+					position: relative;
+					max-height: 0;
+					padding: 0 32px;
+					margin: -20px 0 0 0;
+					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 20px;
+					visibility: hidden;
+					opacity: 0;
+					pointer-events: none;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content_faq {
+					padding: 0 15px;
+				}
+			}
+
+			.hover-content__text {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				max-width: 200px;
+				justify-content: center;
+				align-items: center;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__text {
+					justify-content: flex-start;
+					max-width: calc(100% - 40px);
+					height: unset;
+				}
+			}
+
+			.hover-content__text_faq {
+				max-width: 100%;
+			}
+
+			.hover-content__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0 0 40px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__title {
+					color: #000;
+					margin: 0 0 5px 0;
+					font-size: 2.8vw;
+					line-height: 1.2;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__title {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__title_faq {
+				text-align: left;
+				margin: 0 0 12px 0;
+				font-size: 20px;
+				line-height: 24px;
+				width: 100%;
+			}
+			@media screen and (max-width: 1006px) {
+				.hover-content__title_faq {
+					display: none;
+				}
+			}
+
+			.hover-content__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__description {
+					color: #000;
+					margin: 0 auto 25px auto;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 2.8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__description {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__description_faq {
+				font-size: 14px;
+				line-height: 17px;
+				text-align: left;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__description_faq {
+					margin: 0;
+					color: #fff;
+					width: 100%;
+				}
+			}
+
+			.hover-content__link {
+				color: #fff;
+			}
+
+			.card__arrow {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/faq/card__arrow.png) no-repeat;
+				background-size: contain;
+				width: 30px;
+				height: 26px;
+				position: absolute;
+				z-index: 1;
+				bottom: 32px;
+				right: 32px;
+				transition: 0.3s;
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			.card_faq .card__arrow {
+				z-index: 3;
+				height: 18px;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq .card__arrow {
+					top: 32px;
+					background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/submenu-arrow-ico.png) no-repeat;
+					background-size: contain;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card_faq .card__arrow {
+					width: 20px;
+					height: 11px;
+					top: 15px;
+					top: 24.5px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card_faq .card__arrow {
+					top: 29.5px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card_faq .card__arrow {
+					top: 39.5px;
+				}
+			}
+
+			.text {
+				font-style: normal;
+				color: #000;
+				font-weight: 400;
+				margin: 0 0 60px 0;
+			}
+
+			.text__title {
+				font-size: 20px;
+				line-height: 23px;
+				margin: 0 0 25px 0;
+				font-weight: 700;
+			}
+			.text__title:first-of-type {
+				margin: 0;
+			}
+
+			.slide_mobile .text__title {
+				margin: 0 auto 60px auto !important;
+				text-align: center;
+				max-width: 90%;
+			}
+			@media screen and (max-width: 499px) {
+				.slide_mobile .text__title {
+					margin: 0 auto 30px auto !important;
+				}
+			}
+
+			.text__main {
+				font-size: 16px;
+				line-height: 19px;
+				margin: 0 0 20px 0;
+			}
+			.text__main span {
+				font-weight: 800;
+			}
+			.text__main:last-of-type {
+				margin: 0;
+			}
+
+			.text__main_accent {
+				color: #f0ab00;
+			}
+
+			.text__list {
+				padding: 0 0 0 30px;
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_hover-content {
+				margin: 0 !important;
+				padding: 5px 50px !important;
+				width: unset;
+				max-width: 100%;
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+
+			.info-popup {
+				display: flex;
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				transition: 0.5s;
+				background: rgba(0, 0, 0, 0.7);
+				z-index: 200;
+			}
+
+			.info-popup_opened {
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto;
+				transition: 0.5s;
+			}
+
+			.info-popup__window {
+				max-width: 1024px;
+				max-height: 80vh;
+				position: relative;
+				margin: auto;
+				background: #fff;
+				overflow: hidden;
+				padding: 40px 15px 40px 70px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				border-radius: 20px;
+			}
+			.info-popup__window::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: calc(100% - 20px);
+				background: linear-gradient(360deg, #ffffff 35.42%, rgba(255, 255, 255, 0) 100%);
+				height: 80px;
+			}
+			@media screen and (max-width: 768px) {
+				.info-popup__window {
+					padding: 40px 20px;
+					max-width: calc(100% - 40px);
+				}
+				.info-popup__window .card__download-link {
+					font-size: inherit !important;
+				}
+			}
+
+			.info-popup__close-button {
+				position: absolute;
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/close-ico.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 20px;
+				height: 20px;
+				top: 20px;
+				right: 20px;
+				border: none;
+				cursor: pointer;
+			}
+			.info-popup__close-button:focus-visible {
+				outline: none;
+			}
+
+			.info-popup__logo {
+				max-width: 160px;
+				margin: 0 0 30px 0;
+				transform: translateX(-20px);
+			}
+
+			.info-popup__text-wrapper {
+				overflow: scroll;
+				padding: 0 55px 0 0;
+			}
+			.info-popup__text-wrapper::-webkit-scrollbar {
+				background: #dff0fd;
+				width: 5px;
+				height: 0;
+			}
+			.info-popup__text-wrapper::-webkit-scrollbar-thumb {
+				width: 5px;
+				border-radius: 5px;
+				background: #0093d0;
+			}
+
+			.info-popup__text .text__title {
+				margin: 0 0 25px 0;
+			}
+			.info-popup__text li {
+				margin: 0 0 5px 0;
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/cancellation-insurance/banner.png" alt="Страхование туристов Coral Travel от невыезда" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/cancellation-insurance/banner_mobile.png" alt="Страхование туристов Coral Travel от невыезда" class="banner__image mobile" />
+		</div>
+
+		<div class="text">
+			<p class="text__main">Coral Travel предлагает услугу по&nbsp;организации страхования туристов по&nbsp;рискам, связанным с&nbsp;отменой тура (части тура) или изменением сроков путешествия по&nbsp;независящим от&nbsp;туриста обстоятельствам.</p>
+			<p class="text__main">
+				Данный вид страхования позволяет получить туристу от&nbsp;страховой компании компенсацию расходов по&nbsp;оплате туристского продукта, если по&nbsp;не&nbsp;зависящим от&nbsp;туриста обстоятельствам причиной отмены поездки будет смерть, заболевание, создающее угрозу для жизни и&nbsp;требующего госпитализации Застрахованного или его близкого родственника, телесные повреждения, полученные Застрахованным или его близким родственником
+				в&nbsp;результате несчастного случая или противоправные действия третьих лиц, препятствующих совершению предполагаемой поездки, призыв в&nbsp;армию, вызов в&nbsp;суд. По&nbsp;туристским направлениям, требующим предварительного оформления визы в&nbsp;страну временного пребывания, к&nbsp;числу страховых случаев относится отказ в&nbsp;выдаче визы или получение визы с&nbsp;задержкой, препятствующей своевременному вылету туриста
+				в&nbsp;тур.
+			</p>
+			<p class="text__main">
+				Полный и&nbsp;подробный перечень страховых случаев, а&nbsp;также случаев, не&nbsp;относящихся к&nbsp;числу страховых, указан по&nbsp;тексту опубликованных на&nbsp;данной странице сайта правил страхования каждой страховой компании. Данные Правила содержат информацию о&nbsp;страховой компании и&nbsp;действиях, необходимых к&nbsp;совершению застрахованным лицом, для предъявлению в&nbsp;страховую компанию заявления о&nbsp;страховом
+				случае.
+			</p>
+			<p class="text__main">
+				Страхование по&nbsp;риску &laquo;отмена поездки&raquo; (невыезд) оформляется страховым полисом комплексно со&nbsp;страхованием медико-транспортных расходов туриста в&nbsp;стране временного пребывания на&nbsp;период тура. По&nbsp;тексту страхового полиса содержится актуальная информация о&nbsp;страховой компании, где застрахован турист с&nbsp;указанием страховой суммы. К&nbsp;страховому полису прилагаются правила (условия)
+				страховой компании. Настоятельно рекомендуем оформлять страхование по&nbsp;риску отмена поездки (невыезд) в&nbsp;день заключения Вами договора о&nbsp;реализации туристского продукта, так как данный вид страхования позволяет существенно минимизировать возможные финансовые риски, связанные с&nbsp;отменой туристом поездки или невозможностью ее&nbsp;совершения по&nbsp;причинам, относящимся к&nbsp;числу страховых случаев.
+			</p>
+			<p class="text__title">Страховка от&nbsp;невыезда в&nbsp;случае COVID-19</p>
+			<p class="text__main">Помимо медицинской страховки, Coral Travel предлагает страхование от&nbsp;невыезда. Эта услуга является необязательной при оформлении тура, но&nbsp;мы&nbsp;рекомендуем добавить&nbsp;ее. Страховка от&nbsp;невыезда станет гарантией того, что в&nbsp;случае непредвиденной ситуации, если вы&nbsp;не&nbsp;сможете отправиться в&nbsp;путешествие, потраченные на&nbsp;тур средства вернутся.</p>
+			<p class="text__main">В&nbsp;страховку от&nbsp;невыезда входят случаи заболевания COVID-19!</p>
+			<p class="text__main">Если вам или вашим близким родственникам* до&nbsp;поездки будет диагностирован коронавирус, вы&nbsp;не&nbsp;сможете поехать на&nbsp;отдых. Имея на&nbsp;руках страховку от&nbsp;невыезда, вы&nbsp;вернете деньги за&nbsp;тур.</p>
+			<p class="text__main">* Близкими родственниками являются супруги, дети (в&nbsp;том числе усыновленные), родители, а&nbsp;также родные сестры и&nbsp;братья.</p>
+		</div>
+
+		<ul class="cards">
+			<li class="card card_simple" id="soglasie">
+				<a href="#">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/soglasie.png" alt="Туристическая страховка Согласие" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="ingosstrah">
+				<a href="#">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/ingosstrah.png" alt="Туристическая страховка Ингосстрах" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="alpha">
+				<a href="">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/cancellation-insurance/alpha.png" alt="Туристическая страховка ВСК страхование" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="zetta">
+				<a href="">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/zetta.png" alt="Туристическая страховка Zetta" class="card__image" />
+				</a>
+			</li>
+		</ul>
+
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+		</div>
+
+		<div class="info-popup" id="soglasie">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/soglasie_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Страховые услуги, оказываемые страховой компанией &laquo;Согласие&raquo;</p>
+						<p class="text__main">
+							ООО &laquo;Страховая Компания &laquo;Согласие&raquo;&nbsp;&mdash; успешно ведет свою деятельность на&nbsp;страховом рынке 25&nbsp;лет; входит в&nbsp;топ-10 крупнейших страховщиков России по&nbsp;общему объему сборов; региональная сеть Компании насчитывает более 350 офисов по&nbsp;всей России; Компания находится в&nbsp;составе &laquo;Группы ОНЭКСИМ&raquo;&nbsp;&mdash; одного из&nbsp;крупнейших российских
+							финансово-промышленных холдингов; Наивысший рейтинг надежности и&nbsp;качества услуг на&nbsp;уровне ААА.ic&nbsp;&mdash; Максимальная степень надежности и&nbsp;качества услуг (2018). Лицензии ЦБ&nbsp;РФ&nbsp;от&nbsp;25.05.2015: СИ &#8470;&nbsp;1307, СЛ &#8470;&nbsp;1307, ОС &#8470;&nbsp;1307-03, ОС&#8470;&nbsp;1307-04, ОС &#8470;&nbsp;1307-05.
+						</p>
+						<p class="text__main">
+							Главный офис Компании находится по&nbsp;адресу: <br />
+							Россия, 129110, г. Москва, ул. Гиляровского&nbsp;42. Телефон: <a class="card__download-link" href="tel:+74957390101">+7 (495) 739-01-01</a>
+						</p>
+						<p class="text__main">Сайт ООО &laquo;СК&nbsp;&laquo;Согласие&raquo;&nbsp;&mdash; <a href="https://www.soglasie.ru/" rel="nofollow" target="_blank" class="card__download-link">www.soglasie.ru</a></p>
+						<p class="text__main">Правила страхования граждан, выезжающих за&nbsp;пределы постоянного места (<a href="https://cdn.coral.ru/content/doc/legal/insurance_rules.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Страхование отмены поездки (невыезд) предлагается к вашему рассмотрению опцией при выборе туров по маршрутам <span>Андорра, Бахрейн, Болгария, Греция, Испания, Италия, Израиль, Индия, Кипр, Куба, Марокко, О.А.Э., Турция, Таиланд, Хорватия, Черногория, Шри-Ланка</span>.</p>
+						<p class="text__main">
+							Краткая информация о&nbsp;данном виде страхования содержится по&nbsp;тексту Памяток по&nbsp;условиям страхования, расширенная информация&nbsp;&mdash; в&nbsp;Условиях страхования. <br />
+							Памятка по&nbsp;условиям страхования по&nbsp;риску &laquo;невозможность совершить поездку (невыезд)&raquo;
+						</p>
+						<p class="text__main">Направление: <span>Турция</span> (<a href="http://cdn.coral.ru/content/doc/insurance/pamatka_otmena_turkey_.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Направления: <span>Бахрейн, Израиль, Марокко, О.А.Э., Таиланд, Черногория, Шри-Ланка</span> (<a href="http://cdn.coral.ru/content/doc/insurance/pamatka_otmena_bahr_thai_uae.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Направления: <span>Греция, Испания, Италия, Хорватия, Индия, Андорра, Болгария, Кипр</span> (<a href="http://cdn.coral.ru/content/doc/insurance/pamatka_otmena_europa.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+
+						<p class="text__main">Условия страхования СК «Согласие» (Турция) (<a href="https://cdn.coral.ru/content/doc/legal/pravila_soglasie_turkey.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Условия страхования СК «Согласие» (Иные направления) (<a href="https://cdn.coral.ru/content/doc/legal/pravila_soglasie_other.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Турцию (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_29.07.20.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;ОАЭ (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_uae.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Египет (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_egypt.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Грецию (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_greece.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам на&nbsp;Кипр (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_cyprus.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам на&nbsp;Кубу (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_cuba_1904.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="ingosstrah">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/ingosstrah_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Страховые услуги, оказываемые страховой компанией &laquo;Ингосстрах&raquo;</p>
+						<p class="text__main">
+							<span>СПАО &laquo;Ингосстрах&raquo;</span> <br />
+							Управление страхования путешествующих 117997, Россия, Москва, ул. Большая Тульская, 10, стр.9 Часы работы: 09:00&nbsp;&mdash; 18:00 пн.-чт., 09:00&nbsp;&mdash; 16:45&nbsp;пт. <br />
+							Телефоны: <br />
+							Продажа полисов и&nbsp;консультации клиентов&nbsp;&mdash; <a href="tel:+74959565555" class="card__download-link">+7&nbsp;(495)&nbsp;956&nbsp;55&nbsp;55</a> <br />
+							Рассмотрение и&nbsp;урегулирование претензий&nbsp;&mdash; <a href="tel:+7495232346569" class="card__download-link">+7&nbsp;(495)&nbsp;232&nbsp;34&nbsp;65&nbsp;69</a> <br />
+							Факс&nbsp;&mdash; +7&nbsp;(495)&nbsp;232&nbsp;34&nbsp;62 <br />
+						</p>
+						<p class="text__main">
+							E-mail: <br />
+							<a href="mailto:tourclaims@ingos.ru" target="_blank" class="card__download-link">tourclaims@ingos.ru</a> (по&nbsp;вопросам урегулирования претензий) <br />
+							<a href="mailto:travel@ingos.ru" target="_blank" class="card__download-link">travel@ingos.ru</a> (по&nbsp;вопросам страхования)
+						</p>
+						<p class="text__main">Комплексные правила страхования путешествующих (<a href="https://cdn.coral.ru/content/doc/legal/complex_info_ingos.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">У&nbsp;Вас имеется возможность заказать страхование по&nbsp;риску &laquo;отмена поездки&raquo; (невыезд) СПАО &laquo;Ингосстрах&raquo; по&nbsp;следующим маршрутам Coral Travel: Республика Доминикана, Мексика, Индонезия, Иордания, Китай, Мальдивы, Сингапур, Шри Ланка, Танзания, Камбоджа, Сейшелы.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="alpha">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/img/alfa.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Страховые услуги, оказываемые страховой компанией &laquo;АльфаСтрахование&raquo;</p>
+						<p class="text__main">
+							Адрес центрального офиса АльфаСтрахование: Роcсия, 115162, г. Москва, ул. Шаболовка, д.&nbsp;31, стр. Б <br />
+							Федеральный контакт-центр: <a href="tel:+74957880999" class="card__download-link">+7&nbsp;495&nbsp;788&nbsp;09&nbsp;99</a>
+						</p>
+						<p class="text__main">
+							АО&nbsp;&laquo;АльфаСтрахование&raquo;&nbsp;&mdash; крупнейшая частная страховая компания России с&nbsp;универсальным портфелем страховых услуг, включающим как комплексные программы защиты интересов бизнеса, так и&nbsp;широкий спектр страховых продуктов для частных лиц. Компания предлагает более 200 решений по&nbsp;всем ключевым видам страхования в&nbsp;соответствии с&nbsp;Лицензиями ЦБ&nbsp;РФ&nbsp;СИ
+							&#8470;&nbsp;2239, СЛ &#8470;&nbsp;2239, ОС &#8470;&nbsp;2239&nbsp;&mdash; 02, ОС &#8470;&nbsp;2239&nbsp;&mdash; 03, ОС &#8470;&nbsp;2239&nbsp;&mdash; 04, ОС &#8470;&nbsp;2239&nbsp;&mdash; 05&nbsp;и&nbsp;ПС &#8470;&nbsp;2239. Существует на&nbsp;российском рынке с&nbsp;февраля 1992&nbsp;года.
+						</p>
+						<p class="text__main">Правила страхования граждан, выезжающих за пределы постоянного места (<a href="https://cdn.coral.ru/content/doc/legal/insurancerules_alfainsurance.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Страхование отмены поездки (невыезд) предлагается к&nbsp;вашему рассмотрению опцией при выборе туров по&nbsp;маршрутам Армения, Азербайджан, Узбекистан, Беларусь.</p>
+						<p class="text__main">Для обращения за&nbsp;возмещением в&nbsp;АО&nbsp;&laquo;АльфаСтрахование&raquo; документы можно подать:</p>
+						<ul class="text__list">
+							<li class="text__main">Дистанционно в&nbsp;Личном кабинете на&nbsp;сайте <a href="https://www.alfastrah.ru/login/" rel="nofollow" target="_blank" class="card__download-link">alfastrah.ru/login/</a>. Рассмотрение осуществляется на&nbsp;основании предоставленных документов через Личный кабинет. Для получения суммы выплат более 50&nbsp;000&nbsp;руб. потребуется предоставление оригиналов.</li>
+							<li class="text__main">В&nbsp;офисе страховой компании. В&nbsp;случае возникновения вопросов&nbsp;Вы можете обратиться по&nbsp;круглосуточному номеру телефона&nbsp;<a href="tel:+74957880999" class="card__download-link">+7&nbsp;(495)&nbsp;788&nbsp;0&nbsp;999</a>.</li>
+							<li class="text__main">Направив заказное письмо почтой по&nbsp;адресу: 115162, г. Москва, ул. Шаболовка, 31&nbsp;Б, АО&nbsp;&laquo;АльфаСтрахование&raquo;, Управление страхование путешествующих, Отдел урегулирования убытков.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="zetta">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/zetta_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Страховые услуги, оказываемые страховой компанией &laquo;Зетта Страхование&raquo;</p>
+						<p class="text__main">
+							Адрес центрального офиса ООО &laquo;Зетта Страхование&raquo; <br />
+							Роcсия, 121087, г. Москва, Багрaтионовский проезд, дом&nbsp;7, корп.&nbsp;11 <br />
+							Метро: Багратионовская, Фили <br />
+							Федеральный контакт-центр Телефон: <a href="tel:+78007007707" class="card__download-link">8 (800) 700-77-07</a> <br />
+							e-mail: <a href="mailto:info@zettains.ru" target="_blank" class="card__download-link">info@zettains.ru</a> <br />
+							<a href="https://zettains.ru/" rel="nofollow" target="_blank" class="card__download-link">www.zettains.ru</a> <br />
+							<span>Условия страхования (<a href="http://agency.coral.ru/engine/files/editors/File/Legal/insurance/zetta0616.pdf" target="_blank" class="card__download-link">PDF</a>)</span>
+						</p>
+						<p class="text__main">
+							<span>Информация ООО &laquo;Зетта Страхование&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Тунис (<a href="https://b2bcdn.coral.ru/Coral/p/doc/insurance/letter_tunisia_ins.pdf" target="_blank" class="card__download-link">PDF</a>)</span>
+						</p>
+
+						<p class="text__main">
+							<span>Памятка по&nbsp;условиям страхования туристов в&nbsp;связи с&nbsp;отменой поездки по&nbsp;направлению Вьетнам&nbsp;/ Тунис (<a href="http://cdn.coral.ru/content/doc/insurance/pamyaka_zetta_viet_tunis.pdf" target="_blank" class="card__download-link">PDF</a>)</span>
+						</p>
+						<p class="text__main">Страхование отмены поездки (невыезд) предлагается к&nbsp;вашему рассмотрению опцией при выборе туров по&nbsp;маршрутам Тунис и&nbsp;Вьетнам. При недостаточности страховой суммы&nbsp;Вы имеете возможность оформить дополнительное страхование на&nbsp;более высокую сумму.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+			const popups = document.querySelectorAll(".info-popup");
+			const popupCards = document.querySelectorAll(".card_simple");
+
+			for (let i = 0; i < popups.length; i++) {
+				const currentPopup = popups.item(i);
+				const currentCloseButton = currentPopup.querySelector(".info-popup__close-button");
+
+				popupCards[i].addEventListener("click", (evt) => {
+					evt.preventDefault();
+					openModal(currentPopup);
+				});
+
+				currentCloseButton.addEventListener("click", () => {
+					closeModal(currentPopup);
+				});
+
+				currentPopup.addEventListener("click", (evt) => {
+					if (evt.type === "click") {
+						if (evt.target === evt.currentTarget) {
+							closeModal(currentPopup);
+						}
+					}
+				});
+			}
+
+			window.addEventListener("keyup", (evt) => {
+				if (evt.key === "Escape") {
+					closeModal(document.querySelector(".info-popup_opened"));
+				}
+			});
+
+			function closeModal(popup) {
+				popup.classList.remove("info-popup_opened");
+			}
+
+			function openModal(popup) {
+				popup.classList.add("info-popup_opened");
+			}
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+		</script>
+	</body>
+</html>

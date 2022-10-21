@@ -1,0 +1,31 @@
+.button {
+    margin: 0 auto;
+    border: none;
+    background: #f0ab00;
+    color: #fff !important;
+    border-radius: 8px;
+    padding: 13px 70px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: fit-content;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    transition: 0.3s;
+    outline: none !important;
+    flex-direction: column;
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+
+	@media screen and (max-width: 768px) {
+		font-size: 12px;
+	}
+}

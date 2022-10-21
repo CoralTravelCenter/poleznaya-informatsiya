@@ -1,0 +1,12 @@
+.links-list__link-ico {
+    transform: rotate(-90deg);
+    width: 24px;
+    height: 12px;
+    object-fit: contain;
+    margin: 0px 0px 0px 20px;
+
+    @media screen and (max-width: 768px) {
+        width: 12px;
+        height: 6px;
+    }
+}

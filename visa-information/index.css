@@ -1,0 +1,384 @@
+@import "../../vendor/normalize.css";
+@import "../../vendor/reset.css";
+html {
+  background: #f1f7fc;
+}
+
+ul {
+  padding-left: 15px !important;
+}
+
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url(../../vendor/fonts/museosanscyrl-500-webfont.woff);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url(../../vendor/fonts/museosanscyrl-700-webfont.woff);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url(../../vendor/fonts/museosanscyrl-900-webfont.woff);
+  font-weight: 900;
+}
+.reset__flex {
+  display: block !important;
+  height: unset !important;
+  width: unset !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+}
+
+.page {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.banner {
+  margin: 0 0 55px 0;
+}
+
+.banner__image {
+  max-width: 1024px;
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .banner__image {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.mobile {
+  width: 100%;
+}
+@media screen and (min-width: 769px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none !important;
+  }
+}
+
+.cards {
+  display: flex;
+  flex: 0 0 25%;
+  width: calc(100% + 15px);
+  list-style: none;
+  margin: 0 0 60px -14px;
+  justify-content: space-between;
+  padding: 0;
+}
+@media screen and (max-width: 1006px) {
+  .cards {
+    max-width: calc(100% + 15px);
+    margin: 0 0 60px -15px;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    flex: 0 0 50%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 499px) {
+  .cards {
+    flex: unset;
+    flex-direction: column;
+  }
+}
+
+.cards_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 35px;
+}
+@media screen and (max-width: 1006px) {
+  .cards_grid {
+    grid-template-columns: unset;
+    row-gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  max-width: 245px;
+  width: 100%;
+  min-height: 390px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  transition: 0.3s;
+  border-radius: 20px !important;
+  border: none !important;
+}
+.card:hover .card__title {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .card:hover .card__title {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.card:hover .hover-content {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+  pointer-events: auto;
+}
+@media screen and (max-width: 1006px) {
+  .card:hover .hover-content .hover-content_faq {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.card:hover .card__image {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+@media screen and (max-width: 1006px) {
+  .card {
+    padding: 0 20px;
+    min-height: 40vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: calc(50% - 10px);
+    min-height: auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  .card {
+    max-width: 100%;
+  }
+}
+
+.card__image-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+@media screen and (max-width: 1006px) {
+  .card__image-wrapper {
+    width: 100%;
+  }
+}
+
+.card_visa {
+  min-height: unset;
+  margin: 0 0 35px 0;
+  background-color: transparent !important;
+}
+.card_visa:hover .card__title {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+@media screen and (max-width: 1006px) {
+  .card_visa {
+    padding: 0 !important;
+    width: 47%;
+    max-width: unset;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 499px) {
+  .card_visa .card__title {
+    font-size: 4vw !important;
+  }
+}
+@media screen and (max-width: 499px) {
+  .card_visa .card__title_min {
+    font-size: 10px !important;
+  }
+}
+
+.card__link {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.card__title {
+  font-family: "Museo Sans Cyrl";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 auto 50px auto;
+  transition: 0.3s;
+  max-width: 200px;
+  text-decoration: none;
+}
+@media screen and (max-width: 1006px) {
+  .card__title {
+    font-size: 1.85vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__title {
+    font-size: 3.3vw;
+    line-height: 1.2;
+    margin: 0 auto 25px auto;
+    width: calc(100% - 40px);
+    min-height: 8vw;
+  }
+}
+@media screen and (max-width: 499px) {
+  .card__title {
+    font-size: 5vw;
+  }
+}
+
+.card__title_no-margin {
+  margin: 0 auto;
+}
+
+.card__image {
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.page-footer {
+  max-width: 510px;
+  margin: 0 auto 100px auto;
+}
+@media screen and (max-width: 1006px) {
+  .page-footer {
+    margin: 0 auto 80px auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-footer {
+    max-width: calc(100% - 60px);
+    margin: 0 auto 40px auto;
+  }
+}
+
+.page-footer_buttons {
+  display: flex;
+  max-width: 100%;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .page-footer_buttons {
+    max-width: calc(100% - 60px);
+  }
+}
+
+.button {
+  font-family: "Museo Sans Cyrl";
+  margin: 0 0 55px 0;
+  border: none;
+  background: #f0ab00;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 7px 25px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-width: 140px;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  transition: 0.3s;
+  text-align: center;
+}
+.button:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 1006px) {
+  .button {
+    margin: 0 0 25px 0;
+    line-height: 1.2;
+    width: calc(100% - 40px);
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 12px;
+  }
+}
+
+.button_footer {
+  background: #0093d0;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 22px;
+  margin: 0;
+  max-width: unset;
+}
+@media screen and (max-width: 1006px) {
+  .button_footer {
+    max-width: unset;
+    height: 50px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button_footer {
+    height: 40px;
+    line-height: 1 !important;
+    font-size: 10px !important;
+    padding: 0 5px;
+    width: 50%;
+  }
+}
+
+.button_transparent {
+  background: transparent !important;
+  border: 2px solid #000000;
+  color: #000000 !important;
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .button_transparent {
+    min-width: unset;
+  }
+}

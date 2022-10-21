@@ -1,0 +1,11 @@
+.hover-content__description_faq {
+	font-size: 14px;
+	line-height: 17px;
+	text-align: left;
+
+	@media screen and (max-width: 768px) {
+		margin: 0;
+		color: #fff;
+		width: 100%;
+	}
+}

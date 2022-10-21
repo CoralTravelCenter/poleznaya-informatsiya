@@ -1,0 +1,24 @@
+.logos {
+	margin: 0 auto 30px auto;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+
+	.payment-logo {
+		padding: 0 16px;
+		border-right: 1px solid #000;
+		border-left: 1px solid #000;
+		max-width: calc(100% / 3);
+
+		&:first-of-type {
+			padding: 0 16px 0 0;
+			border: none;
+		}
+
+		&:last-of-type {
+			padding: 0 0 0 16px;
+			border: none;
+		}
+	}
+}

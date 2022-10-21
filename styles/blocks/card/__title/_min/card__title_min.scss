@@ -1,0 +1,12 @@
+.card__title_min {
+	font-size: 16px;
+	line-height: 19px;
+    text-transform: none;
+    margin: 0;
+
+    @media screen and (max-width: 1006px) {
+        text-align: left;
+    }
+
+    
+}

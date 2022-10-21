@@ -1,0 +1,19 @@
+.accordeon {
+	transition: 0.3s;
+	margin: 0 0 80px 0;
+
+	@media screen and (max-width: 768px) {
+		margin: 0 0 40px 0;
+	}
+
+	.text__main {
+		font-size: 20px;
+		@media screen and (max-width: 768px) {
+			font-size: 10px;
+		}
+	}
+
+	&.links {
+		margin: 0 0 10px 0;
+	}
+}

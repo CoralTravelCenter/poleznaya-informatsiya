@@ -1,0 +1,8 @@
+.text__main_min {
+    font-size: 14px;
+    line-height: 1.2;
+
+    @media screen and (max-width: 768px) {
+        font-size: 9px;
+    }
+}

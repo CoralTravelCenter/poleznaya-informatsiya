@@ -1,0 +1,13 @@
+.slider__play-pause {
+    background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider-pause.png) no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+
+    @media screen and (max-width: 499px) {
+        width: 16px;
+        height: 16px;
+    }
+}

@@ -1,0 +1,16 @@
+.info-popup__close-button {
+    position: absolute;
+    background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/close-ico.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: none;
+    }
+}

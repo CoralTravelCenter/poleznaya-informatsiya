@@ -1,0 +1,53 @@
+.leftCustomMenu {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+
+.left-menu__title-link {
+  color: #000 !important;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.left-menu__item {
+  padding: 0 !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  color: #888888 !important;
+  position: relative;
+}
+
+.left-menu_active {
+  padding: 0 0 0 10px !important;
+}
+.left-menu_active::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 0;
+  width: 7px;
+  height: 10px;
+  background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/submenu-active-arrow-ico.png) no-repeat;
+  background-size: contain;
+}
+
+.left-menu__group {
+  display: flex;
+  margin-bottom: 40px !important;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-menu__title-wrap {
+  position: relative;
+}
+.left-menu__title-wrap.left-menu_active {
+  padding: 0 0 0 15px !important;
+}
+.left-menu__title-wrap::before {
+  width: 10px;
+  height: 15px;
+}

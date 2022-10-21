@@ -1,0 +1,30 @@
+.card_visa {
+	min-height: unset;
+    margin: 0 0 35px 0;
+    background-color: transparent !important;
+
+	&:hover .card__title {
+		visibility: visible !important;
+		opacity: 1 !important;
+		pointer-events: auto !important;
+	}
+
+	@media screen and (max-width: 1006px) {
+		padding: 0 !important;
+		width: 47%;
+		max-width: unset;
+		margin: 0;
+	}
+
+	.card__title {
+		@media screen and(max-width: 499px) {
+			font-size: 4vw !important;
+		}
+	}
+
+	.card__title_min {
+		@media screen and(max-width: 499px) {
+			font-size: 10px !important;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.notcritical {
+  padding-top: 0 !important;
+}
+
+.b-crumb_new-style a {
+  color: #4a4a4a !important;
+}
+.b-crumb_new-style + .b-crumb_new-style::before {
+  color: #4a4a4a !important;
+}
+.b-crumb_new-style.active {
+  color: #4a4a4a !important;
+}
+.b-crumb_new-style.active:after {
+  background-color: #4a4a4a !important;
+}

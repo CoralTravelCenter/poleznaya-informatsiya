@@ -1,0 +1,15 @@
+.accordeon__item_closed {
+
+	.accordeon__content {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		pointer-events: none;
+		margin: 0;
+	}
+
+	.accordeon__arrow {
+		transform: rotate(-90deg);
+		transition: 0.3s;
+	}
+}

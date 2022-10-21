@@ -1,0 +1,46 @@
+html {
+	background: #f1f7fc;
+}
+
+ul {
+	padding-left: 15px !important
+}
+
+@import "../../vendor/normalize.css";
+@import "../../vendor/reset.css";
+@import "../../vendor/fonts/fonts.scss";
+
+@import "../../styles/blocks/page/page.scss";
+
+@import "../../styles/blocks/banner/banner.scss";
+@import "../../styles/blocks/banner/__image/banner__image.scss";
+@import "../../styles/blocks/mobile.scss";
+@import "../../styles/blocks/desktop.scss";
+@import "../../styles/blocks/cards/cards.scss";
+@import "../../styles/blocks/cards/_three-columns/cards_three-columns.scss";
+@import "../../styles/blocks/cards/_three-columns/_faq/cards_three-columns_faq.scss";
+@import "../../styles/blocks/card/card.scss";
+@import "../../styles/blocks/card/_faq/card_faq.scss";
+@import "../../styles/blocks/cards/_three-columns/cards_three-columns.scss";
+@import "../../styles/blocks/card/__title/card__title.scss";
+@import "../../styles/blocks/card/__title/_faq/card__title_faq.scss";
+
+@import "../../styles/blocks/hover-content/hover-content.scss";
+@import "../../styles/blocks/hover-content/_faq/hover-content_faq.scss";
+@import "../../styles/blocks/hover-content/_faq/_active/hover-content_faq_active.scss";
+@import "../../styles/blocks/hover-content/__text/hover-content__text.scss";
+@import "../../styles/blocks/hover-content/__text/_faq/hover-content__text_faq.scss";
+@import "../../styles/blocks/hover-content/__title/hover-content__title.scss";
+@import "../../styles/blocks/hover-content/__title/_faq/hover-content__title_faq.scss";
+@import "../../styles/blocks/hover-content/__description/hover-content__description.scss";
+@import "../../styles/blocks/hover-content/__description/_faq/hover-content__description_faq.scss";
+@import "../../styles/blocks/hover-content/__link/hover-content__link.scss";
+@import "../../styles/blocks/card/__arrow/card__arrow.scss";
+
+@import "../../styles/blocks/page-footer/page-footer.scss";
+@import "../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+
+@import "../../styles/blocks/button/button.scss";
+@import "../../styles/blocks/button/_hover-content/button_hover-content.scss";
+@import "../../styles/blocks/button/_footer/button_footer.scss";
+@import "../../styles/blocks/button/_transparent/button_transparent.scss";

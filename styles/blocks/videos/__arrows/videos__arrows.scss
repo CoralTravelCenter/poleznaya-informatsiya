@@ -1,0 +1,15 @@
+.videos__arrows {
+	position: absolute;
+	width: 115%;
+	left: calc(50% - 115% / 2);
+	transform: translateY(-100px);
+
+	@media screen and (max-width: 1006px) {
+		width: 100%;
+		left: 0;
+	}
+
+	@media screen and (max-width: 499px) {
+		transform: translateY(-10vw);
+	}
+}

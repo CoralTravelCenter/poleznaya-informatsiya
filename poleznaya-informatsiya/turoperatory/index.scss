@@ -1,0 +1,45 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../../styles/remove-oti-styles.scss";
+@import "../../styles/blocks/page/page.scss";
+
+@import "../../styles/blocks/banner/banner.scss";
+@import "../../styles/blocks/banner/__image/banner__image.scss";
+@import "../../styles/blocks/desktop.scss";
+@import "../../styles/blocks/mobile.scss";
+
+@import "../../styles/blocks/lead/lead.scss";
+@import "../../styles/blocks/lead/__title/lead__title.scss";
+@import "../../styles/blocks/lead/__title/_min/lead__title_min.scss";
+@import "../../styles/blocks/lead/__description/lead__description.scss";
+
+@import "../../styles/blocks/text/text.scss";
+@import "../../styles/blocks/text/__title/text__title.scss";
+@import "../../styles/blocks/text/__main/text__main.scss";
+
+@import "../../styles/blocks/cards/cards.scss";
+@import "../../styles/blocks/cards/_flex/cards_flex.scss";
+@import "../../styles/blocks/card/card.scss";
+@import "../../styles/blocks/card/_with-ico/card_with-ico.scss";
+@import "../../styles/blocks/card/__title/card__title.scss";
+@import "../../styles/blocks/card/__download-link/card__download-link.scss";
+
+@import "../../styles/blocks/page-footer/page-footer.scss";
+@import "../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+
+@import "../../styles/blocks/button/button.scss";
+@import "../../styles/blocks/button/_card/button_card.scss";
+@import "../../styles/blocks/button/_footer/button_footer.scss";
+@import "../../styles/blocks/button/_transparent/button_transparent.scss";
+
+@import "../../styles/blocks/accordeon/accordeon.scss";
+@import "../../styles/blocks/accordeon/_hidden/accordeon_hidden.scss";
+@import "../../styles/blocks/accordeon/__list/accordeon__list.scss";
+@import "../../styles/blocks/accordeon/__item/accordeon__item.scss";
+@import "../../styles/blocks/accordeon/__item/_closed/accordeon__item_closed.scss";
+@import "../../styles/blocks/accordeon/__item-header/accordeon__item-header.scss";
+@import "../../styles/blocks/accordeon/__content/accordeon__content.scss";
+
+@import "../../styles/blocks/tour-operators/tour-operators.scss";

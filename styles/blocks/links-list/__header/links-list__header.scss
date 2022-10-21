@@ -1,0 +1,54 @@
+.links-list__header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+
+	&#turkish {
+		background: #c90019;
+	}
+
+	&#emirates {
+		background: #d71921;
+	}
+
+	&#etihad {
+		background: #bd8b13;
+	}
+
+	&#aeroflot {
+		background: #065398;
+	}
+
+	&#azurair {
+		background: #003964;
+	}
+	&#ikar {
+		background: #2262a4;
+	}
+
+	&#s7 {
+		background: #c4d600;
+	}
+
+	&#qatar {
+		background: #5c0d34;
+	}
+
+	&#ural {
+		background: #ba0c2f;
+	}
+
+	&#nord {
+		background: #d6181e;
+	}
+
+	&#pegasus {
+		background: #fdc43e;
+	}
+
+	&#redwings {
+		background: #46484d;
+	}
+}

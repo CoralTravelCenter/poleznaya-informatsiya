@@ -1,0 +1,16 @@
+.accordeon__item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    transition: .3s;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        gap: 30px;
+    }
+
+    .text__main {
+        font-weight: 600;
+    }
+}

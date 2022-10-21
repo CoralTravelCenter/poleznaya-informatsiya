@@ -1,0 +1,1331 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Медицинская страховка</title>
+		<style>
+			h1 {
+				display: none !important;
+			}
+
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none;
+				}
+			}
+
+			.lead {
+				margin: 0 auto 60px auto;
+				max-width: 800px;
+			}
+			@media screen and (max-width: 900px) {
+				.lead {
+					max-width: calc(100% - 100px);
+				}
+			}
+
+			.lead__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				color: #000000;
+				margin: 0;
+			}
+			.lead__description span {
+				font-size: 16px;
+				line-height: 19px;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description span {
+					font-size: 1.6vw;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description {
+					font-size: 2.05vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__description {
+					font-size: 2.25vw;
+					line-height: 1.5;
+				}
+			}
+			@media screen and (max-width: 550px) {
+				.lead__description {
+					font-size: 3.3vw;
+				}
+			}
+
+			@media screen and (max-width: 1006px) {
+				.lead__description_insurance span {
+					font-size: inherit;
+				}
+			}
+
+			.cards {
+				display: flex;
+				flex: 0 0 25%;
+				width: calc(100% + 15px);
+				list-style: none;
+				margin: 0 0 60px -14px;
+				justify-content: space-between;
+				padding: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards {
+					max-width: calc(100% + 15px);
+					margin: 0 0 60px -15px;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.cards {
+					flex: 0 0 50%;
+					flex-wrap: wrap;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.cards {
+					flex: unset;
+					flex-direction: column;
+				}
+			}
+
+			.cards_three-columns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: 819px) {
+				.cards_three-columns {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			.cards_three-columns_faq {
+				gap: 16px !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards_three-columns_faq {
+					gap: 8px !important;
+					display: flex !important;
+					flex-direction: column;
+				}
+			}
+
+			.card {
+				max-width: 245px;
+				width: 100%;
+				min-height: 390px;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				transition: 0.3s;
+				border-radius: 20px !important;
+				border: none !important;
+			}
+			.card:hover .card__title {
+				visibility: hidden;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.card:hover .card__title {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.card:hover .hover-content {
+				visibility: visible;
+				opacity: 1;
+				transition: 0.3s;
+				pointer-events: auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.card:hover .hover-content .hover-content_faq {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+			.card:hover .card__image {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
+			@media screen and (max-width: 1006px) {
+				.card {
+					padding: 0 20px;
+					min-height: 40vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card {
+					max-width: calc(50% - 10px);
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card {
+					max-width: 100%;
+				}
+			}
+
+			.card_simple {
+				min-height: unset;
+				max-height: 160px;
+			}
+
+			.card__image {
+				width: 100%;
+				transition: 0.5s;
+				border-radius: 20px;
+			}
+
+			.card_faq {
+				max-width: 330px;
+				max-height: 330px;
+				min-height: 330px;
+				background: #fff;
+				justify-content: center;
+				cursor: auto;
+			}
+			.card_faq:hover .card__arrow {
+				transition: 0.3s;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq:hover .card__arrow {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.card_faq:hover .hover-content {
+				background: #4b4b4b !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq {
+					max-width: 100%;
+					max-height: 1000px;
+					min-height: 90px;
+					padding: 0;
+					background: transparent;
+					justify-content: flex-start;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card_faq {
+					min-height: 60px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card_faq {
+					min-height: 70px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card_faq {
+					min-height: 90px;
+				}
+			}
+
+			.cards_three-columns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: 819px) {
+				.cards_three-columns {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+
+			.card__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #000000;
+				margin: 0 auto 50px auto;
+				transition: 0.3s;
+				max-width: 200px;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title {
+					font-size: 1.85vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title {
+					font-size: 3.3vw;
+					line-height: 1.2;
+					margin: 0 auto 25px auto;
+					width: calc(100% - 40px);
+					min-height: 8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card__title {
+					font-size: 5vw;
+				}
+			}
+
+			.card__title_faq {
+				margin: 0 30px 0 30px;
+				text-align: left;
+				width: calc(100% - 60px);
+				max-width: 100%;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title_faq {
+					font-size: 20px;
+					background: #fff;
+					border-radius: 20px;
+					line-height: 1.3;
+					min-height: 90px;
+					height: 100%;
+					display: flex;
+					margin: 0;
+					padding: 0 100px 0 30px;
+					visibility: visible !important;
+					opacity: 1 !important;
+					width: 100%;
+					z-index: 2;
+					align-items: center;
+					justify-content: flex-start;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title_faq {
+					line-height: 1.2;
+					padding: 0 135px 0 15px;
+					min-height: 60px;
+					height: 60px;
+					font-size: 16px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card__title_faq {
+					min-height: 70px;
+					height: 70px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card__title_faq {
+					min-height: 90px;
+					height: 90px;
+					padding: 0 70px 0 15px;
+				}
+			}
+
+			.hover-content {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				transition: 0.3s;
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				align-items: center;
+				justify-content: space-between;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: auto;
+					position: relative;
+					top: unset;
+					left: unset;
+					height: unset;
+				}
+			}
+
+			.hover-content_faq {
+				align-items: flex-start;
+				padding: 32px;
+				box-sizing: border-box;
+			}
+			@media screen and (max-width: 1006px) {
+				.hover-content_faq {
+					position: relative;
+					max-height: 0;
+					padding: 0 32px;
+					margin: -20px 0 0 0;
+					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 20px;
+					visibility: hidden;
+					opacity: 0;
+					pointer-events: none;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content_faq {
+					padding: 0 15px;
+				}
+			}
+
+			.hover-content__text {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				max-width: 200px;
+				justify-content: center;
+				align-items: center;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__text {
+					justify-content: flex-start;
+					max-width: calc(100% - 40px);
+					height: unset;
+				}
+			}
+
+			.hover-content__text_faq {
+				max-width: 100%;
+			}
+
+			.hover-content_faq_active {
+				max-height: 1000px;
+				padding: 52px 32px 32px 32px;
+				background: #4b4b4b !important;
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto !important;
+			}
+			.hover-content_faq_active ~ .card__arrow {
+				transform: rotate(180deg);
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content_faq_active {
+					padding: 30px 15px 15px 15px;
+				}
+			}
+
+			.hover-content__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0 0 40px 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__title {
+					color: #000;
+					margin: 0 0 5px 0;
+					font-size: 2.8vw;
+					line-height: 1.2;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__title {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__title_faq {
+				text-align: left;
+				margin: 0 0 12px 0;
+				font-size: 20px;
+				line-height: 24px;
+				width: 100%;
+			}
+			@media screen and (max-width: 1006px) {
+				.hover-content__title_faq {
+					display: none;
+				}
+			}
+
+			.hover-content__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #ffffff;
+				margin: 0;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__description {
+					color: #000;
+					margin: 0 auto 25px auto;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 2.8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.hover-content__description {
+					font-size: 4vw;
+				}
+			}
+
+			.hover-content__description_faq {
+				font-size: 14px;
+				line-height: 17px;
+				text-align: left;
+			}
+			@media screen and (max-width: 768px) {
+				.hover-content__description_faq {
+					margin: 0;
+					color: #fff;
+					width: 100%;
+				}
+			}
+
+			.hover-content__link {
+				color: #fff;
+			}
+
+			.card__arrow {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/faq/card__arrow.png) no-repeat;
+				background-size: contain;
+				width: 30px;
+				height: 26px;
+				position: absolute;
+				z-index: 1;
+				bottom: 32px;
+				right: 32px;
+				transition: 0.3s;
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			.card_faq .card__arrow {
+				z-index: 3;
+				height: 18px;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_faq .card__arrow {
+					top: 32px;
+					background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/submenu-arrow-ico.png) no-repeat;
+					background-size: contain;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card_faq .card__arrow {
+					width: 20px;
+					height: 11px;
+					top: 15px;
+					top: 24.5px;
+				}
+			}
+			@media screen and (max-width: 599px) {
+				.card_faq .card__arrow {
+					top: 29.5px;
+				}
+			}
+			@media screen and (max-width: 479px) {
+				.card_faq .card__arrow {
+					top: 39.5px;
+				}
+			}
+
+			.text {
+				font-style: normal;
+				color: #000;
+				font-weight: 400;
+				margin: 0 0 60px 0;
+			}
+
+			.text__title {
+				font-size: 20px;
+				line-height: 23px;
+				margin: 0 0 25px 0;
+				font-weight: 700;
+			}
+			.text__title:first-of-type {
+				margin: 0;
+			}
+
+			.text__main {
+				font-size: 16px;
+				line-height: 19px;
+				margin: 0 0 20px 0;
+			}
+			.text__main span {
+				font-weight: 800;
+			}
+			.text__main:last-of-type {
+				margin: 0;
+			}
+
+			.text__main_accent {
+				color: #f0ab00;
+			}
+
+			.text__list {
+				padding: 0 0 0 30px;
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_hover-content {
+				margin: 0 !important;
+				padding: 5px 50px !important;
+				width: unset;
+				max-width: 100%;
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+
+			.text {
+				font-style: normal;
+				color: #000;
+				font-weight: 400;
+				margin: 0 0 60px 0;
+			}
+
+			.text__title {
+				font-size: 20px;
+				line-height: 23px;
+				margin: 0 0 25px 0;
+				font-weight: 700;
+			}
+			.text__title:first-of-type {
+				margin: 0;
+			}
+
+			.text__main {
+				font-size: 16px;
+				line-height: 19px;
+				margin: 0 0 20px 0;
+			}
+			.text__main span {
+				font-weight: 800;
+			}
+			.text__main:last-of-type {
+				margin: 0;
+			}
+
+			.text__list {
+				padding: 0 0 0 30px;
+			}
+
+			.card__download-link {
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 19px !important;
+				color: #0093d0;
+			}
+			@media screen and (max-width: 499px) {
+				.card__download-link {
+					font-size: 10px !important;
+					white-space: nowrap;
+				}
+			}
+
+			.info-popup {
+				display: flex;
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				transition: 0.5s;
+				background: rgba(0, 0, 0, 0.7);
+				z-index: 200;
+			}
+
+			.info-popup_opened {
+				visibility: visible;
+				opacity: 1;
+				pointer-events: auto;
+				transition: 0.5s;
+			}
+
+			.info-popup__window {
+				max-width: 1024px;
+				height: 80vh;
+				position: relative;
+				margin: auto;
+				background: #fff;
+				overflow: hidden;
+				padding: 40px 15px 40px 70px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				border-radius: 20px;
+			}
+			.info-popup__window::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: calc(100% - 20px);
+				background: linear-gradient(360deg, #ffffff 35.42%, rgba(255, 255, 255, 0) 100%);
+				height: 80px;
+			}
+			@media screen and (max-width: 768px) {
+				.info-popup__window {
+					padding: 40px 20px;
+                    max-width: calc(100% - 40px);
+				}
+				.info-popup__window .card__download-link {
+					font-size: inherit !important;
+				}
+			}
+
+			.info-popup__close-button {
+				position: absolute;
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/close-ico.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 20px;
+				height: 20px;
+				top: 20px;
+				right: 20px;
+				border: none;
+				cursor: pointer;
+			}
+			.info-popup__close-button:focus-visible {
+				outline: none;
+			}
+
+			.info-popup__logo {
+				max-width: 160px;
+				margin: 0 0 30px 0;
+				transform: translateX(-20px);
+			}
+
+			.info-popup__text-wrapper {
+				overflow: scroll;
+				padding: 0 55px 0 0;
+			}
+			.info-popup__text-wrapper::-webkit-scrollbar {
+				background: #dff0fd;
+				width: 5px;
+				height: 0;
+			}
+			.info-popup__text-wrapper::-webkit-scrollbar-thumb {
+				width: 5px;
+				border-radius: 5px;
+				background: #0093d0;
+			}
+
+			.info-popup__text .text__title {
+				margin: 0 0 25px 0;
+			}
+			.info-popup__text li {
+				margin: 0 0 5px 0;
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/banner.png" alt="Медицинское страхование туристов Coral Travel" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/banner_mobile.png" alt="Медицинское страхование туристов Coral Travel" class="banner__image mobile" />
+		</div>
+		<div class="lead">
+			<p class="lead__description lead__description_insurance">
+				В&nbsp;туристический продукт Coral Travel включен полис страхования туристов на&nbsp;время путешествия. <br /><br />
+				<span> Здесь находится актуальная информация о&nbsp;страховой компании, обслуживающей туриста на&nbsp;территории страны временного пребывания, с&nbsp;указанием страховой суммы, наличия или отсутствия франшизы, контактных телефонов сервисной компании.</span> <br /><br />
+				<b>Разъяснение некоторых терминов, используемых в&nbsp;страховании.</b>
+			</p>
+		</div>
+
+		<ul class="cards cards_three-columns cards_three-columns_faq">
+			<li class="card card_faq">
+				<p class="card__title card__title_faq">Что такое страховая сумма?</p>
+				<div class="hover-content hover-content_faq">
+					<div class="hover-content__text hover-content__text_faq">
+						<p class="hover-content__title hover-content__title_faq">Что такое страховая сумма?</p>
+						<p class="hover-content__description hover-content__description_faq">
+							Денежная сумма, в&nbsp;пределах какой застрахован турист, указанная по&nbsp;тексту страхового полиса в&nbsp;иностранной валюте. Общая сумма выплат (оказанных услуг страховой компании) за&nbsp;один или несколько страховых случаев, происшедших в&nbsp;период действия договора страхования, не&nbsp;может превышать размера страховой суммы, указанной в&nbsp;страховом полисе.
+						</p>
+					</div>
+				</div>
+
+				<div class="card__arrow">&nbsp;</div>
+			</li>
+			<li class="card card_faq">
+				<p class="card__title card__title_faq">Что такое франшиза в&nbsp;медицинской страховке?</p>
+				<div class="hover-content hover-content_faq">
+					<div class="hover-content__text hover-content__text_faq">
+						<p class="hover-content__title hover-content__title_faq">Что такое франшиза в&nbsp;медицинской страховке?</p>
+						<p class="hover-content__description hover-content__description_faq">При наступлении страхового случая турист должен оплатить указанную сумму франшизы самостоятельно. Расходы сверх данной суммы покрывает страховая компания.</p>
+					</div>
+				</div>
+
+				<div class="card__arrow">&nbsp;</div>
+			</li>
+			<li class="card card_faq">
+				<p class="card__title card__title_faq">Что делать при наступлении страхового случая?</p>
+				<div class="hover-content hover-content_faq">
+					<div class="hover-content__text hover-content__text_faq">
+						<p class="hover-content__title hover-content__title_faq">Что делать при наступлении страхового случая?</p>
+						<p class="hover-content__description hover-content__description_faq">В&nbsp;обязательном порядке при наступлении страхового случая туристу или заинтересованному лицу необходимо обращаться по&nbsp;телефонам круглосуточного центра Сервисной компании, указанным в&nbsp;страховом полисе, с&nbsp;целью организации медицинских, медико-транспортных и&nbsp;иных услуг, включенных в&nbsp;пакет страхового обслуживания.</p>
+					</div>
+				</div>
+
+				<div class="card__arrow">&nbsp;</div>
+			</li>
+		</ul>
+
+		<div class="text">
+			<p class="text__title">Расходы, покрываемые страховщиком. Расходы не&nbsp;покрываемые страховщиком.</p>
+			<p class="text__title">Исключения из&nbsp;страхования.</p>
+			<p class="text__main text__main_accent">Настоятельно рекомендуем до&nbsp;туристической поездки ознакомиться с&nbsp;Условиями/Правилами страхования, в&nbsp;особенности обратить внимание на&nbsp;риски, не&nbsp;покрываемые страховщиком.</p>
+			<p class="text__main">
+				Условия и&nbsp;Правила страхования каждой из&nbsp;страховых компаний содержат информацию о&nbsp;том, какие случаи относятся к&nbsp;страховым и&nbsp;включены в&nbsp;пакет услуг страховой компании. Существуют ограничения (т.е. риски или заболевания, не&nbsp;покрываемые страховщиком). У&nbsp;каждой страховой компании самостоятельные условия страхования, те&nbsp;или иные риски или исключения возможны к&nbsp;дополнительному
+				страхованию. Риски и&nbsp;исключения из&nbsp;страхования, не&nbsp;оплаченные специальной дополнительной премией и&nbsp;не&nbsp;оговоренные по&nbsp;тексту страхового полиса, не&nbsp;входят в&nbsp;пакет услуг страховой компании.
+			</p>
+			<p class="text__main">CORAL TRAVEL предоставляет сервис дополнительного страхования в&nbsp;отношении следующих рисков и&nbsp;исключений:</p>
+			<ul class="text__list">
+				<li class="text__main">страховые случаи, произошедшие в&nbsp;период занятий активным отдыхом (Страховая компания &laquo;Согласие&raquo;, ОСАО &laquo;ВСК&raquo;)</li>
+				<li class="text__main">страховые случаи, произошедшие в&nbsp;период занятий спортом (Страховая компания &laquo;Согласие&raquo;, ОСАО &laquo;ВСК&raquo;, СПАО &laquo;ИНГОССТРАХ&raquo;, ООО &laquo;Зетта Страхование&raquo;).</li>
+			</ul>
+			<p class="text__main">
+				<span>
+					Настоятельно рекомендуем произвести страхование по&nbsp;вышеуказанным дополнительным рискам, если в&nbsp;период отдыха турист планирует заниматься активными видами развлечений и&nbsp;спорта. Условия страхования каждой страховой компании содержат информацию об&nbsp;активном отдыхе и&nbsp;спортивных мероприятиях, какие не&nbsp;включены в&nbsp;базовое страхование, но&nbsp;возможны к&nbsp;дополнительному страхованию
+					с&nbsp;доплатой страховой премии.
+				</span>
+			</p>
+			<p class="text__main"><span>При необходимости&nbsp;Вы можете получить консультацию по&nbsp;данному вопросу у&nbsp;специалистов бронирования CORAL TRAVEL.</span></p>
+			<p class="text__main"><span>У&nbsp;застрахованного также имеется возможность произвести иное дополнительное страхование, обратившись непосредственно в&nbsp;страховую компанию.</span></p>
+			<p class="text__main">Для Вашего удобства, полного и&nbsp;подробного информирования мы&nbsp;опубликовали Правила и&nbsp;условия страховых компаний в&nbsp;разделах, посвященных каждой страховой компании. Эти разделы содержат также краткую информацию об&nbsp;условиях страхования, контакты страховых компаний для получения справочной информации, выяснения вопросов дополнительного страхования, заявления рекламаций.</p>
+			<p class="text__title">Обратите внимание.</p>
+			<p class="text__main">Страховые услуги оказываются только на&nbsp;территории страны временного пребывания туриста. Даты начала срока действия страхования и&nbsp;его окончания совпадают с&nbsp;датами прибытия туристов на&nbsp;территорию страны временного пребывания и&nbsp;их&nbsp;убытия из&nbsp;страны временного пребывания.</p>
+			<p class="text__main">
+				Правила (условия) страхования страховых компаний содержат полную и&nbsp;точную информацию о&nbsp;страховых услугах страховой компании, используемых терминах, в&nbsp;том числе информацию о&nbsp;расходах застрахованного, покрываемых страховщиком по&nbsp;страховому полису; о&nbsp;расходах застрахованного не&nbsp;покрываемых страховщиком; порядке определения срока действия договора страхования, франшизе, страховой сумме, действиях
+				сторон при наступлении страхового случая, исключениях из&nbsp;страхования и&nbsp;иные условия страхования, действующие в&nbsp;конкретной страховой компании. Более подробную информацию вы&nbsp;можете получить по&nbsp;нижеуказанным телефонам страховых компаний или на&nbsp;их&nbsp;официальных сайтах.
+			</p>
+		</div>
+
+		<ul class="cards">
+			<li class="card card_simple" id="soglasie">
+				<a href="#">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/soglasie.png" alt="Туристическая страховка Согласие" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="ingosstrah">
+				<a href="#">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/ingosstrah.png" alt="Туристическая страховка Ингосстрах" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="vsk">
+				<a href="">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/vsk.png" alt="Туристическая страховка ВСК страхование" class="card__image" />
+				</a>
+			</li>
+			<li class="card card_simple" id="zetta">
+				<a href="">
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/medical-insurance/zetta.png" alt="Туристическая страховка Zetta" class="card__image" />
+				</a>
+			</li>
+		</ul>
+
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="../main/">К&nbsp;разделу Полезная информация</a>
+		</div>
+
+		<div class="info-popup" id="soglasie">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/soglasie_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Медицинское страхование страховой компании ООО &laquo;СК&nbsp;&laquo;Согласие&raquo;</p>
+						<p class="text__main">
+							ООО &laquo;СК&nbsp;&laquo;Согласие&raquo; успешно ведет свою деятельность на&nbsp;страховом рынке уже более 15&nbsp;лет. В&nbsp;соответствии с&nbsp;Лицензиями С &#8470;&nbsp;1307 77&nbsp;и&nbsp;П &#8470;&nbsp;1307 77&nbsp;Минфина РФ&nbsp;Компания успешно осуществляет более 90&nbsp;видов добровольного и&nbsp;обязательного страхования. Компания занимает лидирующие позиции на&nbsp;страховом рынке России; рейтинг
+							надежности А+&nbsp;+(Исключительно высокий уровень надежности). Наличие разветвленной сети продаж, насчитывающей 709&nbsp;подразделений, позволяет Компании осуществлять страховую защиту имущественных интересов клиентов практически на&nbsp;всей территории Российской Федерации.
+						</p>
+						<p class="text__main">
+							Главный офис Компании находится по&nbsp;адресу: <br />
+							Россия, 129110, г. Москва, ул. Гиляровского&nbsp;42. Телефон: <a class="card__download-link" href="tel:+74957390101">+7 (495) 739-01-01</a>
+						</p>
+						<p class="text__main">
+							Контактные телефоны Департамента страхования в&nbsp;туристической индустрии ООО &laquo;СК&nbsp;&laquo;Согласие&raquo;: <br />
+							Телефон: <a href="tel:+74957390101" class="card__download-link">+7 (495) 739-01-01</a><br />
+							Управление урегулирования убытков&nbsp;&mdash; доб.&nbsp;9906 <br />
+							Сайт ООО &laquo;СК&nbsp;&laquo;Согласие&raquo;&nbsp;&mdash; <a href="https://www.soglasie.ru/" rel="nofollow" target="_blank" class="card__download-link">www.soglasie.ru</a>
+						</p>
+						<p class="text__main">Правила страхования граждан, выезжающих за&nbsp;пределы постоянного места (<a href="https://cdn.coral.ru/content/doc/legal/insurance_rules.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">
+							Условия страхования СК&nbsp;&laquo;Согласие&raquo; (Турция) (<a href="https://cdn.coral.ru/content/doc/legal/pravila_soglasie_turkey.pdf" target="_blank" class="card__download-link">PDF</a>) <br />
+							Условия страхования СК&nbsp;&laquo;Согласие&raquo; (Иные направления) (<a href="https://cdn.coral.ru/content/doc/legal/pravila_soglasie_other.pdf" target="_blank" class="card__download-link">PDF</a>)
+						</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Турцию (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_29.07.20.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;ОАЭ (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_uae.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Египет (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_egypt.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Грецию (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_greece.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам на&nbsp;Кипр (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_cyprus.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СК&nbsp;&laquo;Согласие&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам на&nbsp;Кубу (<a href="https://cdn.coral.ru/content/doc/legal/soglasie_covid19_cuba_1904.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Страховая компания Согласие обеспечивает страхованием туристов CORAL TRAVEL, направляющихся по&nbsp;маршрутам туров: Андорра, Азербайджан, Армения, Бахрейн, Болгария, Беларусь, Италия, Испания, Израиль, Индия, Кипр, Куба, Кения, Марокко, ОАЭ, Таиланд, Турция, Черногория, Узбекистан, Хорватия, Шри-Ланка.</p>
+						<p class="text__main">
+							<span>Направление: Турция</span> <br />
+							Страховая сумма не&nbsp;менее 30000 у.е.; франшиза 25&nbsp;у.е.
+						</p>
+						<p class="text__main">
+							<span>Направления: Болгария, Египет, Таиланд, Израиль, Индия, Куба, Шри-Ланка, ОАЭ, Бахрейн, Кения.</span> <br />
+							Страховая сумма не&nbsp;менее 30000 у.е.; франшиза 30&nbsp;у.е. <br />
+						</p>
+						<p class="text__main">
+							<span>Направления: Испания, Греция, Италия, Черногория, Хорватия, Кипр, Андорра, Марокко, Азербайджан, Армения, Беларусь, Узбекистан.</span> <br />
+							Страховая сумма не&nbsp;менее 35000 у.е.; франшиза 0&nbsp;у.е.
+						</p>
+						<p class="text__main">
+							Базовая страховая программа страховой компании Согласие, включаемая в&nbsp;турпродукт&nbsp;&mdash; &laquo;TI&raquo;, см. соответствующую строку в&nbsp;графе страхового полиса &laquo;код&raquo;. <br />
+							Под термином&nbsp;TI понимается вид страхования travel insurance&nbsp;&mdash; пребывание с&nbsp;туристическими&nbsp;/ деловыми целями за&nbsp;пределами постоянного места жительства, в&nbsp;том числе занятия активными видами деятельности: самодеятельный и&nbsp;спортивный туризм; плавание с&nbsp;трубкой и&nbsp;маской под поверхностью воды (сноркелинг), в&nbsp;том числе подводная охота; подвижные игры спортивного
+							характера на&nbsp;суше и&nbsp;в&nbsp;воде; посещение водных аттракционов, аквапарков, катание с&nbsp;водных горок, прыжки в&nbsp;воду с&nbsp;берега или в&nbsp;бассейн; катание или путешествие на&nbsp;лодках (гребных, моторных, парусных), плотах и&nbsp;маломерных судах; поездки (катание) на&nbsp;велосипедах всех типов, водных мотоциклах, водных лыжах, развлечения на&nbsp;воде с&nbsp;использованием буксируемых
+							плавательных средств или парашюта; пешие восхождения (трэкинг) на&nbsp;высоту до&nbsp;1&nbsp;500&nbsp;метров, организованные экскурсии по&nbsp;пещерам; поездки и&nbsp;путешествия на&nbsp;автомашинах внедорожного класса (джип-сафари); поездки (катание, экскурсии) на&nbsp;лошадях и&nbsp;других животных.
+						</p>
+						<p class="text__main">Дополнительное страхование страховой компании.</p>
+						<p class="text__main"><span>!</span> К&nbsp;турам по&nbsp;направлениям Испания, Греция, Кипр, Марокко, Черногория, Хорватия предлагается программа комплексного страхования, включающая в&nbsp;себя:</p>
+						<ul class="text__list">
+							<li class="text__main">безфраншизное медицинское страхование с&nbsp;увеличенной в&nbsp;сравнении со&nbsp;стандартной страховой суммой покрытия&nbsp;&mdash; 40&nbsp;000 у.е.;</li>
+							<li class="text__main">страхование по&nbsp;риску несчастный случай, страховая сумма выплаты до&nbsp;3&nbsp;000 у.е. (выплата денежных средств в&nbsp;случае несчастного случая, произошедшего в&nbsp;период пребывания на&nbsp;территории страхования: телесные повреждения (травма), инвалидность);</li>
+							<li class="text__main">
+								страхование багажа по&nbsp;вине компании-перевозчика со&nbsp;страховой суммой покрытия 500 у.е (утрата или гибель багажа по&nbsp;вине компании-перевозчика, при поездках за&nbsp;границу, по&nbsp;причинам: пожара, взрыва, мер, принятых для тушения пожара; кражи с&nbsp;незаконным проникновением в&nbsp;помещение либо иное хранилище, умышленного уничтожения (повреждения) третьими лицами; аварии транспортного средства);
+							</li>
+							<li class="text__main">страхование гражданской ответственности со&nbsp;страховой суммой покрытия 3&nbsp;000 у.е. (возмещение вреда, причиненного застрахованным лицом третьим лицам).</li>
+						</ul>
+						<p class="text__main">Условия страхования по&nbsp;программе комплексного страхования (<a href="http://agency.coral.ru/engine/files/editors/File/Legal/insurance/rules_soglasie.pdf" target="_blank" class="card__download-link">PDF</a>) содержат расширенную информацию по&nbsp;указанным видам страхования.</p>
+						<p class="text__main">
+							<span>!</span> Если турист имеет желание получить страховое обслуживание без франшизы (направление Болгария, Таиланд, Турция, Израиль, Индия, Куба, Шри-Ланка, ОАЭ, Бахрейн, Марокко, Египет, Кения) или планирует заниматься в&nbsp;период отдыха активными видами отдыха (направление Болгария, Таиланд, Испания, Греция, Грузия, Марокко, Египет, ОАЭ, Бахрейн, Италия, Черногория. Кипр, Хорватия, Андорра, Кения),
+							не&nbsp;включенными в&nbsp;базовое страхование (TI), Вы&nbsp;имеете возможность забронировать в&nbsp;CORAL TRAVEL страховой полис &laquo;активный отдых&raquo;. При заказе и&nbsp;оплате данной страховой услуги, код страховой программы страхового полиса изменится. Вместо кода страховой программы &laquo;TI&raquo; по&nbsp;тексту страхового полиса будет указан код &laquo;AL&raquo; &laquo;активный отдых/ active
+							leisure&raquo;, франшиза по&nbsp;таким полисам страховой компанией не&nbsp;применяется.
+						</p>
+						<p class="text__main">Также полис&nbsp;AL (active leisure) дополняет базовую страховую программу страховой компании Согласие (&laquo;TI&raquo;) рисками, связанными с&nbsp;физической нагрузкой с&nbsp;повышенным риском травматизма: <span>поездки (катание) на&nbsp;мопедах, мотороллерах, скутерах, мотоциклах, квадроциклах, снегоходах; поездки и&nbsp;путешествия на&nbsp;спортивных автомобилях, участие в&nbsp;сафари</span>.</p>
+						<p class="text__main">Если турист планирует заниматься в&nbsp;период отдыха спортивными состязаниями, горными лыжами, дайвингом и&nbsp;пр., имеется возможность забронировать страховой полис с&nbsp;кодом &laquo;SR&raquo; &laquo;спортивный риск&raquo;.</p>
+						<p class="text__main"><span>SR&nbsp;(sport risks)</span>&nbsp;&mdash; занятие спортом во&nbsp;время пребывания за&nbsp;пределами постоянного места жительства. При наступлении страхового случая оплачиваются расходы, предусмотренные договором страхования, в&nbsp;том числе расходы на&nbsp;лечение повреждений, полученных Застрахованным в&nbsp;результате занятия профессиональным или любительским спортом.</p>
+						<p class="text__main">
+							Если Вами будет дополнительно забронирован страховой полис с&nbsp;кодом &laquo;SR&raquo;, то&nbsp;такие туристы дополнительно будут застрахованы по&nbsp;рискам, возникающим результате занятия Застрахованного лица на&nbsp;профессиональном или любительском уровне любыми видами спорта (спортивные мероприятия, соревнования, подготовка к&nbsp;ним, выступления), включая катание с&nbsp;гор на&nbsp;лыжах, санях, сноубордах,
+							снегоходах, рафтинг, дайвинг, альпинизм, воздушные виды спорта (в&nbsp;том числе прыжки и&nbsp;полеты на&nbsp;парашюте), полеты Застрахованного на&nbsp;любом летательном аппарате (кроме полетов в&nbsp;качестве пассажира на&nbsp;воздушном судне гражданской авиации в&nbsp;соответствии с&nbsp;приобретенным билетом). Код SR&nbsp;применяется к&nbsp;тарифу &laquo;TI&raquo;, т.е. базовые условия страхования + спортивные
+							риски.
+						</p>
+						<p class="text__main"><span>В&nbsp;пакет горнолыжных туров в&nbsp;Болгарию и&nbsp;Андорру входит &laquo;Базовое медицинское страхование&raquo; + &laquo;Спортивные риски&raquo; + &laquo;Гражданская ответственность&raquo;.</span></p>
+						<p class="text__main"><span>Сервисные компании страховой компании &laquo;Согласие&raquo;.</span></p>
+						<p class="text__main"><span>Направления: Турция, Болгария, Испания</span></p>
+						<p class="text__main"><span>Сервисная компания &laquo;Kaliptus Medical Organization&raquo;</span></p>
+						<p class="text__main">
+							<span>Контакты круглосуточного центра:</span><br />
+							Турция: 248&nbsp;14&nbsp;74&nbsp;&mdash; для звонков из&nbsp;Анталии и&nbsp;пригородов; <a href="tel:+902422481474" class="card__download-link">+90&nbsp;242&nbsp;248&nbsp;14&nbsp;74</a>&nbsp;&mdash; для международных (междугородних) звонков. <br />
+							Испания: <a href="tel:+34931807300" class="card__download-link">+34&nbsp;931&nbsp;807&nbsp;300</a>, <a href="tel:+34911876794" class="card__download-link">+34&nbsp;911&nbsp;876&nbsp;794</a> <br />
+							Болгария: <a href="tel:+35956916992" class="card__download-link">+3&nbsp;595&nbsp;691&nbsp;69&nbsp;92</a>
+						</p>
+						<p class="text__main"><span>Направление: Египет</span></p>
+						<p class="text__main"><span>Сервисная компания LDM Liga of&nbsp;Defence-Medical Assistance Limited&nbsp;s.&nbsp;r.&nbsp;o.</span></p>
+						<p class="text__main">
+							Контакты сервисной компании: <a href="tel:+74951337667" class="card__download-link">+7&nbsp;495&nbsp;133&nbsp;76&nbsp;67</a>; <a href="tel:+74951331086" class="card__download-link">+7&nbsp;495&nbsp;133&nbsp;10&nbsp;86</a>. <br />
+							WhatsApp и&nbsp;Viber: +7&nbsp;985&nbsp;109&nbsp;85&nbsp;77 <br />
+							Сайт <a href="https://www.ldm-assistance.com/en/turist.php" rel="nofollow" target="_blank" class="card__download-link">www.ldm-assistance.com</a>
+						</p>
+						<p class="text__main"><span>Направления: Андорра, Италия, Кипр, Марокко, Черногория, Хорватия, Азербайджан, Армения, Беларусь, Узбекистан.</span></p>
+						<p class="text__main"><span>Сервисная компания &laquo;Savitar Group&raquo;</span></p>
+						<p class="text__main">
+							Круглосуточный контактный центр: <br />
+							<a href="tel:+74959871775" class="card__download-link">+ 7&nbsp;(495)&nbsp;987&nbsp;17&nbsp;75</a> <br />
+							Если турист находится на&nbsp;территории страны, указанной выше, имеется также возможность обращаться по&nbsp;телефону в&nbsp;стране пребывания: <br />
+							Италия: <a href="tel:+390236311466" class="card__download-link">+39&nbsp;02&nbsp;363&nbsp;11&nbsp;466</a>; <br />
+							Кипр: <a href="tel:+35724030050" class="card__download-link">+357&nbsp;24&nbsp;03&nbsp;00&nbsp;50</a>.
+						</p>
+						<p class="text__main"><span>Направления: Бахрейн, Греция, ОАЭ, Израиль, Индия, Куба, Шри-Ланка, Кения, Таиланд.</span></p>
+						<p class="text__main"><span>Сервисная компания &laquo;AP&nbsp;Companies&raquo;</span></p>
+						<p class="text__main">
+							Круглосуточный контактный центр: <a href="tel:+74951521515" class="card__download-link">+7&nbsp;(495)&nbsp;152&nbsp;15&nbsp;15</a> <br />
+							Если турист находится на&nbsp;территории Израиля, имеется также возможность обращаться по&nbsp;телефону в&nbsp;стране пребывания: <br />
+							Израиль: <a href="tel:+97239155759" class="card__download-link">+972&nbsp;3&nbsp;9155759</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="ingosstrah">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/ingosstrah_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Медицинское страхование страховой компании СПАО &laquo;Ингосстрах&raquo;</p>
+						<p class="text__main">
+							<span>СПАО &laquo;Ингосстрах&raquo;</span> <br />
+							Управление страхования путешествующих 117997, Россия, Москва, ул. Большая Тульская, 10, стр.9 Часы работы: 09:00&nbsp;&mdash; 18:00 пн.-чт., 09:00&nbsp;&mdash; 16:45&nbsp;пт. <br />
+							Телефоны: <br />
+							Продажа полисов и&nbsp;консультации клиентов&nbsp;&mdash; <a href="tel:+74959565555" class="card__download-link">+7&nbsp;(495)&nbsp;956&nbsp;55&nbsp;55</a> <br />
+							Рассмотрение и&nbsp;урегулирование претензий&nbsp;&mdash; <a href="tel:+7495232346569" class="card__download-link">+7&nbsp;(495)&nbsp;232&nbsp;34&nbsp;65&nbsp;69</a> <br />
+							Факс&nbsp;&mdash; +7&nbsp;(495)&nbsp;232&nbsp;34&nbsp;62 <br />
+						</p>
+						<p class="text__main">
+							E-mail: <br />
+							<a href="mailto:tourclaims@ingos.ru" target="_blank" class="card__download-link">tourclaims@ingos.ru</a> (по&nbsp;вопросам урегулирования претензий) <br />
+							<a href="mailto:travel@ingos.ru" target="_blank" class="card__download-link">travel@ingos.ru</a> (по&nbsp;вопросам страхования)
+						</p>
+						<p class="text__main">Комплексные правила страхования путешествующих (<a href="https://cdn.coral.ru/content/doc/legal/complex_ingos.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Правила страхования СПАО &laquo;Ингосстрах&raquo; (Россия) (<a href="https://cdn.coral.ru/content/doc/legal/ingosrus.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СПАО &laquo;Ингосстрах&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Мальдивскую Республику и&nbsp;Танзанию (<a href="https://cdn.coral.ru/content/doc/legal/ingostrah_covid19.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">Информация СПАО &laquo;Ингосстрах&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам на&nbsp;Сейшельские острова (<a href="https://cdn.coral.ru/content/doc/legal/ingostrah_covid19_seychelles.pdf" target="_blank" class="card__download-link">PDF</a>)</p>
+						<p class="text__main">
+							<span> Страховая компания Ингосстрах обеспечивает страхованием туристов CORAL TRAVEL, направляющихся по&nbsp;маршрутам туров:</span> <br />
+							Камбоджа, Китай, Доминиканская республика, Мексика, Индонезия, Израиль, Иордания, Мальдивские острова, Сейшельские острова, Маврикий, Танзания, Сингапур, Шри-Ланка, Россия. <br />
+							<span> Направление Россия:</span> Страховая сумма 480&nbsp;000&nbsp;рублей; франшиза 0&nbsp;рублей. <br />
+							<span> Иные направления:</span> Страховая сумма 40000 у.е.; франшиза 30&nbsp;у.е. <br />
+							При страховом случае, необходимо обращаться по&nbsp;телефонам, указанным в&nbsp;страховом полисе в&nbsp;зависимости от&nbsp;страны пребывания туриста.
+						</p>
+						<p class="text__main">
+							<span>Сервисные центры страховой компании &laquo;Ингосстрах&raquo;:</span>
+						</p>
+						<p class="text__main">
+							<span>Доминиканская Республика</span> <br />
+							Телефоны: <a href="tel:+902423102824" class="card__download-link">+90&nbsp;242&nbsp;310&nbsp;28&nbsp;24</a>; <a href="tel:+74996092626" class="card__download-link">+7&nbsp;499&nbsp;609&nbsp;26&nbsp;26</a> <br />
+							В&nbsp;случае невозможности дозвониться по&nbsp;указанными телефонам, информацию о&nbsp;страховом случае можно отправить письмом по&nbsp;электронной почте на&nbsp;адрес <a href="mailto:international@remed.com.tr" class="card__download-link">international@remed.com.tr</a>. <br />
+							Whatsapp, Viber, Telegram, IMO: +7&nbsp;916&nbsp;488&nbsp;51&nbsp;85; +90&nbsp;531&nbsp;250&nbsp;45&nbsp;96
+						</p>
+						<p class="text__main">
+							<span>Россия</span> <br />
+							LTD &laquo;SMILE SERVICE&raquo; <a href="https://www.smileservice.com/" rel="nofollow" target="_blank" class="card__download-link">www.smileservice.com</a> <br />
+							Единые экстренные телефоны для оказания бесплатной медицинской помощи: <br />
+							<a href="tel:+74959214661" class="card__download-link">+7&nbsp;(495)&nbsp;921&nbsp;46&nbsp;61</a> (Москва); <a href="tel:+442033320072" class="card__download-link">+44&nbsp;20&nbsp;333&nbsp;200&nbsp;72 </a> <br />
+							В&nbsp;случае невозможности дозвониться по&nbsp;указанными телефонам, информацию о&nbsp;страховом случае можно отправить письмом по&nbsp;электронной почте на&nbsp;адрес <a href="mailto:tur@smileassistance.com" target="_blank" class="card__download-link">tur@smileassistance.com</a>, Skype: smile.ingos <br />
+						</p>
+						<p class="text__main">
+							<span>Остальные страны</span> <br />
+							Телефоны: <a href="tel:+902423102824" class="card__download-link">+90&nbsp;242&nbsp;310&nbsp;28&nbsp;24</a>; <a href="tel:+74996092626" class="card__download-link">+7&nbsp;499&nbsp;609&nbsp;26&nbsp;26</a> <br />
+							В&nbsp;случае невозможности дозвониться по&nbsp;указанными телефонам, информацию о&nbsp;страховом случае можно отправить письмом по&nbsp;электронной почте на&nbsp;адрес international@remed.com.tr, Whatsapp, Viber, Telegram, IMO: +7&nbsp;916&nbsp;488 51 85; +90&nbsp;531&nbsp;250 45&nbsp;96
+						</p>
+
+						В&nbsp;случае невозможности дозвониться по&nbsp;указанными телефонам, информацию о&nbsp;страховом случае можно отправить письмом по&nbsp;электронной почте на&nbsp;адрес <a href="mailto:international@remed.com.tr" target="_blank" class="card__download-link">international@remed.com.tr</a>, Whatsapp, Viber, Telegram, IMO: +7&nbsp;916&nbsp;488&nbsp;51&nbsp;85; +90&nbsp;531&nbsp;250&nbsp;45&nbsp;96
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="vsk">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/vsk_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Медицинское страхование страховой компании СОАО &laquo;ВСК&raquo;</p>
+						<p class="text__main">
+							СОАО &laquo;ВСК&raquo; 121552, г. Москва, Островная&nbsp;ул., д.&nbsp;4 <br />
+							Телефоны: <a href="tel:+74957274444" class="card__download-link">+74&nbsp;(495)4&nbsp;727&nbsp;44&nbsp;44</a>; <a href="tel:+74957852776" class="card__download-link">+7&nbsp;(495)&nbsp;785&nbsp;27&nbsp;76</a>; <br />
+							Факс: +7&nbsp;(495)&nbsp;624&nbsp;34&nbsp;34 <br />
+							E-mail: <a href="mailto:info@vsk.ru" target="_blank" class="card__download-link">info@vsk.ru</a> <br />
+							<a href="https://www.vsk.ru/" rel="nofollow" target="_blank" class="card__download-link">www.vsk.ru</a> <br />
+							Условия страхования СОАО &laquo;ВСК&raquo; (<a href="http://agency.coral.ru/engine/files/editors/File/Legal/insurance/electronic-policy-conditions-vsk.pdf" target="_blank" class="card__download-link">PDF</a>)
+						</p>
+						<p class="text__main">
+							<span>Туры по&nbsp;направлению Австрия могут включать страховой полис страховой компании &laquo;ВСК&raquo;.</span><br />
+							Страховая сумма 35&nbsp;000 у.е.; франшиза 0.
+						</p>
+						<p class="text__main">
+							<span>Базовая страховая программа включает:</span> <br />
+							медицинские расходы, исключая расходы на&nbsp;оказание экстренной стоматологической помощи; <br />
+							расходы по&nbsp;медицинской транспортировке; <br />
+							репатриацию тела в&nbsp;случае смерти Застрахованного; <br />
+							необходимость досрочного возвращения Застрахованного в&nbsp;экстренной ситуации; <br />
+							необходимость эвакуации детей, сопровождающих Застрахованного;
+						</p>
+						<p class="text__main">
+							При страховом случае, необходимо обращаться по&nbsp;телефонам, указанным в&nbsp;страховом полисе в&nbsp;зависимости от&nbsp;страны пребывания туриста. Базовая страховая программа страховой компании &laquo;ВСК&raquo; не&nbsp;включает в&nbsp;себя риски &laquo;активный отдых&raquo; и&nbsp;&laquo;спорт&raquo;. Если турист планирует заниматься в&nbsp;период отдыха активными видами отдыха, игровыми мероприятиями, спортивными
+							состязаниями, любительским спортом (занятия любительскими и&nbsp;экстремальными видами спорта, йога, катание на&nbsp;горных лыжах, сноуборд, прыжки с&nbsp;парашютом, полеты на&nbsp;дельтаплане или параплане, пилотирование летательных аппаратов, скалолазание, альпинизм, дайвинг, горные лыжи), имеется возможность забронировать страховой полис &laquo;активный отдых&raquo; или &laquo;спорт&raquo;.
+						</p>
+						<p class="text__main">
+							Под активным отдыхом понимается катание на&nbsp;водных мотоциклах, водных лыжах, развлечения на&nbsp;воде с&nbsp;использованием буксируемых (либо передвигающихся самостоятельно) плавательных средств, парашюта, любые игровые и&nbsp;спортивные мероприятия с&nbsp;использованием естественной или искусственной водной среды, катание в&nbsp;аквапарках и&nbsp;на&nbsp;водных горках; поездки на&nbsp;любых механических,
+							электронных, гужевых транспортных средствах (в&nbsp;т.ч. велосипедах, мотоциклах, мотороллерах, мопедах, скутерах, квадроциклах), использование для передвижения различных видов животных, сафари, охота, рыбалка, спортивные и&nbsp;игровые мероприятия (независимо от&nbsp;числа участников), развлекательные мероприятия, организованные персоналом отеля, сопряженные с&nbsp;повышенным риском (кроме танцев на&nbsp;официально
+							организованной дискотеке). Под игровыми мероприятиями следует понимать последовательное выполнение ряда манипуляций или движений группой лиц с&nbsp;целью самореализации, выходящей за&nbsp;рамки его актуальных социальных ролей.
+						</p>
+						<p class="text__main"><span>В&nbsp;пакет горнолыжных туров входит &laquo;Базовое медицинское страхование&raquo; + &laquo;Спортивные риски&raquo; + &laquo;Гражданская ответственность&raquo;</span></p>
+						<p class="text__main"><span>Сервисные центры страховой компании &laquo;ВСК&raquo;:</span></p>
+						<p class="text__main">
+							Австрия <br />
+							Med Assist International <br />
+							24h@mldc-nt.ru <br />
+							Телефон для связи по&nbsp;СМС +7&nbsp;903&nbsp;195&nbsp;86&nbsp;86 <br />
+							Телефон для связи: <a href="tel:+74959560907" class="card__download-link">+7&nbsp;495&nbsp;956&nbsp;09&nbsp;07</a>
+						</p>
+						<p class="text__main">Дополнительная информация по&nbsp;условиям и&nbsp;правилам страхования содержится по&nbsp;тексту Правил/условий страхования, а&nbsp;также возможны к&nbsp;уточнению у&nbsp;специалистов страховых компаний. Реквизиты каждой страховой компании содержатся по&nbsp;тексту настоящей страницы, а&nbsp;также имеются в&nbsp;публичных источниках информации.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-popup" id="zetta">
+			<div class="info-popup__window">
+				<button class="info-popup__close-button" aria-label="Закрыть всплывающее окно">&nbsp;</button>
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/zetta_logo.png" alt="Страхование туристов согласие" class="info-popup__logo" />
+				<div class="info-popup__text-wrapper">
+					<div class="info-popup__text text">
+						<p class="text__title">Медицинское страхование страховой компании ООО &laquo;Зетта Страхование&raquo;</p>
+						<p class="text__main">
+							Адрес центрального офиса ООО &laquo;Зетта Страхование&raquo; <br />
+							Роcсия, 121087, г. Москва, Багрaтионовский проезд, дом&nbsp;7, корп.&nbsp;11 <br />
+							Метро: Багратионовская, Фили <br />
+							Федеральный контакт-центр Телефон: <a href="tel:+78007007707" class="card__download-link">8 (800) 700-77-07</a> <br />
+							e-mail: <a href="mailto:info@zettains.ru" target="_blank" class="card__download-link">info@zettains.ru</a> <br />
+							<a href="https://zettains.ru/" rel="nofollow" target="_blank" class="card__download-link">www.zettains.ru</a> <br />
+							<span>Условия страхования (<a href="http://agency.coral.ru/engine/files/editors/File/Legal/insurance/zetta0616.pdf" target="_blank" class="card__download-link">PDF</a>)</span>
+						</p>
+						<p class="text__main">
+							<span>Информация ООО &laquo;Зетта Страхование&raquo; о&nbsp;покрытии COVID-19 при страховании по&nbsp;турам в&nbsp;Тунис (<a href="https://b2bcdn.coral.ru/Coral/p/doc/insurance/letter_tunisia_ins.pdf" target="_blank" class="card__download-link">PDF</a>)</span>
+						</p>
+						<p class="text__main">
+							ООО &laquo;Зетта Страхование&raquo; (Zetta Insurance Company Ltd)&nbsp;&mdash; универсальная страховая компания, которая ранее называлась ООО СК&nbsp;&laquo;Цюрих&raquo;, существует на&nbsp;российском рынке с&nbsp;1993&nbsp;года. С&nbsp;февраля 2015 года компания продолжила свою работу под брендом &laquo;Зетта Страхование&raquo;. ООО &laquo;Зетта Страхование&raquo; специализируется на&nbsp;обслуживании физических
+							и&nbsp;юридических лиц. В&nbsp;соответствии с&nbsp;Лицензиями ЦБ&nbsp;РФ&nbsp;СИ &#8470;&nbsp;1083, СЛ &#8470;&nbsp;1083, ОС &#8470;&nbsp;1083&nbsp;&mdash; 3, ОС &#8470;&nbsp;1083&nbsp;&mdash; 4, ОС &#8470;&nbsp;1083&nbsp;&mdash; 5, ОС &#8470;&nbsp;1083&nbsp;&mdash; 2&nbsp;и&nbsp;ПС &#8470;&nbsp;1083 Компания предоставляет более 90&nbsp;программ страхования и&nbsp;перестрахования. <br />
+							Надежность и&nbsp;финансовая устойчивость компании ООО &laquo;Зетта Страхование&raquo; подтверждена рейтинговым агентством &laquo;Эксперт РА&raquo;. Присвоен рейтинг надежности А+&nbsp;&laquo;Очень высокий уровень надежности&raquo;.
+						</p>
+						<p class="text__main">
+							<span>Туры по&nbsp;направлению Тунис, Вьетнам могут включать страховой полис страховой компании &laquo;Зетта Страхование&raquo;.</span> <br />
+							Страховая сумма 40&nbsp;000 у.е.; франшиза 30&nbsp;у.е.
+						</p>
+						<p class="text__main"><span>Базовая страховая программа включает:</span></p>
+						<ul class="text__list">
+							<li class="text__main">Экстренные медицинские расходы, включая расходы на&nbsp;оказание экстренной стоматологической помощи;</li>
+							<li class="text__main">расходы по&nbsp;медицинской транспортировке;</li>
+							<li class="text__main">репатриацию тела в&nbsp;случае смерти Застрахованного;</li>
+							<li class="text__main">необходимость эвакуации детей, сопровождающих Застрахованного;</li>
+						</ul>
+						<p class="text__main">
+							При страховом случае, необходимо обращаться по&nbsp;телефонам, указанным в&nbsp;страховом полисе в&nbsp;зависимости от&nbsp;страны пребывания туриста. Базовая страховая программа страховой компании ООО &laquo;Зетта Страхование&raquo; не&nbsp;включает в&nbsp;себя риски &laquo;активный отдых&raquo; и&nbsp;&laquo;спорт&raquo;. Если турист планирует заниматься в&nbsp;период отдыха активными видами отдыха, игровыми
+							мероприятиями, спортивными состязаниями, любительским спортом (занятия любительскими и&nbsp;экстремальными видами спорта, йога, катание на&nbsp;горных лыжах, сноуборд, прыжки с&nbsp;парашютом, полеты на&nbsp;дельтаплане или параплане, пилотирование летательных аппаратов, скалолазание, альпинизм, дайвинг, горные лыжи), имеется возможность забронировать страховой полис &laquo;активный отдых&raquo; или
+							&laquo;спорт&raquo;. В&nbsp;полисе обозначается в&nbsp;графе Особые условия/Special terms.
+						</p>
+						<p class="text__main">
+							Под <span>активным отдыхом</span> понимается&nbsp;&mdash; отдых, предусматривающий определенные физические нагрузки с&nbsp;повышенным риском травматизма: самодеятельный и&nbsp;спортивный туризм; охота (в&nbsp;том числе подводная); подвижные игры спортивного характера; посещение водных аттракционов, аквапарков, катание с&nbsp;водных горок, прыжки в&nbsp;воду; водные лыжи; катание или путешествие на&nbsp;лодках (гребных,
+							моторных), плотах, и&nbsp;маломерных судах; катание на&nbsp;велосипедах всех типов; катание на&nbsp;мопедах, мотороллерах, скутерах, мотоциклах, квадроциклах; водный мотоцикл; пешие восхождения, экскурсия по&nbsp;пещерам; поездки и&nbsp;путешествия на&nbsp;автомашинах внедорожного.
+						</p>
+						<p class="text__main">
+							Под <span>Спортом</span> понимается -серфинг, виндсерфинг, яхтинг, горные лыжи, сноубординг, поездки на&nbsp;снегоходе, хоккей, маунтинбайк, паркур, скейтбординг, кайтинг, тарзанка, каякинг, треккинг, занятия организованным (любительским) или профессиональным спортом (спорт&nbsp;&mdash; сфера деятельности как совокупность видов спорта, сложившаяся в&nbsp;форме соревнований и&nbsp;специальной практики подготовки
+							человека к&nbsp;ним), участие в&nbsp;любых соревнованиях, скачках, авто и&nbsp;мотогонках, парусных регатах, подводное плавание с&nbsp;использованием дыхательных аппаратов (дайвинг) и/или длительной задержкой дыхания (фри(скин)-дайвинг), клиф и&nbsp;хай-дайвингом, спуск в&nbsp;пещеры (спелеология).
+						</p>
+						<p class="text__main">Дополнительная информация по&nbsp;условиям и&nbsp;правилам страхования содержится по&nbsp;тексту Правил страхования, а&nbsp;также возможны к&nbsp;уточнению у&nbsp;специалистов страховых компаний. Реквизиты каждой страховой компании содержатся по&nbsp;тексту настоящей страницы, а&nbsp;также имеются в&nbsp;публичных источниках информации.</p>
+						<p class="text__main">
+							<span>Телефоны сервисных центров ООО &laquo;Зетта Страхование&raquo;:</span><br />
+							Для получения помощи по&nbsp;страховому полису застрахованному или заинтересованному лицу необходимо позвонить по&nbsp;телефону: <br />
+							<span>Тунис, Вьетнам</span> <br />
+							<span><a href="tel:+74951337667" class="card__download-link">+7&nbsp;495&nbsp;133&nbsp;76&nbsp;67</a>, <a href="tel:+74951331086" class="card__download-link">+7&nbsp;495&nbsp;133&nbsp;10&nbsp;86</a> (LDM&nbsp;Assistance)</span>
+						</p>
+						<p class="text__main">В&nbsp;случае если заказчик (турист) не&nbsp;заинтересован в&nbsp;страховании, предложенном при бронировании турпродукта, запросы принимаются на&nbsp;электронный адрес: <a href="mailto:russia@coral.ru" target="_blank" class="card__download-link">russia@coral.ru</a> (Россия), <a href="mailto:booking@coral.ru" target="_blank" class="card__download-link">booking@coral.ru</a> (выездные маршруты).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+			const popups = document.querySelectorAll(".info-popup");
+			const popupCards = document.querySelectorAll(".card_simple");
+			const tabsContainer = document.querySelector(".cards_three-columns_faq");
+			const tabs = tabsContainer.querySelectorAll(".card");
+
+			if (window.innerWidth < 1007) {
+				tabs.forEach((tab) => {
+					tab.addEventListener("click", function () {
+						toggleTab(tab);
+					});
+				});
+
+				function toggleTab(tab) {
+					tabs.forEach((t) => {
+						if (t.querySelector(".hover-content_faq").classList.contains("hover-content_faq_active") && t !== tab) {
+							t.querySelector(".hover-content_faq").classList.toggle("hover-content_faq_active");
+						}
+					});
+					tab.querySelector(".hover-content_faq").classList.toggle("hover-content_faq_active");
+				}
+			}
+
+			for (let i = 0; i < popups.length; i++) {
+				const currentPopup = popups.item(i);
+				const currentCloseButton = currentPopup.querySelector(".info-popup__close-button");
+
+				popupCards[i].addEventListener("click", (evt) => {
+					evt.preventDefault();
+					openModal(currentPopup);
+				});
+
+				currentCloseButton.addEventListener("click", () => {
+					closeModal(currentPopup);
+				});
+
+				currentPopup.addEventListener("click", (evt) => {
+					if (evt.type === "click") {
+						if (evt.target === evt.currentTarget) {
+							closeModal(currentPopup);
+						}
+					}
+				});
+			}
+
+			window.addEventListener("keyup", (evt) => {
+				if (evt.key === "Escape") {
+					closeModal(document.querySelector(".info-popup_opened"));
+				}
+			});
+
+			function closeModal(popup) {
+				popup.classList.remove("info-popup_opened");
+			}
+
+			function openModal(popup) {
+				popup.classList.add("info-popup_opened");
+			}
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+		</script>
+	</body>
+</html>

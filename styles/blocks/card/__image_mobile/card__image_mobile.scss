@@ -1,0 +1,11 @@
+.card__image_mobile {
+	display: none;
+
+	@media screen and (max-width: 768px) {
+		display: block;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 20px;
+        margin: 0;
+	}
+}

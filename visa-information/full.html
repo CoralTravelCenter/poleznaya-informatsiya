@@ -1,0 +1,647 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Виза</title>
+		<style>
+			h1 {
+				display: none !important;
+			}
+			.reset__flex {
+				display: block !important;
+				height: unset !important;
+				width: unset !important;
+				flex-direction: unset !important;
+				align-items: unset !important;
+				justify-content: unset !important;
+			}
+
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+
+			@media screen and (max-width: 768px) {
+				.banner__image {
+					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 20px;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none;
+				}
+			}
+
+			.cards {
+				display: flex;
+				flex: 0 0 25%;
+				width: calc(100% + 15px);
+				list-style: none;
+				margin: 0 0 60px -14px;
+				justify-content: space-between;
+				padding: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards {
+					max-width: calc(100% + 15px);
+					margin: 0 0 60px -15px;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.cards {
+					flex: 0 0 50%;
+					flex-wrap: wrap;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.cards {
+					flex: unset;
+					flex-direction: column;
+				}
+			}
+
+			.cards_grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				-moz-column-gap: 15px;
+				column-gap: 15px;
+				row-gap: 35px;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards_grid {
+					grid-template-columns: unset;
+					row-gap: 30px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+			}
+
+			.card {
+				max-width: 245px;
+				width: 100%;
+				min-height: 390px;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				transition: 0.3s;
+				border-radius: 20px !important;
+				border: none !important;
+			}
+			.card:hover .card__title {
+				visibility: hidden;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.card:hover .card__title {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.card:hover .hover-content {
+				visibility: visible;
+				opacity: 1;
+				transition: 0.3s;
+				pointer-events: auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.card:hover .hover-content .hover-content_faq {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+			.card:hover .card__image {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
+			@media screen and (max-width: 1006px) {
+				.card {
+					padding: 0 20px;
+					min-height: 40vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card {
+					max-width: calc(50% - 10px);
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card {
+					max-width: 100%;
+				}
+			}
+
+			.card__image-wrapper {
+				overflow: hidden;
+				border-radius: 20px;
+				margin: 0 0 20px 0;
+				position: relative;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__image-wrapper {
+					width: 100%;
+				}
+			}
+
+			.card_visa {
+				min-height: unset;
+				margin: 0 0 35px 0;
+				background-color: transparent !important;
+			}
+			.card_visa:hover .card__title {
+				visibility: visible !important;
+				opacity: 1 !important;
+				pointer-events: auto !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_visa {
+					padding: 0 !important;
+					width: 47%;
+					max-width: unset;
+					margin: 0;
+				}
+			}
+
+			.card__link {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-end;
+				text-decoration: none;
+				overflow: hidden;
+			}
+
+			.card__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #000000;
+				margin: 0 auto 50px auto;
+				transition: 0.3s;
+				max-width: 200px;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title {
+					font-size: 1.85vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title {
+					font-size: 3.3vw;
+					line-height: 1.2;
+					margin: 0 auto 25px auto;
+					width: calc(100% - 40px);
+					min-height: 8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card__title {
+					font-size: 5vw;
+				}
+			}
+
+			.card__title_no-margin {
+				margin: 0 auto;
+			}
+
+			.card__image {
+				width: 100%;
+				transition: 0.5s;
+				border-radius: 20px;
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/banner.png" alt="" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/banner_mobile.png" alt="" class="banner__image mobile" />
+		</div>
+		<ul class="cards cards_grid">
+			<li class="card card_visa">
+				<a href="/main/austria/austriavisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/austria.png" alt="Виза в Австрию" />
+					</div>
+					<p class="card__title card__title_no-margin">Австрия</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/andorra/andorravisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/andorra.png" alt="Виза в Андорру" />
+					</div>
+					<p class="card__title card__title_no-margin">Андорра</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/bahrein/bahreinvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/bahrein.png" alt="Виза в Бахрейн" />
+					</div>
+					<p class="card__title card__title_no-margin">Бахрейн</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/bulgaria/infoaboutvisabulgari/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/bolgaria.png" alt="Виза в Болгария" />
+					</div>
+					<p class="card__title card__title_no-margin">Болгария</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/vietnam/vietnamvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/vietnam.png" alt="Виза во Вьетнам" />
+					</div>
+					<p class="card__title card__title_no-margin">Вьетнам</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/greece/greecevisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/greece.png" alt="Виза в Грецию" />
+					</div>
+					<p class="card__title card__title_no-margin">Греция</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/dominikana/dominikanavisabelarus/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/dominicana.png" alt="Виза в Доминикану" />
+					</div>
+					<p class="card__title card__title_no-margin">Доминикана</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/egypt/egypvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/egypt.png" alt="Виза в Египет" />
+					</div>
+					<p class="card__title card__title_no-margin">Египет</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/israel/israelvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/izrael.png" alt="Виза в Израиль" />
+					</div>
+					<p class="card__title card__title_no-margin">Израиль</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/india/indiavisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/india.png" alt="Виза в Индию" />
+					</div>
+					<p class="card__title card__title_no-margin">Индия</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/bali/visabali/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/indonezia.png" alt="Виза в Индонезию" />
+					</div>
+					<p class="card__title card__title_no-margin">Индонезия</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/jordan/infoaboutvisaiordania/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/iordania.png" alt="Виза в Иорданию" />
+					</div>
+					<p class="card__title card__title_no-margin">Иордания</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/spain/spainvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/spain.png" alt="Виза в Испанию" />
+					</div>
+					<p class="card__title card__title_no-margin">Испания</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/italia/viza-v-italiu/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/italy.png" alt="Виза в Италию" />
+					</div>
+					<p class="card__title card__title_no-margin">Италия</p>
+				</a>
+			</li>
+			<!-- <li class="card card_visa">
+				<a href="#" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/qatar.png" alt="Виза в Катар" />
+					</div>
+					<p class="card__title card__title_no-margin">Катар</p>
+				</a>
+			</li> -->
+			<li class="card card_visa">
+				<a href="/kenya/viza-v-keniyu/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/keniya.png" alt="Виза в Кению" />
+					</div>
+					<p class="card__title card__title_no-margin">Кения</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/cyprus/viza-na-cyprus/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/kipr.png" alt="Виза на Кипр" />
+					</div>
+					<p class="card__title card__title_no-margin">Кипр</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/cuba/visacuba/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/cuba.png" alt="Виза на Кубу" />
+					</div>
+					<p class="card__title card__title_no-margin">Куба</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/maldives/maldivesvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/maldives.png" alt="Виза на Мальдивы" />
+					</div>
+					<p class="card__title card__title_no-margin">Мальдивы</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/mexico/mexicovisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/mexika.png" alt="Виза в Мексику" />
+					</div>
+					<p class="card__title card__title_no-margin">Мексика</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/mauritius/mauritiusvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/mavrikii.png" alt="Виза в Маврикий" />
+					</div>
+					<p class="card__title card__title_no-margin">Маврикий</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/morocco/moroccovisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/marokko.png" alt="Виза в Марокко" />
+					</div>
+					<p class="card__title card__title_no-margin">Марокко</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/uae/uaevisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/uae.png" alt="Виза в ОАЭ" />
+					</div>
+					<p class="card__title card__title_no-margin">ОАЭ</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/seychelles/seychellesvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/seashells.png" alt="Виза на Сейшелы" />
+					</div>
+					<p class="card__title card__title_no-margin">Сейшелы</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/singapore/singaporevisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/singapour.png" alt="Виза в Сингапур" />
+					</div>
+					<p class="card__title card__title_no-margin">Сингапур</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/thailand/visathai/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/thailand.png" alt="Виза в Таиланд" />
+					</div>
+					<p class="card__title card__title_no-margin">Таиланд</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/tanzania/tanzaniavisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/tanzania.png" alt="Виза в Танзанию" />
+					</div>
+					<p class="card__title card__title_no-margin">Танзания</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/tunis/tunisvisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/tunis.png" alt="Виза в Тунис" />
+					</div>
+					<p class="card__title card__title_no-margin">Тунис</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/turkey/infoaboutvisaturkey/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/turkey.png" alt="Виза в Турцию" />
+					</div>
+					<p class="card__title card__title_no-margin">Турция</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/uzbekistan/viza-v-uzbekistan/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/uzbekistan.png" alt="Виза в Узбекистан" />
+					</div>
+					<p class="card__title card__title_no-margin">Узбекистан</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/croatia/croatiavisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/horvatia.png" alt="Виза в Хорватию" />
+					</div>
+					<p class="card__title card__title_no-margin">Хорватия</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/chernogoriya/visa-chernogoriya/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/chernogoria.png" alt="Виза в Черногорию" />
+					</div>
+					<p class="card__title card__title_no-margin">Черногория</p>
+				</a>
+			</li>
+			<li class="card card_visa">
+				<a href="/main/srilanka/srilankavisa/" class="card__link">
+					<div class="card__image-wrapper">
+						<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/visa/shri-lanka.png" alt="Виза на Шри-Ланку" />
+					</div>
+					<p class="card__title card__title_no-margin">Шри-Ланка</p>
+				</a>
+			</li>
+		</ul>
+
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+		</div>
+
+		<script>
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+		</script>
+	</body>
+</html>

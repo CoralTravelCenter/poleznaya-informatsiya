@@ -1,0 +1,118 @@
+.form__wrapper {
+	display: flex;
+	margin: 0;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+
+	&:last-of-type {
+		margin: 0 !important;
+	}
+
+	@media screen and (max-width: 1439px) {
+		column-gap: 10px;
+	}
+
+	@media screen and (max-width: 1006px) {
+		min-height: unset !important;
+	}
+
+	@media screen and (max-width: 969px) {
+		margin: 0 0 30px 0 !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin: 0 0 15px 0 !important;
+	}
+}
+
+.price-input {
+	::after {
+		content: "₽";
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-family: "Museo Sans Cyrl";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 1;
+		color: #989898;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 15px 0 0;
+		z-index: 1;
+
+		@media screen and (max-width: 768px) {
+			font-size: 12px;
+			right: -5px;
+		}
+	}
+}
+
+.first-pay {
+	::after {
+		content: "%";
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-family: "Museo Sans Cyrl";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 1;
+		color: #989898;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 15px 0 0;
+		z-index: 1;
+
+		@media screen and (max-width: 768px) {
+			font-size: 12px;
+			right: -5px;
+		}
+	}
+}
+
+.months-select {
+	::after {
+		content: "";
+		position: absolute;
+		top: calc(50% - 14px / 2);
+		right: 15px;
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/arrow-down.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 28px;
+		height: 14px;
+		z-index: 1;
+		pointer-events: none;
+
+		@media screen and (max-width: 1006px) {
+			right: 5px;
+		}
+
+		@media screen and (max-width: 768px) {
+			top: calc(50% - 7px / 2);
+			width: 14px;
+			height: 7px;
+		}
+	}
+}
+
+#sber {
+	.form__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		min-height: 70px;
+		margin: 0 0 10px 0;
+
+		&:last-of-type {
+			margin: 0 !important;
+		}
+	}
+}

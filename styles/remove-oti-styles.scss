@@ -1,0 +1,15 @@
+h1 {
+	display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+	.contentLayout-BaseContainer .notcritical {
+		padding-top: 0 !important;
+	}
+
+	.contentLayout-BaseContainer .notcritical .container {
+		margin-top: 0 !important;
+	}
+}
+
+

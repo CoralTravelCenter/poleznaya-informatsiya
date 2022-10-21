@@ -1,0 +1,871 @@
+<style>
+	html {
+		background-color: #f1f7fc;
+	}
+
+	h1 {
+		display: none !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		.contentLayout-BaseContainer .notcritical {
+			padding-top: 0 !important;
+		}
+		.contentLayout-BaseContainer .notcritical .container {
+			margin-top: 0 !important;
+		}
+	}
+	.page {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.banner {
+		margin: 0 0 55px 0;
+	}
+
+	.banner__image {
+		max-width: 1024px;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.banner__image {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.desktop {
+			display: none !important;
+		}
+	}
+
+	.mobile {
+		width: 100%;
+	}
+	@media screen and (min-width: 769px) {
+		.mobile {
+			display: none !important;
+		}
+	}
+
+	.lead {
+		margin: 0 auto 60px auto;
+		max-width: 800px;
+	}
+	@media screen and (max-width: 900px) {
+		.lead {
+			max-width: calc(100% - 100px);
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead {
+			max-width: unset;
+		}
+	}
+
+	.lead__title {
+		margin: 0 0 24px 0;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 44px;
+		line-height: 1.2;
+		text-align: center;
+		color: #000000;
+		display: block !important;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__title {
+			font-size: 4.7vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__title {
+			font-size: 6vw;
+		}
+	}
+	.lead__title:last-child {
+		margin: 0;
+	}
+
+	.lead__title_min {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 24px;
+		margin: 0 0 60px 0;
+	}
+
+	.lead__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		color: #000000;
+		margin: 0;
+	}
+	.lead__description span {
+		font-size: 16px;
+		line-height: 19px;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description span {
+			font-size: 1.6vw;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description {
+			font-size: 2.05vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__description {
+			font-size: 2.25vw;
+			line-height: 1.5;
+		}
+	}
+	@media screen and (max-width: 550px) {
+		.lead__description {
+			font-size: 3.3vw;
+		}
+	}
+
+	.text {
+		line-height: 1.2;
+		font-style: normal;
+		color: #000;
+		font-weight: 400;
+		margin: 0 0 60px 0;
+	}
+
+	.text__title {
+		font-size: 20px;
+		margin: 0 0 25px 0;
+		font-weight: 700;
+	}
+	.text__title:first-of-type {
+		margin: 0;
+	}
+
+	.slide_mobile .text__title {
+		margin: 0 auto 60px auto !important;
+		text-align: center;
+		max-width: 90%;
+	}
+	@media screen and (max-width: 499px) {
+		.slide_mobile .text__title {
+			margin: 0 auto 30px auto !important;
+		}
+	}
+
+	.text__main {
+		font-size: 16px;
+		margin: 0 0 20px 0;
+		font-weight: 400;
+	}
+	.text__main span {
+		font-weight: 800;
+	}
+	.text__main:last-of-type {
+		margin: 0;
+	}
+	#info-avia .text__main {
+		font-size: 14px;
+	}
+
+	.cards {
+		display: flex;
+		flex: 0 0 25%;
+		width: 100%;
+		list-style: none;
+		margin: 0 0 60px 0;
+		justify-content: space-between;
+		padding: 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.cards {
+			gap: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.cards {
+			flex: 0 0 50%;
+			flex-wrap: wrap;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.cards {
+			flex: unset;
+			flex-direction: column;
+		}
+	}
+
+	.cards_flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex: unset !important;
+		gap: 20px;
+	}
+
+	.card {
+		max-width: 245px;
+		width: 100%;
+		min-height: 390px;
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		background-position: center !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		transition: 0.3s;
+		border-radius: 20px !important;
+		border: none !important;
+	}
+	.card:hover .card__title {
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.card:hover .card__title {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.card:hover .hover-content {
+		visibility: visible;
+		opacity: 1;
+		transition: 0.3s;
+		pointer-events: auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.card:hover .hover-content .hover-content_faq {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	.card:hover .card__image {
+		transform: scale(1.05);
+		transition: 0.5s;
+	}
+	@media screen and (max-width: 1006px) {
+		.card {
+			padding: 0 20px;
+			min-height: 40vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card {
+			max-width: calc(50% - 10px);
+			min-height: auto;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card {
+			max-width: 100%;
+		}
+	}
+
+	.card_with-ico {
+		max-height: unset;
+		min-height: unset;
+		max-width: calc(33.3333333333% - 15px);
+		justify-content: center;
+		background: #fff;
+		padding: 34px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.card_with-ico {
+			max-width: calc(50% - 20px);
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card_with-ico {
+			max-width: 100%;
+		}
+	}
+	.card_with-ico .card__title {
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
+		font-size: 16px;
+	}
+	.card_with-ico .card__content-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+	.card_with-ico:hover .card__image {
+		transform: none;
+	}
+	.card_with-ico:hover .card__title {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.card__title {
+		height: 30%;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.2;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000000;
+		margin: 0 auto 50px auto;
+		transition: 0.3s;
+		max-width: 200px;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 1199px) {
+		.card__title {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.card__title {
+			font-size: 1.85vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__title {
+			font-size: 3.3vw;
+			margin: 0;
+			width: calc(100% - 40px);
+			height: unset;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card__title {
+			font-size: 5vw;
+		}
+	}
+
+	.card__download-link {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 19px !important;
+		color: #0093d0 !important;
+		cursor: pointer;
+	}
+	@media screen and (max-width: 499px) {
+		.card__download-link {
+			font-size: 10px !important;
+			white-space: nowrap;
+		}
+	}
+
+	.page-footer {
+		max-width: 510px;
+		margin: 0 auto 100px auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer {
+			margin: 0 auto 80px auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer {
+			max-width: calc(100% - 60px);
+			margin: 0 auto 40px auto;
+		}
+	}
+
+	.page-footer_buttons {
+		display: flex;
+		max-width: 100%;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer_buttons {
+			max-width: calc(100% - 60px);
+		}
+	}
+
+	.button {
+		margin: 0 0 40px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+		outline: none !important;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+
+	.button_card {
+		margin: 0 0 30px 0;
+		text-decoration: none;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.button_card {
+			width: 200px;
+			height: 50px;
+		}
+	}
+
+	.button_footer {
+		background: #0093d0;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 13px 22px;
+		margin: 0;
+		max-width: unset;
+	}
+	@media screen and (max-width: 1006px) {
+		.button_footer {
+			max-width: unset;
+			height: 50px;
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button_footer {
+			height: 40px;
+			line-height: 1 !important;
+			font-size: 10px !important;
+			padding: 0 5px;
+			width: 50%;
+		}
+	}
+
+	.button_transparent {
+		background: transparent !important;
+		border: 2px solid #000000;
+		color: #000000 !important;
+		min-width: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.button_transparent {
+			min-width: unset;
+		}
+	}
+
+	.accordeon {
+		transition: 0.3s;
+		margin: 0 0 80px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.accordeon {
+			margin: 0 0 40px 0;
+		}
+	}
+	.accordeon .text__main {
+		font-size: 20px;
+	}
+	@media screen and (max-width: 768px) {
+		.accordeon .text__main {
+			font-size: 10px;
+		}
+	}
+
+	.accordeon_hidden {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		margin: 0;
+	}
+
+	.accordeon__list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.accordeon__item {
+		background: #fff;
+		border-radius: 20px;
+		padding: 32px;
+		transition: 0.3s;
+		margin: 0 0 10px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.accordeon__item {
+			padding: 16px;
+		}
+	}
+	.accordeon__item .accordeon__content {
+		visibility: visible;
+		opacity: 1;
+		max-height: -webkit-fit-content;
+		max-height: -moz-fit-content;
+		max-height: fit-content;
+		pointer-events: auto;
+		transition: 0.3s;
+	}
+	.accordeon__item .accordeon__arrow {
+		width: 31px;
+		height: 16px;
+		-o-object-fit: contain;
+		object-fit: contain;
+		transform: rotate(-90deg);
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.accordeon__item .accordeon__arrow {
+			width: 15px;
+			height: 8px;
+		}
+	}
+
+	.accordeon__item_closed .accordeon__content {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		pointer-events: none;
+		margin: 0;
+	}
+	.accordeon__item_closed .accordeon__arrow {
+		transform: rotate(0deg);
+		transition: 0.3s;
+	}
+
+	.accordeon__item-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+	@media screen and (max-width: 768px) {
+		.accordeon__item-header {
+			gap: 30px;
+		}
+	}
+	.accordeon__item-header .text__main {
+		font-weight: 600;
+	}
+
+	.accordeon__content {
+		margin: 20px 0 0 0;
+		transition: 0.3s;
+	}
+
+	.tour-operators {
+		margin: 0 0 80px 0;
+	}
+	.tour-operators .text {
+		background: #fff;
+		padding: 40px;
+		border-radius: 20px;
+		margin: 0 0 10px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.tour-operators .text {
+			padding: 20px;
+		}
+	}
+	.tour-operators .text__main {
+		font-size: 20px;
+	}
+	@media screen and (max-width: 768px) {
+		.tour-operators .text__main {
+			font-size: 12px;
+		}
+	}
+	.tour-operators .text__main:last-of-type {
+		margin: 0 0 20px 0;
+	}
+	.tour-operators .card__download-link {
+		text-decoration: none;
+	}
+	@media screen and (max-width: 768px) {
+		.tour-operators {
+			margin: 0 0 40px 0;
+		}
+	}
+	.tour-operators .lead__title {
+		max-width: 500px;
+	}
+	.tour-operators .lead__title_min {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	#accord-handler {
+		display: flex;
+		gap: 50px;
+		align-items: center;
+		cursor: pointer;
+	}
+	#accord-handler .accordeon__arrow {
+		width: 25px;
+	}
+	#accord-handler .lead__title {
+		margin: 0;
+		color: #0093d0 !important;
+	}
+</style>
+
+<div class="page">
+	<section class="banner">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/banner.png" alt="Дополнительные услуги и сервисы Coral Travel" class="banner__image desktop" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/banner_mobile.png" alt="Дополнительные услуги и сервисы Coral Travel" class="banner__image mobile" />
+	</section>
+	<section class="lead">
+		<p class="lead__title lead__title_min">ТУРОПЕРАТОРЫ, реализующие турпродукт торгового знака (знака обслуживания) <br /><img src="https://cdn.coral.ru/content/corallogo-41fb4cf7.svg" alt="" class="logo" /></p>
+	</section>
+	<section class="tour-operators">
+		<div class="text">
+			<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;ТУРОПЕРАТОР КОРАЛ ТРЕВЕЛ ЦЕНТР&raquo; (ООО &laquo;ТО&nbsp;КОРАЛ ТРЕВЕЛ ЦЕНТР&raquo;)</p>
+			<p class="text__main">
+				Реестровый номер в&nbsp;Едином федеральном реестре туроператоров <a href="https://tourism.gov.ru/operators/show.php?id=109226" target="_blank" rel="nofollow" class="card__download-link">РТО 009028</a><br />
+				ОГРН (основной государственный регистрационный номер) 1127746458840<br />
+				ИНН 7707778239<br />
+				КПП 770701001
+			</p>
+			<p class="text__main">Адрес (место нахождения): 107031, г. Москва, улица Петровка, дом 15/13, стр.&nbsp;5, этаж&nbsp;3, помещение&nbsp;I, &#8470;&nbsp;комната 33</p>
+			<p class="text__main">ООО &laquo;ТО&nbsp;КОРАЛ ТРЕВЕЛ ЦЕНТР&raquo; является туроператором и&nbsp;уполномоченным агентом туроператоров, реализующих турпродукт CORAL TRAVEL.</p>
+			<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:mnenie@coral.ru" target="_blank">mnenie@coral.ru</a></p>
+			<p class="text__main">Информация о&nbsp;финансовом обеспечении: Общий размер 10&nbsp;000&nbsp;000 (десять миллионов) рублей.</p>
+			<p class="text__main">
+				Наименование страховщика, номер, дата и&nbsp;срок действия договора страхования гражданской ответственности туроператора: Договор страхования гражданской ответственности за&nbsp;неисполнение или ненадлежащее исполнение обязательств по&nbsp;договору о&nbsp;реализации туристского продукта от&nbsp;28&nbsp;апреля 2022 года за &#8470;&nbsp;0012345-0290247/22ГОТП, заключенный между страхователем ООО &laquo;ТО&nbsp;КОРАЛ ТРЕВЕЛ
+				ЦЕНТР&raquo; и&nbsp;страховщиком ООО &laquo;СК&nbsp;&laquo;Согласие&raquo; на&nbsp;период с&nbsp;25&nbsp;июня 2022 года по&nbsp;30&nbsp;июня 2023&nbsp;года, страховая сумма 10&nbsp;000&nbsp;000 (десять миллионов) рублей.
+			</p>
+			<a href="https://cdn.coral.ru/content/doc/legal/coraltravelcentr2019.pdf" target="_blank" class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+		</div>
+		<div class="text">
+			<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;Корал тревел&raquo; (ООО &laquo;Корал тревел&raquo;)</p>
+			<p class="text__main">
+				Реестровый номер в&nbsp;Едином федеральном реестре туроператоров <a href="https://tourism.gov.ru/operators/show.php?id=109103" target="_blank" rel="nofollow" class="card__download-link">РТО 016582</a><br />
+				ОГРН (основной государственный регистрационный номер) 1027739844021<br />
+				ИНН 7707255341<br />
+				КПП 770701001
+			</p>
+			<p class="text__main">Адрес (место нахождения): 107031, г. Москва, улица Петровка, дом 15/13, стр.&nbsp;5, этаж&nbsp;3, помещение&nbsp;I, комната &#8470;&nbsp;36</p>
+			<p class="text__main">ООО &laquo;ТО&nbsp;КОРАЛ ТРЕВЕЛ ЦЕНТР&raquo; является туроператором и&nbsp;уполномоченным агентом туроператоров, реализующих турпродукт CORAL TRAVEL.</p>
+			<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:info@coral.ru" target="_blank">info@coral.ru</a></p>
+			<p class="text__main">Информация о&nbsp;финансовом обеспечении: Общий размер 300&nbsp;000&nbsp;000 (триста миллионов) рублей.</p>
+			<p class="text__main">
+				Наименование страховщика, номер, дата и&nbsp;срок действия договора страхования гражданской ответственности туроператора: Договор страхования гражданской ответственности за&nbsp;неисполнение или ненадлежащее исполнение обязательств по&nbsp;договору о&nbsp;реализации туристского продукта от&nbsp;22&nbsp;сентября 2021 года за &#8470;&nbsp;0012345-0637083/21ГОТП, заключенный между страхователем ООО &laquo;Корал тревел&raquo;
+				и&nbsp;страховщиком ООО &laquo;СК&nbsp;&laquo;Согласие&raquo; на&nbsp;период с&nbsp;01&nbsp;января 2022 года по&nbsp;31&nbsp;декабря 2022&nbsp;года, страховая сумма 300&nbsp;000&nbsp;000 (триста миллионов) рублей.
+			</p>
+			<a href="https://cdn.coral.ru/content/doc/legal/politika_coral_travel_2019.pdf" target="_blank" class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+		</div>
+		<div class="text">
+			<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;КОРАЛ ТРЕВЕЛ ВОСТОК&raquo; (ООО &laquo;КОРАЛ ТРЕВЕЛ ВОСТОК&raquo;)</p>
+			<p class="text__main">
+				Реестровый номер в&nbsp;Едином федеральном реестре туроператоров <a href="https://tourism.gov.ru/operators/show.php?id=113599" target="_blank" rel="nofollow" class="card__download-link">РТО 020545</a><br />
+				ОГРН (основной государственный регистрационный номер) 5167746317481<br />
+				ИНН 7707375247<br />
+				КПП 771801001
+			</p>
+			<p class="text__main">Адрес (место нахождения): 107392, г. Москва, ул. Халтуринская, д.6А, помещение&nbsp;II, комната 8д</p>
+			<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:coral.east@coral.ru" target="_blank">coral.east@coral.ru</a></p>
+			<p class="text__main">Информация о&nbsp;финансовом обеспечении: Общий размер 50&nbsp;500&nbsp;000 (пятьдесят миллионов пятьсот тысяч) рублей.</p>
+			<p class="text__main">
+				Наименование страховщика, номер, дата и&nbsp;срок действия договора страхования гражданской ответственности туроператора: Договор страхования гражданской ответственности туроператора за&nbsp;неисполнение обязательств по&nbsp;договору о&nbsp;реализации туристского продукта от&nbsp;24&nbsp;января 2022 года за &#8470; ДОТ-001144754, заключенный между страхователем ООО &laquo;Гость Тур&raquo; и&nbsp;страховщиком ООО &laquo;Зетта
+				Страхование&raquo;, срок действия с&nbsp;01&nbsp;апреля 2022 года по&nbsp;31&nbsp;марта 2023&nbsp;года, страховая сумма 500&nbsp;000 (пятьсот тысяч) рублей; Договор страхования гражданской ответственности туроператора за&nbsp;неисполнение обязательств по&nbsp;договору о&nbsp;реализации туристского продукта от&nbsp;31&nbsp;мая 2022 года за &#8470;&nbsp;0012345-0344591/22ГОТП, заключенный между страхователем ООО &laquo;Гость
+				Тур&raquo; и&nbsp;страховщиком ООО &laquo;СК&nbsp;&laquo;Согласие&raquo;, срок действия с&nbsp;15&nbsp;июня 2022 года по&nbsp;14&nbsp;июня 2023&nbsp;года, страховая сумма 50&nbsp;000&nbsp;000 (пятьдесят миллионов) рублей.
+			</p>
+			<a class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+		</div>
+		<div class="text">
+			<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;Гость Тур&raquo; (ООО &laquo;Гость Тур&raquo;)</p>
+			<p class="text__main">
+				Реестровый номер в&nbsp;Едином федеральном реестре туроператоров <a href="https://tourism.gov.ru/operators/show.php?id=102067" target="_blank" rel="nofollow" class="card__download-link">РТО 015347</a><br />
+				ОГРН (основной государственный регистрационный номер) 1157746323679<br />
+				ИНН 7718137798<br />
+				КПП 770101001
+			</p>
+			<p class="text__main">Адрес (место нахождения): 105005, г. Москва, ул. Бауманская, д. 68/8, стр.&nbsp;1, эт.&nbsp;1, пом. I, ком.&nbsp;26</p>
+			<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:info@guesttour.ru" target="_blank">info@guesttour.ru</a></p>
+			<p class="text__main">Информация о&nbsp;финансовом обеспечении: Общий размер 50&nbsp;000&nbsp;000 (пятьдесят миллионов) рублей.</p>
+			<p class="text__main">
+				Наименование страховщика, номер, дата и&nbsp;срок действия договора страхования гражданской ответственности туроператора: Договор страхования гражданской ответственности туроператора за&nbsp;неисполнение обязательств по&nbsp;договору о&nbsp;реализации туристского продукта от&nbsp;06&nbsp;сентября 2021 года за &#8470;&nbsp;433-087790/21, заключенный между страхователем ООО &laquo;КОРАЛ ТРЕВЕЛ ВОСТОК&raquo; и&nbsp;страховщиком СПАО
+				&laquo;Ингосстрах&raquo;, срок действия с&nbsp;01&nbsp;ноября 2021 года по&nbsp;31&nbsp;октября 2022&nbsp;года, страховая сумма 50&nbsp;000&nbsp;000 (пятьдесят миллионов) рублей.
+			</p>
+			<a class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+		</div>
+	</section>
+	<section class="lead" id="accord-handler">
+		<p class="lead__title lead__title_min">Партнерские компании</p>
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+	</section>
+	<section class="accordeon accordeon_hidden text">
+		<ul class="accordeon__list">
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Услуги по&nbsp;реализации туристского продукта туроператоров CORAL TRAVEL на&nbsp;сайте www.coral.ru (покупка тура онлайн), оказывает и&nbsp;сопровождает: Общество с&nbsp;ограниченной ответственностью &laquo;Корал Тревел Центр Бронирования&raquo; (ООО&nbsp;&laquo;Корал&nbsp;Тревел&nbsp;Центр&nbsp;Бронирования&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 1087746569437
+						<br />
+						ИНН 7701783360 <br />
+						КПП 770101001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 105005, г. Москва, Бауманская&nbsp;ул., д. 68/8&nbsp;стр.&nbsp;1, пом. I</p>
+					<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:tourist@coral.ru" target="_blank">tourist@coral.ru</a></p>
+					<a class="card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;КОРАЛ ТРЕВЕЛ РЕГИОНЫ&raquo; (ООО&nbsp;&laquo;КОРАЛ&nbsp;ТРЕВЕЛ&nbsp;РЕГИОНЫ&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 111774643590
+						<br />
+						ИНН 7701921316 <br />
+						КПП 770101001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 105066, г. Москва, Нижняя Красносельская&nbsp;ул., д. 40/12, к.&nbsp;20, этаж&nbsp;8, помещение&nbsp;II, комната 1л</p>
+					<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:regions@coral.ru" target="_blank">regions@coral.ru</a></p>
+					<a href="https://cdn.coral.ru/content/doc/legal/coraltravelregion2019.pdf" target="_blank" class="card__download-link text__main">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;КОРАЛ ТРЕВЕЛ ЗАПАД&raquo; (ООО&nbsp;&laquo;КОРАЛ&nbsp;ТРЕВЕЛ&nbsp;ЗАПАД&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 5167746280147
+						<br />
+						ИНН 7707374733 <br />
+						КПП 770901001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 105005, г. Москва, ул. Радио, д.&nbsp;12. стр.&nbsp;2, этаж&nbsp;2, помещение&nbsp;I, комната 15,16</p>
+					<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:coral.west@coral.ru" target="_blank">coral.west@coral.ru</a></p>
+					<a class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;КОРАЛ ТРЕВЕЛ СЕРВИС&raquo; (ООО&nbsp;&laquo;КОРАЛ&nbsp;ТРЕВЕЛ&nbsp;СЕРВИС&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 5167746279070
+						<br />
+						ИНН 7707374719 <br />
+						КПП 771401001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 125167, г. Москва, ул. Пилота Нестерова, д.&nbsp;5, этаж.&nbsp;2, комната 16</p>
+					<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:service@coral.ru" target="_blank">service@coral.ru</a></p>
+					<a href="https://cdn.coral.ru/content/doc/legal/coraltravelservic2019.pdf" target="_blank" class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;Турмагазин&raquo; (ООО&nbsp;&laquo;Турмагазин&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 1137746354701 <br />
+						ИНН 7703788420 <br />
+						КПП 770301001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 123022, г. Москва, ул. Красная Пресня, д.&nbsp;28, оф. 304А</p>
+					<p class="text__main">Электронный адрес: <a class="card__download-link" href="mailto:info@tourmagazin.ru" target="_blank">info@tourmagazin.ru</a></p>
+					<a class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+			<li class="accordeon__item accordeon__item_closed">
+				<div class="accordeon__item-header">
+					<p class="text__main">Общество с&nbsp;ограниченной ответственностью &laquo;ФЛАЙ2ХОЛИДЕЙ&raquo; (ООО&nbsp;&laquo;ФЛАЙ2ХОЛИДЕЙ&raquo;)</p>
+					<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/tour-operators/arrow.png" class="accordeon__arrow" />
+				</div>
+				<div class="accordeon__content">
+					<p class="text__main">
+						ОГРН (основной государственный регистрационный номер) 1157746541369
+						<br />
+						ИНН 7726343152 <br />
+						КПП 771301001 <br />
+					</p>
+					<p class="text__main">Адрес (место нахождения): 127299, г. Москва, ул. Космонавта Волкова, д.20, этаж&nbsp;6, комната 611</p>
+					<p class="text__main">Электронные адреса: <a class="card__download-link" href="mailto:info@2holiday.ru" target="_blank">info@2holiday.ru</a>, <a class="card__download-link" href="mailto:coral.holidays@coral.ru" target="_blank">coral.holidays@coral.ru</a></p>
+					<a href="https://cdn.coral.ru/content/doc/legal/coraltravelotdykh2019.pdf" target="_blank" class="text__main card__download-link">Политика в&nbsp;отношении обработки персональных данных</a>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<section class="page-footer page-footer_buttons">
+		<button class="button button_footer button_transparent" id="back">Назад</button>
+		<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+	</section>
+</div>
+
+<script>
+	const page = document.querySelector(".page");
+	const accordeon = page.querySelector(".accordeon");
+	const accordHandler = page.querySelector("#accord-handler");
+	const accordeonItems = accordeon.querySelectorAll(".accordeon__item");
+	const pageFooter = page.querySelector(".page-footer");
+	const backButton = pageFooter.querySelector("#back");
+	const widgetContainer = page.parentNode;
+
+	accordeonItems.forEach((item) => {
+		item.addEventListener("click", () => {
+			item.classList.toggle("accordeon__item_closed");
+		});
+	});
+
+	accordHandler.addEventListener("click", () => {
+		accordeon.classList.toggle("accordeon_hidden");
+	});
+
+	backButton.addEventListener("click", () => {
+		history.go(-1);
+	});
+
+	widgetContainer.classList.remove("widgetcontainer");
+	widgetContainer.classList.remove("oti-content-typography");
+</script>

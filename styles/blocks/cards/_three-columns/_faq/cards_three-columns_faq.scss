@@ -1,0 +1,9 @@
+.cards_three-columns_faq {
+	gap: 16px !important;
+
+	@media screen and (max-width: 1006px) {
+		gap: 8px !important;
+		display: flex !important;
+		flex-direction: column;
+	}
+}

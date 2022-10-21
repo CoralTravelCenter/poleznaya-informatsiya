@@ -1,0 +1,7 @@
+.card__title_white {
+	color: #fff;
+
+	@media screen and (max-width: 768px) {
+		color: #000;
+	}
+}

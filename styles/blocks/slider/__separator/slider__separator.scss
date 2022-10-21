@@ -1,0 +1,11 @@
+.slider__separator {
+	width: 2px;
+	height: 100%;
+	min-height: 73px;
+	background: #ffffff;
+
+	@media screen and (max-width: 499px) {
+		height: 80%;
+		min-height: unset;
+	}
+}

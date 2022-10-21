@@ -1,0 +1,38 @@
+html {
+	background: #f1f7fc;
+}
+
+@import "../../vendor/normalize.css";
+@import "../../vendor/reset.css";
+@import "../../vendor/fonts/fonts.scss";
+@import "../../styles/blocks/reset/reset__flex.scss";
+
+@import "../../styles/blocks/page/page.scss";
+
+@import "../../styles/blocks/banner/banner.scss";
+@import "../../styles/blocks/banner/__image/banner__image.scss";
+@import "../../styles/blocks/desktop.scss";
+@import "../../styles/blocks/mobile.scss";
+
+@import "../../styles/blocks/lead/lead.scss";
+@import "../../styles/blocks/lead/__description/lead__description.scss";
+
+@import "../../styles/blocks/cards/cards.scss";
+@import "../../styles/blocks/cards/_grid/cards_grid.scss";
+
+@import "../../styles/blocks/card/card.scss";
+@import "../../styles/blocks/card/__image-wrapper/card__image-wrapper.scss";
+@import "../../styles/blocks/card/_visa/card_visa.scss";
+@import "../../styles/blocks/card/__link/card__link.scss";
+@import "../../styles/blocks/card/__title/card__title.scss";
+@import "../../styles/blocks/card/__image/card__image.scss";
+@import "../../styles/blocks/card/__bottom/card__bottom.scss";
+@import "../../styles/blocks/card/__download-link/card__download-link.scss";
+@import "../../styles/blocks/card/__title/_min/card__title_min.scss";
+@import  "../../styles/blocks/card/__image-ico/card__image-ico.scss";
+
+@import "../../styles/blocks/page-footer/page-footer.scss";
+@import "../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+@import "../../styles/blocks/button/button.scss";
+@import "../../styles/blocks/button/_footer/button_footer.scss";
+@import "../../styles/blocks/button/_transparent/button_transparent.scss";

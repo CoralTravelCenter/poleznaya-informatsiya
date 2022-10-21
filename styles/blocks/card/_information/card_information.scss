@@ -1,0 +1,148 @@
+.card_information {
+	max-height: 328px;
+	min-height: 328px;
+	max-width: 328px;
+	width: 100%;
+
+	&:nth-of-type(1) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card1.png);
+
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card1_blur.png);
+		}
+	}
+	&:nth-of-type(2) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card2.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card2_blur.png);
+		}
+	}
+	&:nth-of-type(3) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card3.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card3_blur.png);
+		}
+	}
+	&:nth-of-type(4) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card4.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card4_blur.png);
+		}
+	}
+	&:nth-of-type(5) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card5.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card5_blur.png);
+		}
+	}
+	&:nth-of-type(6) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card6.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card6_blur.png);
+		}
+	}
+	&:nth-of-type(7) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card7.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card7_blur.png);
+		}
+	}
+	&:nth-of-type(8) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card8.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card8_blur.png);
+		}
+	}
+	&:nth-of-type(9) {
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card9.png);
+		&:hover {
+			background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/tourists-information/card9_blur.png);
+		}
+	}
+
+	.card__title {
+		max-width: 300px;
+		margin: 0 0 35px 0;
+
+		@media screen and (max-width: 768px) {
+			margin: 0 0 25px 0;
+		}
+	}
+
+	.hover-content__text {
+		max-width: 300px;
+	}
+
+	.hover-content__button {
+		margin: 0 0 40px 0;
+	}
+
+	@media screen and (max-width: 1199px) {
+		max-width: unset;
+	}
+
+	@media screen and (max-width: 819px) {
+		max-width: calc(50% - 10px);
+	}
+
+	@media screen and (max-width: 768px) {
+		background: #fff !important;
+		padding: 0;
+		max-height: unset;
+		min-height: unset;
+	}
+
+	@media screen and (max-width: 499px) {
+		max-width: 100%;
+	}
+}
+
+.cards_main {
+	.card_information {
+		&:nth-of-type(1) {
+			background: url(../../../../images/main-page/card1.png);
+			&:hover {
+				background: url(../../../../images/main-page/card1_blur.png);
+			}
+		}
+		&:nth-of-type(2) {
+			background: url(../../../../images/main-page/card2.png);
+			&:hover {
+				background: url(../../../../images/main-page/card2_blur.png);
+			}
+		}
+		&:nth-of-type(3) {
+			background: url(../../../../images/main-page/card3.png);
+			&:hover {
+				background: url(../../../../images/main-page/card3_blur.png);
+			}
+		}
+		&:nth-of-type(4) {
+			background: url(../../../../images/main-page/card4.png);
+			&:hover {
+				background: url(../../../../images/main-page/card4_blur.png);
+			}
+		}
+		&:nth-of-type(5) {
+			background: url(../../../../images/main-page/card5.png);
+			&:hover {
+				background: url(../../../../images/main-page/card5_blur.png);
+			}
+		}
+		&:nth-of-type(6) {
+			background: url(../../../../images/main-page/card6.png);
+			&:hover {
+				background: url(../../../../images/main-page/card6_blur.png);
+			}
+		}
+
+		.card__title {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 65px;
+			margin: 0 0 12px 0;
+			font-weight: 900;
+		}
+	}		
+}

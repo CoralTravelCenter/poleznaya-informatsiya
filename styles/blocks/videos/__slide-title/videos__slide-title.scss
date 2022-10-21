@@ -1,0 +1,17 @@
+.videos__slide-title {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+	color: #000000;
+	margin: 0 0 60px 0;
+
+	@media screen and (max-width: 768px) {
+		margin: 0 0 30px 0;
+		font-size: 20px;
+	}
+	@media screen and (max-width: 479px) {
+		font-size: 18px;
+	}
+}

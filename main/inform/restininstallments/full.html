@@ -1,0 +1,1247 @@
+<style>
+	h1 {
+		display: none !important;
+	}
+	html {
+		background-color: #f1f7fc;
+	}
+
+	.page {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.banner {
+		margin: 0 0 55px 0;
+	}
+
+	.banner__image {
+		max-width: 1024px;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.banner__image {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
+	.mobile {
+		width: 100%;
+	}
+	@media screen and (min-width: 769px) {
+		.mobile {
+			display: none !important;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.desktop {
+			display: none !important;
+		}
+	}
+
+	.logos {
+		margin: 0 auto 30px auto;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: center;
+	}
+	.logos .payment-logo {
+		padding: 0 16px;
+		border-right: 1px solid #000;
+		border-left: 1px solid #000;
+		max-width: 33.3333333333%;
+	}
+	.logos .payment-logo:first-of-type {
+		padding: 0 16px 0 0;
+		border: none;
+	}
+	.logos .payment-logo:last-of-type {
+		padding: 0 0 0 16px;
+		border: none;
+	}
+
+	.lead {
+		margin: 0 auto 60px auto;
+		max-width: 800px;
+	}
+	@media screen and (max-width: 900px) {
+		.lead {
+			max-width: calc(100% - 100px);
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead {
+			max-width: unset;
+		}
+	}
+
+	.lead_bg {
+		background: #fff;
+		border-radius: 20px;
+		padding: 40px 0;
+		margin: 0 0 20px 0;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	@media screen and (max-width: 768px) {
+		.lead_bg {
+			padding: 20px;
+		}
+	}
+	.lead_bg .lead__description {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.qr-code__img {
+		width: 52px;
+		margin: 0 0 24px 0;
+	}
+
+	.lead__title {
+		margin: 0 0 24px 0;
+
+		font-style: normal;
+		font-weight: 700;
+		font-size: 44px;
+		line-height: 53px;
+		text-align: center;
+		color: #000000;
+		display: block !important;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__title {
+			font-size: 4.7vw;
+			line-height: 1.2;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__title {
+			font-size: 6vw;
+		}
+	}
+	.lead__title:last-child {
+		margin: 0;
+	}
+
+	.lead__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		color: #000000;
+		margin: 0;
+	}
+	.lead__description span {
+		font-size: 16px;
+		line-height: 19px;
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description span {
+			font-size: 1.6vw;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.lead__description {
+			font-size: 2.05vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.lead__description {
+			font-size: 2.25vw;
+			line-height: 1.5;
+		}
+	}
+	@media screen and (max-width: 550px) {
+		.lead__description {
+			font-size: 3.3vw;
+		}
+	}
+
+	.mb-80 {
+		margin-bottom: 80px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.mb-80 {
+			margin-bottom: 40px;
+		}
+	}
+
+	.sber-payment {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.sber-payment__logo {
+		margin: 0 0 24px 0;
+	}
+
+	.cards {
+		display: flex;
+		flex: 0 0 25%;
+		width: 100%;
+		list-style: none;
+		margin: 0 0 60px 0;
+		justify-content: space-between;
+		padding: 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.cards {
+			gap: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.cards {
+			flex: 0 0 50%;
+			flex-wrap: wrap;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.cards {
+			flex: unset;
+			flex-direction: column;
+		}
+	}
+
+	.cards_two-columns {
+		flex: 0 0 50%;
+		gap: 20px;
+		width: 100%;
+	}
+	@media screen and (max-width: 1006px) {
+		.cards_two-columns {
+			max-width: unset;
+			flex: unset;
+			flex-direction: column;
+		}
+	}
+
+	.card {
+		max-width: 245px;
+		width: 100%;
+		min-height: 390px;
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		background-position: center !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		transition: 0.3s;
+		border-radius: 20px !important;
+		border: none !important;
+	}
+	.card:hover .card__title {
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.card:hover .card__title {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.card:hover .hover-content {
+		visibility: visible;
+		opacity: 1;
+		transition: 0.3s;
+		pointer-events: auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.card:hover .hover-content .hover-content_faq {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	.card:hover .card__image {
+		transform: scale(1.05);
+		transition: 0.5s;
+	}
+	@media screen and (max-width: 1006px) {
+		.card {
+			padding: 0 20px;
+			min-height: 40vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card {
+			max-width: calc(50% - 10px);
+			min-height: auto;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card {
+			max-width: 100%;
+		}
+	}
+
+	.card_large {
+		background: #fff;
+		border-radius: 20px;
+		padding: 60px 30px;
+		min-height: 502px;
+		width: 100%;
+		max-width: unset;
+	}
+	.card_large .card__title {
+		max-width: 100%;
+		margin: 0 0 32px 0;
+		text-transform: unset;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 29px;
+	}
+	@media screen and (max-width: 1006px) {
+		.card_large .card__title {
+			margin: 0 0 40px 0;
+			font-size: 28px;
+			line-height: 1.2;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card_large .card__title {
+			font-size: 18px;
+			margin: 0 auto 25px auto;
+			width: calc(100% - 40px);
+			min-height: 8vw;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card_large .card__title {
+			font-size: 16px;
+		}
+	}
+	.card_large:last-of-type {
+		margin: 0;
+	}
+	.card_large:hover .card__title {
+		visibility: unset;
+		opacity: unset;
+		transition: unset;
+	}
+	.card_large:hover .hover-content {
+		visibility: unset;
+		opacity: unset;
+		transition: unset;
+		pointer-events: unset;
+	}
+	@media screen and (max-width: 1099px) {
+		.card_large {
+			padding: 60px 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card_large {
+			width: 100%;
+		}
+	}
+
+	.card__logo {
+		max-width: 140px;
+		margin: 0 0 40px 0;
+		min-height: 52px;
+		-o-object-fit: contain;
+		object-fit: contain;
+	}
+	@media screen and (max-width: 1006px) {
+		.card__logo {
+			margin: 0 0 30px 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__logo {
+			margin: 0 0 15px 0;
+		}
+	}
+
+	.card__title {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000000;
+		margin: 0 auto 50px auto;
+		transition: 0.3s;
+		max-width: 200px;
+		text-decoration: none;
+	}
+	@media screen and (max-width: 1006px) {
+		.card__title {
+			font-size: 1.85vw;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__title {
+			font-size: 3.3vw;
+			line-height: 1.2;
+			margin: 0 auto 25px auto;
+			width: calc(100% - 40px);
+			min-height: 8vw;
+		}
+	}
+	@media screen and (max-width: 499px) {
+		.card__title {
+			font-size: 5vw;
+		}
+	}
+
+	.card__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: #000000;
+		margin: 0 0 30px 0;
+		max-width: 460px;
+	}
+	.card__description:last-of-type {
+		margin: 0 0 40px 0;
+	}
+	@media screen and (max-width: 768px) {
+		.card__description:last-of-type {
+			margin: 0 0 60px 0;
+		}
+	}
+	.card__description span {
+		font-weight: 700;
+	}
+	@media screen and (max-width: 1006px) {
+		.card__description {
+			max-width: 100%;
+			color: #000;
+			margin: 0 auto 25px auto;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 24px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card__description {
+			font-size: 14px;
+		}
+	}
+
+	.button {
+		margin: 0 0 55px 0;
+		border: none;
+		background: #f0ab00;
+		color: #fff !important;
+		border-radius: 8px;
+		padding: 7px 25px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px !important;
+		line-height: 19px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		max-width: 140px;
+		text-decoration: none !important;
+		box-sizing: border-box;
+		transition: 0.3s;
+		text-align: center;
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	@media screen and (max-width: 1006px) {
+		.button {
+			margin: 0 0 25px 0;
+			line-height: 1.2;
+			width: calc(100% - 40px);
+			font-size: 20px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button {
+			font-size: 12px;
+		}
+	}
+
+	.button_card {
+		margin: 0 0 30px 0;
+		text-decoration: none;
+		transition: 0.3s;
+	}
+	@media screen and (max-width: 768px) {
+		.button_card {
+			width: 200px;
+			height: 50px;
+		}
+	}
+
+	.calculator {
+		background: #fff;
+		border-radius: 20px;
+		padding: 60px;
+		margin: 0 0 60px 0;
+		max-width: 100%;
+	}
+	@media screen and (max-width: 1439px) {
+		.calculator {
+			padding: 40px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.calculator {
+			padding: 30px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.calculator {
+			padding: 25px;
+		}
+	}
+
+	.calculator__tabs {
+		max-height: 35px;
+		display: flex;
+		margin: 0 0 60px 0;
+	}
+	@media screen and (max-width: 1006px) {
+		.calculator__tabs {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.calculator__tabs {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	.calculator__tab {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0 30px 0 0;
+		cursor: pointer;
+	}
+	.calculator__tab:last-of-type {
+		margin: 0;
+	}
+
+	.calculator__tab_disabled {
+		filter: grayscale(1);
+	}
+
+	.calculator__tab-image {
+		max-width: 210px;
+	}
+	@media screen and (max-width: 768px) {
+		.calculator__tab-image {
+			width: 100px;
+		}
+	}
+
+	.form {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		min-height: 180px;
+		max-height: 100%;
+		visibility: visible;
+		opacity: 1;
+	}
+	@media screen and (max-width: 1439px) {
+		.form {
+			-moz-column-gap: 20px;
+			column-gap: 20px;
+		}
+	}
+	@media screen and (max-width: 969px) {
+		.form {
+			flex-direction: column;
+		}
+	}
+
+	.form_disabled {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		min-height: 0;
+	}
+
+	.form__fields {
+		padding: 0 31px 0 0;
+		display: flex;
+		flex-direction: column;
+		width: calc(50% - 1px);
+		justify-content: space-between;
+		box-sizing: border-box;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__fields {
+			padding: 0;
+		}
+	}
+	@media screen and (max-width: 969px) {
+		.form__fields {
+			width: 100%;
+			margin: 0 0 30px 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__fields {
+			margin: 0 0 15px 0;
+		}
+	}
+
+	.form__separator {
+		width: 2px;
+		min-height: 100%;
+		background: #e5e5e5;
+		border-radius: 5px;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__separator {
+			display: none;
+		}
+	}
+
+	.form__info {
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 0 32px;
+		width: calc(50% - 1px);
+		justify-content: space-between;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__info {
+			padding: 0;
+		}
+	}
+	@media screen and (max-width: 969px) {
+		.form__info {
+			width: 100%;
+		}
+	}
+
+	.form__wrapper {
+		display: flex;
+		margin: 0;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+	.form__wrapper:last-of-type {
+		margin: 0 !important;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__wrapper {
+			-moz-column-gap: 10px;
+			column-gap: 10px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.form__wrapper {
+			min-height: unset !important;
+		}
+	}
+	@media screen and (max-width: 969px) {
+		.form__wrapper {
+			margin: 0 0 30px 0 !important;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__wrapper {
+			margin: 0 0 15px 0 !important;
+		}
+	}
+
+	.price-input ::after {
+		content: "₽";
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 1;
+		color: #989898;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 15px 0 0;
+		z-index: 1;
+	}
+	@media screen and (max-width: 768px) {
+		.price-input ::after {
+			font-size: 12px;
+			right: -5px;
+		}
+	}
+
+	.first-pay ::after {
+		content: "%";
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 1;
+		color: #989898;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 15px 0 0;
+		z-index: 1;
+	}
+	@media screen and (max-width: 768px) {
+		.first-pay ::after {
+			font-size: 12px;
+			right: -5px;
+		}
+	}
+
+	.months-select ::after {
+		content: "";
+		position: absolute;
+		top: calc(50% - 7px);
+		right: 15px;
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/arrow-down.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 28px;
+		height: 14px;
+		z-index: 1;
+		pointer-events: none;
+	}
+	@media screen and (max-width: 1006px) {
+		.months-select ::after {
+			right: 5px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.months-select ::after {
+			top: calc(50% - 3.5px);
+			width: 14px;
+			height: 7px;
+		}
+	}
+
+	#sber .form__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		min-height: 70px;
+		margin: 0 0 10px 0;
+	}
+	#sber .form__wrapper:last-of-type {
+		margin: 0 !important;
+	}
+
+	.form__label {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		color: #000000;
+		margin: 0 30px 0 0 !important;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__label {
+			font-size: 18px;
+			line-height: 1.2;
+			margin: 0 !important;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.form__label {
+			font-size: 16px;
+			max-width: 100%;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__label {
+			font-size: 12px;
+		}
+	}
+
+	.form__label_result {
+		max-width: 140px;
+	}
+	@media screen and (max-width: 1006px) {
+		.form__label_result {
+			max-width: unset;
+		}
+	}
+
+	.form__input {
+		border: 2px solid #e5e5e5;
+		border-radius: 8px;
+		width: 210px;
+		height: 70px;
+		padding: 15px 0 15px 20px;
+
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 1;
+		color: #989898;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		position: relative;
+	}
+	.form__input::-webkit-outer-spin-button,
+	.form__input::-webkit-inner-spin-button {
+		display: none;
+	}
+	.form__input:focus-visible {
+		outline: none;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__input {
+			line-height: 1.2;
+			width: 180px;
+			height: 60px;
+			padding: 15px 0 15px 10px;
+			font-size: 22px;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.form__input {
+			width: 200px;
+			padding: 10px 0 10px 10px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__input {
+			height: 35px;
+			font-size: 12px;
+			max-width: 150px;
+			width: 100%;
+			padding: 5px 0 5px 5px;
+		}
+	}
+	@media screen and (max-width: 399px) {
+		.form__input {
+			max-width: 120px;
+		}
+	}
+
+	.form__percents {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 38px;
+		text-align: right;
+		color: #989898;
+	}
+	@media screen and (max-width: 1006px) {
+		.form__percents {
+			font-size: 32px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__percents {
+			font-size: 16px;
+		}
+	}
+
+	.form__result {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 35px;
+		line-height: 48px;
+		text-align: right;
+		color: #0093d0;
+	}
+	@media screen and (max-width: 1439px) {
+		.form__result {
+			font-size: 25px;
+			line-height: 1.2;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.form__result {
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.form__result {
+			font-size: 16px;
+		}
+	}
+
+	.button_form {
+		padding: 15px 0;
+		margin: 0 20px 0 0 !important;
+		font-size: 14px !important;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0 !important;
+	}
+	.button_form:last-of-type {
+		margin: 0 !important;
+	}
+	@media screen and (max-width: 1439px) {
+		.button_form {
+			max-height: 50px;
+			margin: 0 !important;
+		}
+	}
+	@media screen and (max-width: 1006px) {
+		.button_form {
+			max-width: unset;
+			height: 50px;
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button_form {
+			height: 40px;
+			line-height: 1 !important;
+			font-size: 12px !important;
+			padding: 0 5px;
+		}
+	}
+
+	.button_transparent {
+		background: transparent !important;
+		border: 2px solid #000000;
+		color: #000000 !important;
+		min-width: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.button_transparent {
+			min-width: unset;
+		}
+	}
+
+	.page-footer {
+		max-width: 510px;
+		margin: 0 auto 100px auto;
+	}
+	@media screen and (max-width: 1006px) {
+		.page-footer {
+			margin: 0 auto 80px auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer {
+			max-width: calc(100% - 60px);
+			margin: 0 auto 40px auto;
+		}
+	}
+
+	.page-footer_buttons {
+		display: flex;
+		max-width: 100%;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+		justify-content: center;
+	}
+	@media screen and (max-width: 768px) {
+		.page-footer_buttons {
+			max-width: calc(100% - 60px);
+		}
+	}
+
+	.button_footer {
+		background: #0093d0;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 13px 22px;
+		margin: 0;
+		max-width: unset;
+	}
+	@media screen and (max-width: 1006px) {
+		.button_footer {
+			max-width: unset;
+			height: 50px;
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.button_footer {
+			height: 40px;
+			line-height: 1 !important;
+			font-size: 10px !important;
+			padding: 0 5px;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="page">
+	<section class="banner">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/banner(new).png" alt="Способы оплаты на Coral Travel" class="banner__image desktop" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/banner_mobile(new).png" alt="Способы оплаты на Coral Travel" class="banner__image mobile" />
+	</section>
+
+	<section class="logos">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/mc.png" alt="MasterCard" class="payment-logo" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/visa.png" alt="Visa" class="payment-logo" />
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/mir.png" alt="МИР" class="payment-logo" />
+	</section>
+
+	<section class="lead">
+		<h2 class="lead__title">Оплата онлайн банковской картой</h2>
+		<p class="lead__description">Зачисление в&nbsp;режиме реального времени. Мы&nbsp;принимаем к&nbsp;оплате через Интернет банковские карты любого российского банка. Оплата производится на&nbsp;авторизованной странице Сбербанка. Вы&nbsp;можете быть уверены в&nbsp;сохранности и&nbsp;безопасности ваших денежных средств.</p>
+	</section>
+
+	<section class="lead lead_bg mb-80">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/payments/qr-code.png" class="qr-code__img" />
+		<h2 class="lead__title">Оплата по&nbsp;QR-коду через мобильное приложение вашего банка</h2>
+		<p class="lead__description">
+			После бронирования тура выберите способ оплаты по&nbsp;QR-коду и&nbsp;отсканируйте сгенерированный код в&nbsp;мобильном приложении вашего банка. <br /><br />
+			При оплате через приложение Cбербанк денежные средства зачисляются в&nbsp;режиме реального времени.
+		</p>
+	</section>
+
+	<section class="lead sber-payment">
+		<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/sber-logo.png" alt="" class="sber-payment__logo" />
+		<h2 class="lead__title">Оплата с использованием платежных систем Сбербанка</h2>
+		<p class="lead__description">
+			<b> Зачисление от&nbsp;5&nbsp;минут до&nbsp;3&nbsp;рабочих дней.</b> <br /><br />
+			Оплатить тур&nbsp;Вы можете через Сбербанк Онлайн, выбрав в&nbsp;списке поставщика услуг &laquo;Coral&raquo; или введя ИНН из&nbsp;квитанции с&nbsp;реквизитами, сформированными после бронирования тура. При использовании данного способа оплаты, зачисление средств на&nbsp;заявку происходит от&nbsp;5&nbsp;минут до&nbsp;нескольких часов. <br /><br />
+			Оплатить тур также возможно с&nbsp;помощью терминалов самообслуживания или кассира в&nbsp;отделении Сбера наличными средства или с&nbsp;помощью банковской карты. При использовании данного способа оплаты, банком может взиматься комиссия. Срок зачисления средств на&nbsp;заявку может составлять до&nbsp;3&nbsp;рабочих дней.
+		</p>
+	</section>
+
+	<section class="lead lead_bg">
+		<h2 class="lead__title">Рассрочка и&nbsp;кредит</h2>
+		<p class="lead__description">Coral Travel заботится о&nbsp;том, чтобы ваш отдых был не&nbsp;только комфортным, но&nbsp;и&nbsp;доступным. Вы&nbsp;можете приобрести тур в&nbsp;кредит или в&nbsp;рассрочку вместе с&nbsp;картой &laquo;Халва&raquo; и&nbsp;Сбербанк!</p>
+	</section>
+
+	<section>
+		<ul class="cards cards_two-columns">
+			<li class="card card_large">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/halva.png" alt="" class="card__logo" />
+				<p class="card__title">С&nbsp;картой &laquo;Халва&raquo; вы&nbsp;можете купить тур в&nbsp;рассрочку, не&nbsp;выходя из&nbsp;дома</p>
+				<p class="card__description">
+					<span>Зачисление в&nbsp;режиме<br />реального времени.</span>
+				</p>
+				<p class="card__description">Оформите карту рассрочки &laquo;Халва&raquo; и&nbsp;оплатите в&nbsp;рассрочку забронированный тур в&nbsp;личном кабинете.</p>
+				<p class="card__description">Срок рассрочки 12&nbsp;месяцев для действующих клиентов Совкомбанка и&nbsp;владельцев карты рассрочки &laquo;Халва&raquo;.</p>
+				<p class="card__description">Для новых пользователей карты &laquo;Халва&raquo; доступна увеличенная рассрочка на&nbsp;срок до&nbsp;12&nbsp;месяцев по&nbsp;промо-коду <span>HALVACORAL22</span>. Введите промо-код в&nbsp;мобильном приложении банка после оплаты тура.</p>
+				<a href="/hot-offers/broniruyte-v-rassrochku-s-oplatoy-po-karte-halva/" class="button button_card">Подробнее</a>
+			</li>
+			<li class="card card_large">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/sber.png" alt="" class="card__logo" />
+				<p class="card__title">Клиентам Сбербанка доступно приобретение тура в&nbsp;кредит онлайн</p>
+				<p class="card__description"><span>Зачисление в&nbsp;режиме реального времени без посещения банка.</span></p>
+				<p class="card__description">
+					Оформите кредит на&nbsp;тур, не&nbsp;выходя из&nbsp;дома, с&nbsp;помощью сервиса &laquo;Покупай со&nbsp;Сбером&raquo;. Для этого выберите способ оплаты &laquo;В&nbsp;кредит&raquo; после бронирования тура на&nbsp;нашем сайте и&nbsp;заполните анкету в&nbsp;Сбербанк Онлайн. Рассмотрение заявки занимает несколько минут. Средства поступают в&nbsp;режиме реального времени с&nbsp;помощью после подписания кредитного договора.
+				</p>
+				<p class="card__description">Для оформления заявки необходимо быть клиентом Сбера, иметь действующую дебетовую карту и&nbsp;доступ в&nbsp;Сбербанк Онлайн.</p>
+
+				<a href="/main/inform/restininstallments/pokupay-so-sberbank/" class="button button_card">Подробнее</a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="lead sber-payment">
+		<h2 class="lead__title">Оплата по банковским реквизитам</h2>
+		<p class="lead__description">
+			<b>Зачисление в&nbsp;течение 1-3 рабочих дней.</b> <br /><br />
+			Оплатите тур через удобный для Вас банк по&nbsp;реквизитам из&nbsp;квитанции. Квитанция станет доступна после бронирования тура. Обратите внимание, что банком может взиматься дополнительная комиссия за&nbsp;проведение платежа. Срок зачисления средств может достигать до&nbsp;3&nbsp;рабочих дней.
+		</p>
+	</section>
+
+	<section class="lead">
+		<h2 class="lead__title">Кредитный калькулятор</h2>
+		<p class="lead__description">Coral Travel заботится о&nbsp;том, чтобы ваш отдых был не&nbsp;только комфортным, но&nbsp;и&nbsp;доступным. Вы&nbsp;можете приобрести тур в&nbsp;кредит или в&nbsp;рассрочку вместе с&nbsp;картой &laquo;Халва&raquo; и&nbsp;Сбербанк!</p>
+	</section>
+
+	<section class="calculator">
+		<div class="calculator__tabs">
+			<div class="calculator__tab">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/halva.png" alt="" class="calculator__tab-image" />
+			</div>
+			<div class="calculator__tab calculator__tab_disabled">
+				<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/sber-logo.png" alt="" class="calculator__tab-image" />
+			</div>
+		</div>
+		<div class="form" id="halva" novalidate>
+			<div class="form__fields">
+				<div class="form__wrapper price-input">
+					<label for="tour-price" class="form__label">Предполагаемая стоимость тура</label>
+					<input type="text" class="form__input" id="tour-price" value="100 000" maxlength="8" />
+				</div>
+				<div class="form__wrapper months-select">
+					<label for="credit-duration" class="form__label">Срок кредита</label>
+					<select name="credit-duration" id="credit-duration" class="form__input">
+						<option value="3">3 месяца</option>
+						<option value="12">12 месяцев</option>
+						<option value="24">24 месяца</option>
+					</select>
+				</div>
+			</div>
+			<div class="form__separator">&nbsp;</div>
+			<div class="form__info">
+				<div class="form__wrapper">
+					<span class="form__label form__label_result">Ежемесячный платеж</span>
+					<span class="form__result">0 ₽</span>
+				</div>
+				<div class="form__wrapper">
+					<a href="/" class="button button_form">Выбрать&nbsp;тур</a>
+					<a href="/hot-offers/broniruyte-v-rassrochku-s-oplatoy-po-karte-halva/" class="button button_form button_transparent">Подробные&nbsp;условия</a>
+				</div>
+			</div>
+		</div>
+		<div class="form form_disabled" id="sber" novalidate>
+			<div class="form__fields">
+				<div class="form__wrapper price-input">
+					<label for="tour-price" class="form__label">Предполагаемая стоимость тура</label>
+					<input type="text" class="form__input" id="tour-price" value="100 000" maxlength="8" />
+				</div>
+				<div class="form__wrapper first-pay">
+					<label for="first-pay" class="form__label">Первоначальный взнос</label>
+					<input type="text" class="form__input" id="first-pay" value="10" maxlength="2" />
+				</div>
+				<div class="form__wrapper months-select">
+					<label for="credit-duration" class="form__label">Срок кредита</label>
+					<select name="credit-duration" id="credit-duration" class="form__input">
+						<option value="3">3 месяца</option>
+						<option value="6">6 месяцев</option>
+						<option value="12">12 месяцев</option>
+						<option value="18">18 месяцев</option>
+						<option value="24">24 месяца</option>
+						<option value="30">30 месяцев</option>
+						<option value="36">36 месяцев</option>
+					</select>
+				</div>
+			</div>
+			<div class="form__separator">&nbsp;</div>
+			<div class="form__info">
+				<div class="form__wrapper">
+					<span class="form__label">Ставка по кредиту</span>
+					<span class="form__percents">25%</span>
+				</div>
+				<div class="form__wrapper">
+					<span class="form__label form__label_result">Ежемесячный платеж</span>
+					<span class="form__result">0 ₽</span>
+				</div>
+				<div class="form__wrapper">
+					<a href="/" class="button button_form">Выбрать тур</a>
+					<a href="/main/inform/restininstallments/pokupay-so-sberbank/" class="button button_form button_transparent">Подробные условия</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="page-footer page-footer_buttons">
+		<button class="button button_footer button_transparent" id="back">Назад</button>
+		<a class="button button_footer" href="/poleznaya-informatsiya/">К&nbsp;разделу Полезная информация</a>
+	</section>
+</div>
+
+<script>
+	const calculator = document.querySelector(".calculator");
+	const tabs = calculator.querySelectorAll(".calculator__tab");
+	const forms = calculator.querySelectorAll(".form");
+	const pageFooter = document.querySelector(".page-footer");
+	const backButton = pageFooter.querySelector("#back");
+
+	backButton.addEventListener("click", () => {
+		history.go(-1);
+	});
+
+	tabs.forEach((tab) => {
+		tab.addEventListener("click", switchTab);
+	});
+
+	forms.forEach((form) => {
+		let percentData;
+		if (form.id === "halva") {
+			percentData = "0%";
+		} else {
+			percentData = form.querySelector(".form__percents").textContent;
+		}
+
+		const percent = percentData.substring(0, percentData.length - 1);
+		const inputs = form.querySelectorAll("input");
+
+		inputs.forEach((input) => {
+			input.addEventListener("click", () => {
+				input.value = "";
+			});
+		});
+
+		form.addEventListener("input", () => {
+			credit(form, 1 + parseFloat(percent) / 100);
+		});
+	});
+
+	function switchTab() {
+		tabs.forEach((tab) => (tab.classList.contains("calculator__tab_disabled") ? tab.classList.remove("calculator__tab_disabled") : tab.classList.add("calculator__tab_disabled")));
+		forms.forEach((form) => (form.classList.contains("form_disabled") ? form.classList.remove("form_disabled") : form.classList.add("form_disabled")));
+	}
+
+	function credit(form, percent) {
+		const price = form.querySelector("#tour-price");
+		const duration = form.querySelector("#credit-duration");
+		const result = form.querySelector(".form__result");
+		let firstPay;
+		if (form.id === "sber") {
+			firstPay = Number(form.querySelector("#first-pay").value);
+		}
+		const pureString = deleteSpaces(price.value);
+		const priceToNum = Number(pureString);
+
+		if (priceToNum !== NaN || priceToNum !== undefined || priceToNum !== null || priceToNum !== String) {
+			if (form.id === "halva") {
+				result.textContent = `от ${Math.round((priceToNum / parseFloat(duration.value)) * percent).toLocaleString("ru")} ₽`;
+			}
+			if (form.id === "sber") {
+				result.textContent = `от ${Math.round(((priceToNum - (priceToNum * firstPay) / 100) / parseFloat(duration.value)) * percent).toLocaleString("ru")} ₽`;
+			}
+			price.value = priceToNum.toLocaleString("ru");
+		} else {
+			result.textContent = `0 ₽`;
+			price.value = "";
+		}
+	}
+
+	function deleteSpaces(string) {
+		const arr = string.split("");
+		const newArr = [];
+
+		for (let i = 0; i < arr.length; i++) {
+			if (Number(arr[i]) === 0) {
+				if (parseFloat(arr[i]) === 0) {
+					newArr.push(arr[i]);
+				}
+				continue;
+			}
+			newArr.push(arr[i]);
+		}
+		return newArr.join("");
+	}
+
+	const widgetContainers = document.querySelectorAll(".widgetcontainer");
+
+	widgetContainers.forEach((item) => {
+		item.classList.remove("widgetcontainer");
+		item.classList.remove("oti-content-typography");
+	});
+</script>

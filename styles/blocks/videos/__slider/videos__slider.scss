@@ -1,0 +1,29 @@
+.videos__slider {
+	width: 100%;
+	height: auto;
+	margin: 0 0 10px 0;
+	max-height: 480px;
+
+	.swiper-wrapper {
+		padding: 0;
+		max-height: 480px;
+	}
+
+	.swiper-slide {
+		width: 100% !important;
+		min-height: 480px;
+
+		img {
+			display: block;
+			width: auto;
+			height: 100%;
+			margin: 0 auto;
+		}
+
+		@media screen and (max-width: 499px) {
+			min-height: unset;
+			height: 56vw;
+			margin-bottom: 10px;
+		}
+	}
+}

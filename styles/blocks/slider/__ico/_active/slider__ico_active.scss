@@ -1,0 +1,28 @@
+.slider__ico_active {
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -45px;
+		left: calc(50% - 60px / 2);
+		background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/how-to-book-online/slider_hand.png);
+		width: 60px;
+		height: 60px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		transition: 0.3s;
+
+		@media screen and (max-width: 768px) {
+			width: 40px;
+			height: 43px;
+			bottom: -20px;
+			left: 50%;
+		}
+
+		@media screen and (max-width: 499px) {
+			width: 30px;
+			height: 33px;
+			bottom: -34px;
+			left: 40%;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.button_footer {
+	background: #0093d0;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 13px 22px;
+	margin: 0;
+	max-width: unset;
+
+	@media screen and (max-width: 1006px) {
+		max-width: unset;
+		height: 50px;
+		margin: 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		height: 40px;
+		line-height: 1 !important;
+		font-size: 10px !important;
+		padding: 0 5px;
+		width: 50%;
+	}
+}

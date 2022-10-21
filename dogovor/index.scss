@@ -1,0 +1,33 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../vendor/normalize.css";
+@import "../vendor/reset.css";
+@import "../vendor/fonts/fonts.scss";
+
+@import "../styles/blocks/page/page.scss";
+
+@import "../styles/blocks/banner/banner.scss";
+@import "../styles/blocks/banner/__image/banner__image.scss";
+@import "../styles/blocks/desktop.scss";
+@import "../styles/blocks/mobile.scss";
+
+@import "../styles/blocks/lead/lead.scss";
+@import "../styles/blocks/lead/__description/lead__description.scss";
+
+@import "../styles/blocks/text/text.scss";
+@import "../styles/blocks/text/__main/text__main.scss";
+@import "../styles/blocks/text/__link/text__link.scss";
+@import "../styles/blocks/text/__main/_min/text__main_min.scss";
+@import "../styles/blocks/card/__download-link/card__download-link.scss";
+
+@import "../styles/blocks/page-footer/page-footer.scss";
+@import "../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+
+@import "../styles/blocks/buttons/buttons.scss";
+
+@import "../styles/blocks/button/button.scss";
+@import "../styles/blocks/button/_footer/button_footer.scss";
+@import "../styles/blocks/button/_transparent/button_transparent.scss";
+@import "../styles/blocks/button/_wide/button_wide.scss";

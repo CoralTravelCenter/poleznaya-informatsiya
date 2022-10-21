@@ -1,0 +1,28 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../../../../styles/remove-oti-styles.scss";
+@import "../../../../styles/blocks/page/page.scss";
+
+@import "../../../../styles/blocks/desktop.scss";
+@import "../../../../styles/blocks/mobile.scss";
+
+@import "../../../../styles/blocks/banner/banner.scss";
+@import "../../../../styles/blocks/banner/__image/banner__image.scss";
+
+@import "../../../../styles/blocks/lead/lead.scss";
+@import "../../../../styles/blocks/lead/__title/lead__title.scss";
+@import "../../../../styles/blocks/lead/__description/lead__description.scss";
+@import "../../../../styles/blocks/text/text.scss";
+@import "../../../../styles/blocks/text/__main/text__main.scss";
+@import "../../../../styles/blocks/text/__list/text__list.scss";
+
+
+@import "../../../../styles/blocks/page-footer/page-footer.scss";
+@import "../../../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";
+@import "../../../../styles/blocks/buttons/buttons.scss";
+
+@import "../../../../styles/blocks/button/button.scss";
+@import "../../../../styles/blocks/button/_footer/button_footer.scss";
+@import "../../../../styles/blocks/button/_transparent/button_transparent.scss";

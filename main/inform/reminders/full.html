@@ -1,0 +1,875 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Памятка туристу</title>
+		<style>
+			h1 {
+				display: none !important;
+			}
+
+			.reset__flex {
+				display: block !important;
+				height: unset !important;
+				width: unset !important;
+				flex-direction: unset !important;
+				align-items: unset !important;
+				justify-content: unset !important;
+			}
+
+			.page {
+				display: flex;
+				max-width: 1024px;
+				margin: 0 auto;
+				flex-direction: column;
+				position: relative;
+			}
+
+			.banner {
+				margin: 0 0 55px 0;
+			}
+
+			.banner__image {
+				max-width: 1024px;
+				max-width: 100%;
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop {
+					display: none;
+				}
+			}
+
+			.mobile {
+				width: 100%;
+			}
+			@media screen and (min-width: 769px) {
+				.mobile {
+					display: none;
+				}
+			}
+
+			.lead {
+				margin: 0 auto 60px auto;
+				max-width: 800px;
+			}
+			@media screen and (max-width: 900px) {
+				.lead {
+					max-width: calc(100% - 100px);
+				}
+			}
+
+			.lead__description {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				color: #000000;
+				margin: 0;
+			}
+			.lead__description span {
+				font-size: 16px;
+				line-height: 19px;
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description span {
+					font-size: 1.6vw;
+				}
+			}
+			@media screen and (max-width: 1006px) {
+				.lead__description {
+					font-size: 2.05vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.lead__description {
+					font-size: 2.25vw;
+					line-height: 1.5;
+				}
+			}
+			@media screen and (max-width: 550px) {
+				.lead__description {
+					font-size: 3.3vw;
+				}
+			}
+
+			.cards {
+				display: flex;
+				flex: 0 0 25%;
+				width: calc(100% + 15px);
+				list-style: none;
+				margin: 0 0 60px -14px;
+				justify-content: space-between;
+				padding: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards {
+					max-width: calc(100% + 15px);
+					margin: 0 0 60px -15px;
+					gap: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.cards {
+					flex: 0 0 50%;
+					flex-wrap: wrap;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.cards {
+					flex: unset;
+					flex-direction: column;
+				}
+			}
+
+			.cards_grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				-moz-column-gap: 15px;
+				column-gap: 15px;
+				row-gap: 35px;
+			}
+			@media screen and (max-width: 1006px) {
+				.cards_grid {
+					grid-template-columns: unset;
+					row-gap: 30px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+			}
+
+			.card {
+				max-width: 245px;
+				width: 100%;
+				min-height: 390px;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				transition: 0.3s;
+				border-radius: 20px !important;
+				border: none !important;
+			}
+			.card:hover .card__title {
+				visibility: hidden;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			@media screen and (max-width: 768px) {
+				.card:hover .card__title {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.card:hover .hover-content {
+				visibility: visible;
+				opacity: 1;
+				transition: 0.3s;
+				pointer-events: auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.card:hover .hover-content .hover-content_faq {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+			.card:hover .card__image {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
+			@media screen and (max-width: 1006px) {
+				.card {
+					padding: 0 20px;
+					min-height: 40vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card {
+					max-width: calc(50% - 10px);
+					min-height: auto;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card {
+					max-width: 100%;
+				}
+			}
+
+			.card__image-wrapper {
+				overflow: hidden;
+				border-radius: 20px;
+				margin: 0 0 20px 0;
+				position: relative;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__image-wrapper {
+					width: 100%;
+				}
+			}
+
+			.card_visa {
+				min-height: unset;
+				margin: 0 0 35px 0;
+				background-color: transparent !important;
+			}
+			.card_visa:hover .card__title {
+				visibility: visible !important;
+				opacity: 1 !important;
+				pointer-events: auto !important;
+			}
+			@media screen and (max-width: 1006px) {
+				.card_visa {
+					padding: 0 !important;
+					width: 47%;
+					max-width: unset;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card_visa .card__title {
+					font-size: 4vw !important;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card_visa .card__title_min {
+					font-size: 10px !important;
+				}
+			}
+
+			.card__link {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-end;
+				text-decoration: none;
+				overflow: hidden;
+			}
+
+			.card__title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #000000;
+				margin: 0 auto 50px auto;
+				transition: 0.3s;
+				max-width: 200px;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title {
+					font-size: 1.85vw;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.card__title {
+					font-size: 3.3vw;
+					line-height: 1.2;
+					margin: 0 auto 25px auto;
+					width: calc(100% - 40px);
+					min-height: 8vw;
+				}
+			}
+			@media screen and (max-width: 499px) {
+				.card__title {
+					font-size: 5vw;
+				}
+			}
+
+			.card__image {
+				width: 100%;
+				transition: 0.5s;
+				border-radius: 20px;
+			}
+
+			.card__bottom {
+				display: flex;
+				justify-content: space-between;
+				width: 90%;
+			}
+
+			.card__download-link {
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 19px !important;
+				color: #0093d0;
+			}
+			@media screen and (max-width: 499px) {
+				.card__download-link {
+					font-size: 10px !important;
+				}
+			}
+
+			.card__title_min {
+				font-size: 16px;
+				line-height: 19px;
+				text-transform: none;
+				margin: 0;
+			}
+			@media screen and (max-width: 1006px) {
+				.card__title_min {
+					text-align: left;
+				}
+			}
+
+			.card__image-ico {
+				background: url(https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/word-ico.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 22px;
+				height: 30px;
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				z-index: 1;
+			}
+
+			.page-footer {
+				max-width: 510px;
+				margin: 0 auto 100px auto;
+			}
+			@media screen and (max-width: 1006px) {
+				.page-footer {
+					margin: 0 auto 80px auto;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer {
+					max-width: calc(100% - 60px);
+					margin: 0 auto 40px auto;
+				}
+			}
+
+			.page-footer_buttons {
+				display: flex;
+				max-width: 100%;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.page-footer_buttons {
+					max-width: calc(100% - 60px);
+				}
+			}
+
+			.button {
+				margin: 0 0 55px 0;
+				border: none;
+				background: #f0ab00;
+				color: #fff !important;
+				border-radius: 8px;
+				padding: 7px 25px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px !important;
+				line-height: 19px !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				max-width: 140px;
+				text-decoration: none !important;
+				box-sizing: border-box;
+				transition: 0.3s;
+				text-align: center;
+			}
+			.button:hover {
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 1006px) {
+				.button {
+					margin: 0 0 25px 0;
+					line-height: 1.2;
+					width: calc(100% - 40px);
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button {
+					font-size: 12px;
+				}
+			}
+
+			.button_footer {
+				background: #0093d0;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 13px 22px;
+				margin: 0;
+				max-width: unset;
+			}
+			@media screen and (max-width: 1006px) {
+				.button_footer {
+					max-width: unset;
+					height: 50px;
+					margin: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.button_footer {
+					height: 40px;
+					line-height: 1 !important;
+					font-size: 10px !important;
+					padding: 0 5px;
+					width: 50%;
+				}
+			}
+
+			.button_transparent {
+				background: transparent !important;
+				border: 2px solid #000000;
+				color: #000000 !important;
+				min-width: 210px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@media screen and (max-width: 768px) {
+				.button_transparent {
+					min-width: unset;
+				}
+			}
+		</style>
+	</head>
+	<body class="page">
+		<div class="banner">
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/banner.png" alt="" class="banner__image desktop" />
+			<img src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/banner_mobile.png" alt="" class="banner__image mobile" />
+		</div>
+
+		<div class="lead">
+			<p class="lead__description">Отправляясь на&nbsp;отдых, не&nbsp;забудьте прочитать всю полезную информацию о&nbsp;стране. А&nbsp;также скачать и&nbsp;распечатать памятки по&nbsp;направлениям. Все важные детали путешествия находятся в&nbsp;одном файле.</p>
+		</div>
+
+		<ul class="cards cards_grid">
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/abhazia.png" alt="Памятка по поездке в Абхазию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Абхазия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_abkhazia_2022.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/austria.png" alt="Памятка по поездке в Австрию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Австрия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_austria_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/azerbaijan.png" alt="Памятка по поездке в Азербайджан" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Азербайджан</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_azerbaijan.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/andorra.png" alt="Памятка по поездке в Андорру" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Андорра</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_andorra.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/armeniia.png" alt="Памятка по поездке в Армению" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Армения</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_armenia_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/balli.png" alt="Памятка по поездке на Бали" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Бали</p>
+					<a href="https://cdn.coral.ru/content/doc/reminder/reminder_indonesia_2022%D1%81oral.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/bahrein.png" alt="Памятка по поездке в Бахрейн" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Бахрейн</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_bahrain_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/belarus.png" alt="Памятка по поездке в Беларусь" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Беларусь</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_belarus_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/bolgaria.png" alt="Памятка по поездке в Болгарию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Болгария</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_bulgaria_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/vietnam.png" alt="Памятка по поездке во Вьетнам" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Вьетнам</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_vietnam_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/greece.png" alt="Памятка по поездке в Грецию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Греция</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_greece.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/dominikana.png" alt="Памятка по поездке в Доминикану" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Доминикана</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_dominikana_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/egypt.png" alt="Памятка по поездке в Египет" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Египет</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_egypt_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/israel.png" alt="Памятка по поездке в Израиль" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Израиль</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_israel.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/india.png" alt="Памятка по поездке в Индию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Индия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_india.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/iordania.png" alt="Памятка по поездке в Иорданию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Иордания</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_jordan.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/spain.png" alt="Памятка по поездке в Испанию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Испания</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_spain.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/italy.png" alt="Памятка по поездке в Италию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Италия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_italy.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/kamboja.png" alt="Памятка по поездке в Камбоджу" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Камбоджа</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_cambodia_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/qatar.png" alt="Памятка по поездке в Катар" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Катар</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_qatar.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/kenia.png" alt="Памятка по поездке в Кению" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Кения</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_kenya_.docx" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/kipr.png" alt="Памятка по поездке на Кипр" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Кипр</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_cyprus.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/china.png" alt="Памятка по поездке в Китай" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Китай</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_china_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/cuba.png" alt="Памятка по поездке на Кубу" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Куба</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_cuba.docx" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/mavrikii.png" alt="Памятка по поездке в Маврикий" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Маврикий</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_mauritius.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/maldives.png" alt="Памятка по поездке на Мальдивы" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Мальдивы</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_maldives.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/marokko.png" alt="Памятка по поездке в Марокко" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Марокко</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_marocco_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/mexika.png" alt="Памятка по поездке в Мексику" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Мексика</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_mexico_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/uae.png" alt="Памятка по поездке в ОАЭ" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">ОАЭ</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_uae.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/russia.png" alt="Памятка по поездкам в Россия" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Россия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_russia.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/thailand.png" alt="Памятка по поездке в Таиланд" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Таиланд</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_thailand_310321.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/tanzania.png" alt="Памятка по поездке в Танзанию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Танзания</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_tanzania.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/tunis.png" alt="Памятка по поездке в Тунис" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Тунис</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_tunisia.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/turkey.png" alt="Памятка по поездке в Турцию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Турция</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_turkey_coral.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/singapour.png" alt="Памятка по поездке в Сингапур" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Сингапур</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_singapore_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/seashells.png" alt="Памятка по поездке на Сейшелы" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Сейшелы</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_seychelles_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/uzbekistan.png" alt="Памятка по поездке в Узбекистан" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Узбекистан</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_uzbekistan.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/horvatia.png" alt="Памятка по поездке в Хорватию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Хорватия</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_croatia_.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/chernogoria.png" alt="Памятка по поездке в Черногорию" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Черногория</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_montenegro.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+			<li class="card card_visa">
+				<div class="card__image-wrapper">
+					<div class="card__image-ico">&nbsp;</div>
+					<img class="card__image" src="https://cdn.coral.ru/content/cms/russia/useful-information-pages/notes/shri-lanka.png" alt="Памятка по поездке на Шри-Ланку" />
+				</div>
+				<div class="card__bottom">
+					<p class="card__title card__title_min">Шри-Ланка</p>
+					<a href="https://cdn.coral.ru/content/doc/reminders/reminder_srilanka.doc" class="card__download-link">Скачать</a>
+				</div>
+			</li>
+		</ul>
+
+		<div class="page-footer page-footer_buttons">
+			<button class="button button_footer button_transparent" id="back">Назад</button>
+			<a class="button button_footer" href="/useful-information/">К&nbsp;разделу Полезная информация</a>
+		</div>
+		<script>
+			const pageFooter = document.querySelector(".page-footer");
+			const backButton = pageFooter.querySelector("#back");
+
+			backButton.addEventListener("click", () => {
+				history.go(-1);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../vendor/normalize.css";
+@import "../vendor/reset.css";
+@import "../vendor/fonts/fonts.scss";
+
+@import "../styles/blocks/page/page.scss";
+
+@import "../styles/blocks/banner/banner.scss";
+@import "../styles/blocks/banner/__image/banner__image.scss";
+@import "../styles/blocks/desktop.scss";
+@import "../styles/blocks/mobile.scss";
+
+@import "../styles/blocks/lead/lead.scss";
+@import "../styles/blocks/lead/__description/lead__description.scss";
+
+@import "../styles/blocks/cards/cards.scss";
+
+@import "../styles/blocks/card/card.scss";
+@import "../styles/blocks/card/__image_mobile/card__image_mobile.scss";
+@import "../styles/blocks/card/__image/_hover/card__image_hover.scss";
+@import "../styles/blocks/cards/_flex/cards_flex.scss";
+
+@import "../styles/blocks/card/_square/card_square.scss";
+@import "../styles/blocks/card/__link/card__link.scss";
+@import "../styles/blocks/card/__title/card__title.scss";
+@import "../styles/blocks/card/__title/_white/card__title_white.scss";
+@import "../styles/blocks/hover-content/hover-content.scss";
+@import "../styles/blocks/hover-content/__text/hover-content__text.scss";
+@import "../styles/blocks/hover-content/__description/hover-content__description.scss";
+@import "../styles/blocks/hover-content/__spec/hover-content__spec.scss";
+@import "../styles/blocks/button/button.scss";
+@import "../styles/blocks/button/_card/button_card.scss";
+
+@import "../styles/blocks/page-footer/page-footer.scss";
+@import "../styles/blocks/button/_footer/button_footer.scss";
+@import "../styles/blocks/button/_single/button_single.scss";

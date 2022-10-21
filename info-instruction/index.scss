@@ -1,0 +1,61 @@
+html {
+	background-color: #f1f7fc;
+}
+
+@import "../../vendor/normalize.css";
+@import "../../vendor/reset.css";
+@import "../../vendor/fonts/fonts.scss";
+
+@import "../../styles/blocks/page/page.scss";
+
+@import "../../styles/blocks/banner/banner.scss";
+@import "../../styles/blocks/banner/__image/banner__image.scss";
+@import "../../styles/blocks/desktop.scss";
+@import "../../styles/blocks/mobile.scss";
+
+@import "../../styles/blocks/lead/lead.scss";
+@import "../../styles/blocks/lead/__title/lead__title.scss";
+@import "../../styles/blocks/lead/__title/_subtitle/lead__title_subtitle.scss";
+@import "../../styles/blocks/lead/__description/lead__description.scss";
+
+@import "../../styles/blocks/text/text.scss";
+@import "../../styles/blocks/text/__title/text__title.scss";
+
+@import "../../styles/blocks/slider/slider.scss";
+@import "../../styles/blocks/slider/__wrapper/slider__wrapper.scss";
+@import "../../styles/blocks/slider/__separator/slider__separator.scss";
+@import "../../styles/blocks/slider/__icons/slider__icons.scss";
+@import "../../styles/blocks/slider/__icons/_wrapper/slider__icons_wrapper.scss";
+@import "../../styles/blocks/slider/__ico/slider__ico.scss";
+@import "../../styles/blocks/slider/__ico/_active/slider__ico_active.scss";
+@import "../../styles/blocks/slider/slide/slide.scss";
+@import "../../styles/blocks/slider/slide/_mobile/slide_mobile.scss";
+@import "../../styles/blocks/slider/slide/_disabled/slide_disabled.scss";
+@import "../../styles/blocks/slider/__play-pause/slider__play-pause.scss";
+@import "../../styles/blocks/slider/__play-pause/_paused/slider__play-pause_paused.scss";
+@import "../../styles/blocks/slider/__pagination/slider__pagination.scss";
+
+@import "../../styles/blocks/phones/phones.scss";
+@import "../../styles/blocks/phones/__column/phones__column.scss";
+@import "../../styles/blocks/phones/__image/phones__image.scss";
+@import "../../styles/blocks/phones/__text/phones__text.scss";
+@import "../../styles/blocks/phones/__tel/phones__tel.scss";
+@import "../../styles/blocks/phones/__description/phones__description.scss";
+
+@import "../../styles/blocks/videos/videos.scss";
+@import "../../styles/blocks/videos/__slider/videos__slider.scss";
+@import "../../styles/blocks/videos/__thumbs/videos__thumbs.scss";
+@import "../../styles/blocks/videos/__arrows/videos__arrows.scss";
+@import "../../styles/blocks/videos/__arrow/videos__arrow.scss";
+@import "../../styles/blocks/videos/__wrapper/videos__wrapper.scss";
+@import "../../styles/blocks/videos/__iframe/videos__iframe.scss";
+@import "../../styles/blocks/videos/__slide-title/videos__slide-title.scss";
+@import "../../styles/blocks/videos/__slide-title/_min/videos__slide-title_min.scss";
+@import "../../styles/blocks/videos/__thumb/videos__thumb.scss";
+
+@import "../../styles/blocks/button/button.scss";
+@import "../../styles/blocks/button/_transparent/button_transparent.scss";
+@import "../../styles/blocks/button/_footer/button_footer.scss";
+
+@import "../../styles/blocks/page-footer/page-footer.scss";
+@import "../../styles/blocks/page-footer/_buttons/page-footer_buttons.scss";

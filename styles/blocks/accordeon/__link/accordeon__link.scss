@@ -1,0 +1,12 @@
+.accordeon__link {
+	width: 100%;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10%;
+
+	@media screen and (max-width: 768px) {
+		gap: 20px;
+	}
+}

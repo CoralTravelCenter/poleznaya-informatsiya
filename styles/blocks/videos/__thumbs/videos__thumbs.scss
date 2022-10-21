@@ -1,0 +1,53 @@
+.videos__thumbs {
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+
+	.swiper-wrapper {
+		padding: 0;
+	}
+
+	.swiper-slide {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		overflow: hidden;
+		cursor: pointer;
+		display: flex;
+		justify-content: flex-start;
+
+		&-active {
+			img {
+				opacity: 1 !important;
+				cursor: auto;
+				border: 3px solid #f0ab00;
+			}
+			opacity: 1;
+			cursor: auto;
+		}
+
+		img {
+			width: auto;
+			max-height: 93px;
+			object-fit: cover;
+			height: 100%;
+			opacity: 0.6;
+			box-sizing: border-box;
+
+			@media screen and (max-width: 499px) {
+				max-height: 12vw;
+				margin: 0 0 7.5px 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1006px) {
+		width: calc(100% - 140px);
+		margin: 0 auto;
+	}
+
+	@media screen and (max-width: 499px) {
+		width: calc(100% - 100px);
+	}
+}
